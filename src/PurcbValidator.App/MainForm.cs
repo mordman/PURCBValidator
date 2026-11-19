@@ -40,46 +40,71 @@ public sealed class MainForm : Form
 
     private void BuildUi()
     {
-        // верхняя панель выбора пакета
-        var top = new Panel { Dock = DockStyle.Top, Height = 68, Padding = new Padding(10, 10, 10, 6) };
+        // верхняя панель выбора пакета: TableLayoutPanel без якорей —
+        // кнопки «Обзор…», «Проверить», «Экспорт…» видны при любой ширине
+        // формы (абсолютные координаты с Anchor=Right на док-панели,
+        // созданной до причаливания, уводили кнопки за правый край)
+        var top = new TableLayoutPanel
+        {
+            Dock = DockStyle.Top,
+            Height = 78,
+            Padding = new Padding(10, 8, 10, 6),
+            ColumnCount = 5,
+        };
+        top.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));       // подпись
+        top.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));  // путь к пакету
+        top.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));       // «Обзор…»
+        top.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));       // «Проверить»
+        top.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));       // «Экспорт…»
+        top.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+        top.RowStyles.Add(new RowStyle(SizeType.AutoSize));
 
-        var pathLabel = new Label { Text = "Папка пакета или файл &mapping.json:", AutoSize = true, Location = new Point(10, 12) };
-        _pathBox.Location = new Point(220, 8);
-        _pathBox.Width = 560;
-        _pathBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+        var pathLabel = new Label
+        {
+            Text = "Папка пакета или файл &mapping.json:",
+            AutoSize = true,
+            Anchor = AnchorStyles.Left,
+            Margin = new Padding(3, 12, 3, 3),
+        };
+
+        _pathBox.Dock = DockStyle.Fill;
+        _pathBox.Margin = new Padding(3, 8, 3, 3);
         _pathBox.PlaceholderText = "например, C:\\Отчётность\\УОД_2026-04-30";
 
         _browseButton.Text = "Обзор…";
-        _browseButton.Location = new Point(790, 6);
-        _browseButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-        _browseButton.Width = 90;
+        _browseButton.AutoSize = true;
+        _browseButton.Padding = new Padding(8, 0, 8, 0);
+        _browseButton.Margin = new Padding(6, 6, 3, 3);
         _browseButton.Click += BrowseClick;
 
         _validateButton.Text = "Проверить";
-        _validateButton.Location = new Point(890, 6);
-        _validateButton.Width = 110;
-        _validateButton.Height = 28;
-        _validateButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+        _validateButton.AutoSize = true;
+        _validateButton.Padding = new Padding(14, 2, 14, 2);
+        _validateButton.Margin = new Padding(6, 6, 3, 3);
         _validateButton.BackColor = Color.FromArgb(0x1F, 0x4E, 0x79);
         _validateButton.ForeColor = Color.White;
         _validateButton.FlatStyle = FlatStyle.Flat;
         _validateButton.Click += async (_, _) => await RunValidationAsync();
 
         _exportButton.Text = "Экспорт в Excel…";
-        _exportButton.Location = new Point(890, 38);
-        _exportButton.Width = 110;
-        _exportButton.Height = 26;
-        _exportButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+        _exportButton.AutoSize = true;
+        _exportButton.Padding = new Padding(8, 0, 8, 0);
+        _exportButton.Margin = new Padding(6, 6, 3, 3);
         _exportButton.Enabled = false;
         _exportButton.Click += ExportClick;
 
         _schemaCheck.Text = "Проверять по официальным JSON-схемам ЦБ";
-        _schemaCheck.Location = new Point(220, 38);
         _schemaCheck.AutoSize = true;
         _schemaCheck.Checked = true;
+        _schemaCheck.Margin = new Padding(3, 6, 3, 0);
 
-        top.Controls.AddRange(new Control[] { pathLabel, _pathBox, _browseButton, _validateButton, _exportButton, _schemaCheck });
-        top.ResumeLayout(false);
+        top.Controls.Add(pathLabel, 0, 0);
+        top.Controls.Add(_pathBox, 1, 0);
+        top.Controls.Add(_browseButton, 2, 0);
+        top.Controls.Add(_validateButton, 3, 0);
+        top.Controls.Add(_exportButton, 4, 0);
+        top.Controls.Add(_schemaCheck, 1, 1);
+        top.SetColumnSpan(_schemaCheck, 4);
 
         // панель сводки
         var summary = new Panel { Dock = DockStyle.Top, Height = 56, Padding = new Padding(10, 6, 10, 6), BackColor = Color.FromArgb(0xF2, 0xF6, 0xFA) };

@@ -1,6 +1,6 @@
 # Валидатор отчётности ПУРЦБ (УОД, XBRL-CSV 2.0)
 
-Классическое Windows-приложение (WinForms, .NET 8) для проверки пакетов
+Классическое Windows-приложение (WinForms, .NET 10) для проверки пакетов
 учётно-операционных данных профессиональных участников рынка ценных бумаг
 (ПУРЦБ) в формате **XBRL-CSV 2.0 Банка России** на соответствие
 **таксономии УОД ПУРЦБ 6.1.0.10** (набор 20260403/20260430) и
@@ -97,7 +97,7 @@ WARNING контрольных соотношений ЦБ) / **ИНФО**.
 
 ## Сборка и запуск
 
-Требуется **SDK .NET 8** (Windows, Linux или macOS — WinForms-проект
+Требуется **SDK .NET 10** (Windows, Linux или macOS — WinForms-проект
 собирается и на Linux благодаря `EnableWindowsTargeting`).
 
 ```bash
@@ -111,7 +111,7 @@ dotnet run --project src/PurcbValidator.Cli -- samples/example_package --out rep
 Публикация автономного exe для Windows:
 
 ```bash
-dotnet publish src/PurcbValidator.App -c Release -r win-x64 --self-contained false -o publish
+dotnet publish src/PurcbValidator.App -c Release -r win-x64 --self-contained false -o publish   # нужен установленный .NET 10 Desktop Runtime
 ```
 
 ### Консольный запуск
