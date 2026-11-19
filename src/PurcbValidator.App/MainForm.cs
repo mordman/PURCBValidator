@@ -86,7 +86,7 @@ public sealed class MainForm : Form
         _validateButton.FlatStyle = FlatStyle.Flat;
         _validateButton.Click += async (_, _) => await RunValidationAsync();
 
-        _exportButton.Text = "Экспорт в Excel…";
+        _exportButton.Text = "Экспорт…";
         _exportButton.AutoSize = true;
         _exportButton.Padding = new Padding(8, 0, 8, 0);
         _exportButton.Margin = new Padding(6, 6, 3, 3);
@@ -348,15 +348,20 @@ public sealed class MainForm : Form
         if (_report is null) return;
         using var dialog = new SaveFileDialog
         {
-            Title = "Экспорт отчёта в Excel",
-            Filter = "Книга Excel (*.xlsx)|*.xlsx",
-            FileName = $"Отчёт валидации ПУРЦБ {DateTime.Now:yyyy-MM-dd HH-mm}.xlsx",
+            Title = "Экспорт отчёта",
+            // Markdown — основной формат (первый в фильтре и в имени по умолчанию),
+            // Excel остаётся доступным вторым пунктом
+            Filter = "Отчёт Markdown (*.md)|*.md|Книга Excel (*.xlsx)|*.xlsx",
+            FileName = $"Отчёт валидации ПУРЦБ {DateTime.Now:yyyy-MM-dd HH-mm}.md",
         };
         if (dialog.ShowDialog(this) != DialogResult.OK) return;
         try
         {
-            var writer = new ExcelReportWriter();
-            writer.Write(_report, dialog.FileName);
+            // формат определяется расширением выбранного файла
+            if (dialog.FileName.EndsWith(".md", StringComparison.OrdinalIgnoreCase))
+                new MarkdownReportWriter().Write(_report, dialog.FileName);
+            else
+                new ExcelReportWriter().Write(_report, dialog.FileName);
             SetStatus("Отчёт сохранён: " + dialog.FileName);
             if (MessageBox.Show(this, "Отчёт сохранён.\nОткрыть файл?", "Валидатор ПУРЦБ",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)

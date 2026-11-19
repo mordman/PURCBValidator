@@ -17,7 +17,7 @@
 
 | Проект | Назначение |
 |---|---|
-| `src/PurcbValidator.Core` | Библиотека валидации: 4 слоя проверок, Excel-отчёт, встроенные ресурсы ЦБ |
+| `src/PurcbValidator.Core` | Библиотека валидации: 4 слоя проверок, отчёты (Markdown/Excel), встроенные ресурсы ЦБ |
 | `src/PurcbValidator.App` | WinForms-приложение (основной сценарий работы) |
 | `src/PurcbValidator.Cli` | Консольный запуск (для CI-конвейеров и батников) |
 | `tests/PurcbValidator.Core.Tests` | 34 автотеста (xUnit): эталонный пакет ЦБ, испорченные пакеты, регрессии на реальных данных |
@@ -105,7 +105,7 @@ cd PurcbValidator
 dotnet build                      # всё решение
 dotnet test                       # 34 теста (~10 с)
 dotnet run --project src/PurcbValidator.App    # Windows-приложение
-dotnet run --project src/PurcbValidator.Cli -- samples/example_package --out report.xlsx
+dotnet run --project src/PurcbValidator.Cli -- samples/example_package --out report.md
 ```
 
 Публикация автономного exe для Windows:
@@ -120,7 +120,7 @@ dotnet publish src/PurcbValidator.App -c Release -r win-x64 --self-contained fal
 purcb-validator <путь к mapping.json или папке пакета> [параметры]
   --no-schema      не проверять по официальным JSON-схемам ЦБ
   --rules <файл>   альтернативный файл правил rules.json
-  --out <файл>     сохранить отчёт в .xlsx
+  --out <файл>     сохранить отчёт (.md — Markdown или .xlsx — Excel)
   --quiet          печатать только сводку
 ```
 
@@ -130,9 +130,12 @@ purcb-validator <путь к mapping.json или папке пакета> [па�
 
 Укажите папку пакета или файл `mapping.json`, нажмите **«Проверить»**.
 Результаты фильтруются по критичности и слою, двойной клик по строке —
-полная карточка замечания. Кнопка **«Экспорт в Excel…»** сохраняет отчёт
-(листы «Сводка», «Замечания», «Таблицы пакета»; автофильтр, закрепление
-заголовков, подсветка критичности).
+полная карточка замечания. Кнопка **«Экспорт…»** сохраняет отчёт в
+формате **Markdown** (`.md` — разделы «Сводка», «По слоям проверки»,
+«Замечания», «Таблицы пакета»; удобно вставлять в задачи, wiki и
+merge-запросы) или в **Excel** (`.xlsx`: те же разделы отдельными
+листами с автофильтром, закреплением заголовков и подсветкой
+критичности).
 
 ## Формат rules.json
 

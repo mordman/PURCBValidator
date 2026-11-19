@@ -11,7 +11,7 @@ namespace PurcbValidator.Cli;
 /// Параметры:
 ///   --no-schema      не проверять по официальным JSON-схемам ЦБ
 ///   --rules &lt;файл&gt;   альтернативный файл правил rules.json
-///   --out &lt;файл&gt;     сохранить отчёт в .xlsx
+///   --out &lt;файл&gt;     сохранить отчёт (.md — Markdown или .xlsx — Excel)
 ///   --quiet          не печатать полный список замечаний
 /// </summary>
 internal static class Program
@@ -26,7 +26,7 @@ internal static class Program
             Console.WriteLine("Использование: purcb-validator <путь к mapping.json или папке пакета> [параметры]");
             Console.WriteLine("  --no-schema      не проверять по официальным JSON-схемам ЦБ");
             Console.WriteLine("  --rules <файл>   альтернативный файл правил rules.json");
-            Console.WriteLine("  --out <файл>     сохранить отчёт в .xlsx");
+            Console.WriteLine("  --out <файл>     сохранить отчёт (.md — Markdown или .xlsx — Excel)");
             Console.WriteLine("  --quiet          печатать только сводку");
             return 0;
         }
@@ -100,7 +100,11 @@ internal static class Program
         {
             try
             {
-                new ExcelReportWriter().Write(report, outFile);
+                // формат отчёта определяется расширением: .md — Markdown, иначе Excel
+                if (outFile.EndsWith(".md", StringComparison.OrdinalIgnoreCase))
+                    new MarkdownReportWriter().Write(report, outFile);
+                else
+                    new ExcelReportWriter().Write(report, outFile);
                 Console.WriteLine();
                 Console.WriteLine($"Отчёт сохранён: {outFile}");
             }
