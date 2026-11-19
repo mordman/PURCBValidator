@@ -1,0 +1,468 @@
+using System.Text;
+using PurcbValidator.Core.Mapping;
+using PurcbValidator.Core.Models;
+using PurcbValidator.Core.Taxonomy;
+
+namespace PurcbValidator.Core.Csv;
+
+/// <summary>
+/// Слой 3 — проверка CSV-файлов пакета: наличие файлов, кодировка,
+/// заголовок против описания таблицы в mapping.json, число строк данных,
+/// число полей в строках, типы значений, ограничение длины текста,
+/// домены перечислений и фасеты таксономии.
+/// </summary>
+public sealed class CsvPackageValidator
+{
+    private readonly TaxonomyDictionary _taxonomy;
+
+    public CsvPackageValidator(TaxonomyDictionary taxonomy)
+    {
+        _taxonomy = taxonomy;
+    }
+
+    /// <summary>Загружает и проверяет все таблицы пакета. Возвращает загруженные таблицы.</summary>
+    public Dictionary<string, CsvTableData> Validate(
+        MappingDocument mapping,
+        List<ValidationIssue> issues,
+        Action<string>? progress = null)
+    {
+        var result = new Dictionary<string, CsvTableData>(StringComparer.OrdinalIgnoreCase);
+        if (mapping.Header is null) return result;
+
+        var baseDir = Path.GetDirectoryName(mapping.SourcePath) ?? ".";
+        var delimiter = string.IsNullOrEmpty(mapping.Header.Delimiter) ? "|" : mapping.Header.Delimiter!;
+        var qualifier = string.IsNullOrEmpty(mapping.Header.TextQualifier) ? "\"" : mapping.Header.TextQualifier!;
+        var limit = mapping.Header.TextValueLengthLimit ?? 8192;
+        var declaredEncoding = mapping.Header.Encoding ?? "UTF-8";
+
+        foreach (var t in mapping.Tables)
+        {
+            if (string.IsNullOrEmpty(t.Uri)) continue;
+            var tableName = t.TableName;
+            var fullPath = Path.Combine(baseDir, t.Uri);
+            progress?.Invoke($"Проверка таблицы {tableName} ({t.Uri})");
+
+            if (!File.Exists(fullPath))
+            {
+                issues.Add(new ValidationIssue
+                {
+                    Layer = ValidationLayer.CsvData,
+                    Severity = IssueSeverity.Error,
+                    Code = "CSV-001",
+                    File = t.Uri,
+                    Table = tableName,
+                    Message = "CSV-файл, указанный в mapping.json, отсутствует в пакете",
+                });
+                continue;
+            }
+
+            // --- чтение с жёсткой проверкой UTF-8 ---
+            string text;
+            var hasBom = false;
+            try
+            {
+                var bytes = File.ReadAllBytes(fullPath);
+                hasBom = bytes.Length >= 3 && bytes[0] == 0xEF && bytes[1] == 0xBB && bytes[2] == 0xBF;
+                var strictUtf8 = new UTF8Encoding(false, true);
+                try
+                {
+                    text = strictUtf8.GetString(bytes);
+                }
+                catch (DecoderFallbackException)
+                {
+                    issues.Add(new ValidationIssue
+                    {
+                        Layer = ValidationLayer.CsvData,
+                        Severity = IssueSeverity.Error,
+                        Code = "CSV-002",
+                        File = t.Uri,
+                        Table = tableName,
+                        Message = "Файл не является корректным UTF-8 (обнаружены недопустимые байты)",
+                    });
+                    text = new UTF8Encoding(false, false).GetString(bytes);
+                }
+            }
+            catch (Exception ex)
+            {
+                issues.Add(new ValidationIssue
+                {
+                    Layer = ValidationLayer.CsvData,
+                    Severity = IssueSeverity.Error,
+                    Code = "CSV-003",
+                    File = t.Uri,
+                    Table = tableName,
+                    Message = $"Не удалось прочитать файл: {ex.Message}",
+                });
+                continue;
+            }
+
+            if (!string.Equals(declaredEncoding, "UTF-8", StringComparison.OrdinalIgnoreCase))
+            {
+                issues.Add(new ValidationIssue
+                {
+                    Layer = ValidationLayer.CsvData,
+                    Severity = IssueSeverity.Error,
+                    Code = "CSV-004",
+                    File = t.Uri,
+                    Table = tableName,
+                    Message = $"Кодировка файла должна соответствовать заявленной в mapping.json ({declaredEncoding})",
+                });
+            }
+
+            if (hasBom)
+            {
+                issues.Add(new ValidationIssue
+                {
+                    Layer = ValidationLayer.CsvData,
+                    Severity = IssueSeverity.Info,
+                    Code = "CSV-005",
+                    File = t.Uri,
+                    Table = tableName,
+                    Message = "Файл начинается с маркера BOM; требуется UTF-8 без BOM",
+                });
+            }
+
+            // --- разбор CSV ---
+            var fileErrors = new List<string>();
+            var rowLines = new List<long>();
+            var lexer = new CsvLexer(delimiter, qualifier);
+            var rows = lexer.Parse(text, fileErrors, rowLines);
+
+            if (rows.Count == 0)
+            {
+                issues.Add(new ValidationIssue
+                {
+                    Layer = ValidationLayer.CsvData,
+                    Severity = IssueSeverity.Error,
+                    Code = "CSV-006",
+                    File = t.Uri,
+                    Table = tableName,
+                    Message = "Файл пуст (отсутствует даже строка заголовка)",
+                });
+                continue;
+            }
+
+            var header = rows[0];
+            var dataRows = rows.Skip(1).ToList();
+            var dataLines = rowLines.Count == rows.Count
+                ? rowLines.Skip(1).ToList()
+                : new List<long>();
+
+            var table = new CsvTableData
+            {
+                TableName = tableName,
+                Uri = t.Uri!,
+                Path = fullPath,
+                HeaderColumns = header.Fields,
+                Rows = dataRows,
+                RowLines = dataLines,
+                FileErrors = fileErrors,
+            };
+            result[tableName] = table;
+
+            foreach (var fe in fileErrors)
+                issues.Add(new ValidationIssue
+                {
+                    Layer = ValidationLayer.CsvData,
+                    Severity = IssueSeverity.Error,
+                    Code = "CSV-007",
+                    File = t.Uri,
+                    Table = tableName,
+                    Message = fe,
+                });
+
+            // --- заголовок против mapping ---
+            var mapped = t.Columns.Select(c => c.ColumnId).ToList();
+            var headerSet = new HashSet<string>(header.Fields, StringComparer.Ordinal);
+            var mappedSet = new HashSet<string>(mapped, StringComparer.Ordinal);
+
+            foreach (var missing in mapped.Where(c => !headerSet.Contains(c)))
+                issues.Add(new ValidationIssue
+                {
+                    Layer = ValidationLayer.CsvData,
+                    Severity = IssueSeverity.Error,
+                    Code = "CSV-010",
+                    File = t.Uri,
+                    Table = tableName,
+                    Column = missing,
+                    ColumnLabel = _taxonomy.Label(missing),
+                    Message = $"Колонка \"{missing}\" описана в mapping.json, но отсутствует в заголовке CSV",
+                });
+            foreach (var extra in header.Fields.Where(c => !mappedSet.Contains(c)))
+                issues.Add(new ValidationIssue
+                {
+                    Layer = ValidationLayer.CsvData,
+                    Severity = IssueSeverity.Error,
+                    Code = "CSV-011",
+                    File = t.Uri,
+                    Table = tableName,
+                    Column = extra,
+                    ColumnLabel = _taxonomy.Label(extra),
+                    Message = $"Колонка \"{extra}\" присутствует в заголовке CSV, но не описана в mapping.json",
+                });
+
+            var sameOrder = header.Fields.Count == mapped.Count && header.Fields.SequenceEqual(mapped);
+            if (!sameOrder && headerSet.SetEquals(mappedSet))
+                issues.Add(new ValidationIssue
+                {
+                    Layer = ValidationLayer.CsvData,
+                    Severity = IssueSeverity.Info,
+                    Code = "CSV-012",
+                    File = t.Uri,
+                    Table = tableName,
+                    Message = "Порядок колонок в заголовке CSV отличается от порядка описания в mapping.json (набор колонок совпадает)",
+                });
+
+            // --- число строк данных ---
+            var declared = t.CsvRowsCount;
+            if (declared.HasValue && declared.Value != dataRows.Count)
+                issues.Add(new ValidationIssue
+                {
+                    Layer = ValidationLayer.CsvData,
+                    Severity = IssueSeverity.Error,
+                    Code = "CSV-020",
+                    File = t.Uri,
+                    Table = tableName,
+                    Row = dataRows.Count,
+                    Message = $"Число строк данных ({dataRows.Count}) не совпадает с заявленным в mapping.json csvRowsCount ({declared.Value})",
+                });
+
+            // --- построчная проверка ---
+            for (var r = 0; r < dataRows.Count; r++)
+            {
+                var row = dataRows[r];
+                var lineNo = r < dataLines.Count ? dataLines[r] : header.Fields.Count + r + 2;
+
+                if (row.HasErrors)
+                {
+                    foreach (var e in row.Errors)
+                        issues.Add(new ValidationIssue
+                        {
+                            Layer = ValidationLayer.CsvData,
+                            Severity = IssueSeverity.Error,
+                            Code = "CSV-030",
+                            File = t.Uri,
+                            Table = tableName,
+                            Row = r + 1,
+                            Message = e,
+                        });
+                }
+
+                if (row.Fields.Count != header.Fields.Count)
+                {
+                    issues.Add(new ValidationIssue
+                    {
+                        Layer = ValidationLayer.CsvData,
+                        Severity = IssueSeverity.Error,
+                        Code = "CSV-031",
+                        File = t.Uri,
+                        Table = tableName,
+                        Row = r + 1,
+                        Message = $"Число полей в строке ({row.Fields.Count}) не совпадает с числом колонок заголовка ({header.Fields.Count})",
+                    });
+                    continue; // типы проверять бессмысленно
+                }
+
+                ValidateRowValues(mapping, t, table, row, r + 1, limit, issues);
+            }
+        }
+
+        // --- лишние CSV в папке ---
+        var knownFiles = new HashSet<string>(mapping.Tables
+            .Where(x => x.Uri is not null)
+            .Select(x => x.Uri!), StringComparer.OrdinalIgnoreCase);
+        foreach (var f in Directory.EnumerateFiles(baseDir, "*.csv"))
+        {
+            var name = Path.GetFileName(f);
+            if (!knownFiles.Contains(name))
+                issues.Add(new ValidationIssue
+                {
+                    Layer = ValidationLayer.CsvData,
+                    Severity = IssueSeverity.Warning,
+                    Code = "CSV-040",
+                    File = name,
+                    Message = "CSV-файл находится в папке пакета, но не описан в mapping.json (в состав пакета не войдёт)",
+                });
+        }
+
+        return result;
+    }
+
+    private void ValidateRowValues(
+        MappingDocument mapping,
+        MappingTable t,
+        CsvTableData table,
+        CsvRow row,
+        long rowNo,
+        long limit,
+        List<ValidationIssue> issues)
+    {
+        for (var i = 0; i < table.HeaderColumns.Count && i < row.Fields.Count; i++)
+        {
+            var col = table.HeaderColumns[i];
+            var value = row.Fields[i];
+            if (value.Length == 0) continue;
+
+            // «-» — признак отсутствия значения в формате УОД: проверки типов,
+            // масок и перечислений к нему не применяются; правомерность отсутствия
+            // значения у конкретного элемента проверяют exists-правила ЦБ
+            if (value == "-") continue;
+
+            // ограничение длины текстовых значений
+            if (value.Length > limit)
+                issues.Add(new ValidationIssue
+                {
+                    Layer = ValidationLayer.CsvData,
+                    Severity = IssueSeverity.Error,
+                    Code = "CSV-050",
+                    File = table.Uri,
+                    Table = table.TableName,
+                    Row = rowNo,
+                    Column = col,
+                    ColumnLabel = _taxonomy.Label(col),
+                    Value = TruncValue(value),
+                    Message = $"Длина значения ({value.Length}) превышает textValueLengthLimit ({limit})",
+                });
+
+            // пробелы по краям
+            if (value != value.Trim())
+                issues.Add(new ValidationIssue
+                {
+                    Layer = ValidationLayer.CsvData,
+                    Severity = IssueSeverity.Info,
+                    Code = "CSV-051",
+                    File = table.Uri,
+                    Table = table.TableName,
+                    Row = rowNo,
+                    Column = col,
+                    ColumnLabel = _taxonomy.Label(col),
+                    Value = TruncValue(value),
+                    Message = "Значение содержит начальные или конечные пробелы",
+                });
+
+            var colDef = t.Columns.FirstOrDefault(c => c.ColumnId == col);
+            var columnType = colDef?.Aspect?.Type?.ColumnType;
+            var dataType = colDef?.Aspect?.Type?.DataType;
+
+            // краткая форма маппинга: тип из таксономии
+            if (columnType is null)
+            {
+                var qname = _taxonomy.QNameFromColumnId(col);
+                if (qname is not null)
+                {
+                    var cType = _taxonomy.ConceptType(qname);
+                    columnType = cType;
+                }
+            }
+
+            switch (columnType)
+            {
+                case "xbrli:integerItemType":
+                    if (!IsInteger(value))
+                        issues.Add( TypeIssue(table, rowNo, col, value, "целое число (integer)") );
+                    break;
+
+                case "xbrli:decimalItemType":
+                case "xbrli:monetaryItemType":
+                case "xbrli:pureItemType":
+                    if (!IsDecimal(value))
+                        issues.Add( TypeIssue(table, rowNo, col, value, "число (decimal)") );
+                    break;
+
+                case "xbrli:dateItemType":
+                    if (!MappingLoader.IsIsoDate(value))
+                        issues.Add( TypeIssue(table, rowNo, col, value, "дата в формате ГГГГ-ММ-ДД") );
+                    break;
+
+                case "enum:enumerationItemType":
+                case "enum2:enumerationSetItemType":
+                    ValidateEnum(table, rowNo, col, value, columnType, issues);
+                    break;
+            }
+
+            // фасеты XSD (pattern и др.) для концепта колонки
+            var qn = _taxonomy.QNameFromColumnId(col);
+            if (qn is not null && _taxonomy.FacetsFor(qn) is { } facets)
+            {
+                if (facets.TryGetValue("pattern", out var pattern))
+                {
+                    try
+                    {
+                        if (!System.Text.RegularExpressions.Regex.IsMatch(value, pattern))
+                            issues.Add(new ValidationIssue
+                            {
+                                Layer = ValidationLayer.TaxonomyChecks,
+                                Severity = IssueSeverity.Error,
+                                Code = "TAX-010",
+                                File = table.Uri,
+                                Table = table.TableName,
+                                Row = rowNo,
+                                Column = col,
+                                ColumnLabel = _taxonomy.Label(col),
+                                Value = TruncValue(value),
+                                Message = $"Значение не соответствует маске таксономии «{pattern}»",
+                            });
+                    }
+                    catch (System.Text.RegularExpressions.RegexParseException)
+                    {
+                        // некорректная маска в таксономии — не наш провал
+                    }
+                }
+            }
+        }
+    }
+
+    private void ValidateEnum(
+        CsvTableData table, long rowNo, string col, string value, string columnType,
+        List<ValidationIssue> issues)
+    {
+        var qname = _taxonomy.QNameFromColumnId(col);
+        var domain = qname is null ? null : _taxonomy.EnumDomainFor(qname);
+        if (domain is null) return; // домен неизвестен — не проверяем
+
+        if (!domain.Values.Contains(value))
+        {
+            var hint = columnType == "enum2:enumerationSetItemType"
+                ? "значение должно быть URI вида http://…#Member"
+                : "значение должно быть именем члена перечисления (например, mem-int:…Member)";
+            issues.Add(new ValidationIssue
+            {
+                Layer = ValidationLayer.TaxonomyChecks,
+                Severity = IssueSeverity.Error,
+                Code = "TAX-020",
+                File = table.Uri,
+                Table = table.TableName,
+                Row = rowNo,
+                Column = col,
+                ColumnLabel = _taxonomy.Label(col),
+                Value = TruncValue(value),
+                Message = $"Значение отсутствует в домене перечисления концепта {qname}: {hint}",
+            });
+        }
+    }
+
+    private ValidationIssue TypeIssue(CsvTableData table, long rowNo, string col, string value, string expected) => new()
+    {
+        Layer = ValidationLayer.CsvData,
+        Severity = IssueSeverity.Error,
+        Code = "CSV-060",
+        File = table.Uri,
+        Table = table.TableName,
+        Row = rowNo,
+        Column = col,
+        ColumnLabel = _taxonomy.Label(col),
+        Value = TruncValue(value),
+        Message = $"Значение не соответствует типу колонки: ожидается {expected}",
+    };
+
+    internal static bool IsInteger(string value)
+        => long.TryParse(value, System.Globalization.NumberStyles.AllowLeadingSign,
+               System.Globalization.CultureInfo.InvariantCulture, out _);
+
+    internal static bool IsDecimal(string value)
+        => decimal.TryParse(value,
+               System.Globalization.NumberStyles.AllowLeadingSign | System.Globalization.NumberStyles.AllowDecimalPoint,
+               System.Globalization.CultureInfo.InvariantCulture, out _);
+
+    private static string TruncValue(string v) => v.Length <= 120 ? v : v[..120] + "…";
+}

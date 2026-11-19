@@ -1,0 +1,3621 @@
+{
+  "$schema" : "https://json-schema.org/draft/2020-12/schema",
+  "$id" : "http://www.cbr.ru/xbrl_csv/20260403/20260430/dic/concepts.def.json",
+  "description" : "Справочник концептов, создан 2026-03-02T11:44:04.004Z",
+  "$defs" : {
+    "concept_purcb-dic_AA_AsstNttng" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_AA_AsstNttng"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:integerItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_AA_BlncIn" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_AA_BlncIn"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:decimalItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_AA_BlncOut" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_AA_BlncOut"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:decimalItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_AA_BlncOutBlk" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_AA_BlncOutBlk"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:decimalItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_AA_BlncOutDbt" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_AA_BlncOutDbt"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:monetaryItemOnlyRublesType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_AA_BlncOutDbtMrgn" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_AA_BlncOutDbtMrgn"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:monetaryItemOnlyRublesType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_AA_BlncOutGrnt" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_AA_BlncOutGrnt"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:decimalItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_AA_BlncPln" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_AA_BlncPln"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:decimalItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_AA_Bss" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_AA_Bss"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_AA_BssOthr" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_AA_BssOthr"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_AA_Ctgrs" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_AA_Ctgrs"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_AA_Dt" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_AA_Dt"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:dateItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_AA_OprtnPrps" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_AA_OprtnPrps"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_AA_OprtnTp" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_AA_OprtnTp"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_AA_Qntt" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_AA_Qntt"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:decimalItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_AA_QnttDspsl" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_AA_QnttDspsl"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:decimalItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_AA_QnttRcpt" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_AA_QnttRcpt"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:decimalItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_AA_RcptOrDspsl" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_AA_RcptOrDspsl"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_AA_Tm" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_AA_Tm"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_A_BlncInPstn" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_A_BlncInPstn"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:decimalItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_A_BlncInPstnR" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_A_BlncInPstnR"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:monetaryItemOnlyRublesType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_A_BlncOutPstn" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_A_BlncOutPstn"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:decimalItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_A_BlncOutPstnR" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_A_BlncOutPstnR"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:monetaryItemOnlyRublesType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_A_Cls" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_A_Cls"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:dateItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Actvts" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Actvts"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_A_ExchgRtInPstn" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_A_ExchgRtInPstn"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:decimalItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_A_ExchgRtOutPstn" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_A_ExchgRtOutPstn"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:decimalItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_A_IndctCd" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_A_IndctCd"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_A_IndctDscr" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_A_IndctDscr"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_A_IndvdlInvstmnt" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_A_IndvdlInvstmnt"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_ALF_ClntAmnt" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_ALF_ClntAmnt"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:decimalItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_ALF_Grpng" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_ALF_Grpng"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_ALF_LctnNm" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_ALF_LctnNm"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_ALF_LctnTp" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_ALF_LctnTp"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_ALF_LctnTpOthr" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_ALF_LctnTpOthr"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_ALF_OrgAccnt" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_ALF_OrgAccnt"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_ALF_OrgAmnt" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_ALF_OrgAmnt"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:decimalItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_ALF_OrgINN" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_ALF_OrgINN"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_ALF_OrgNm" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_ALF_OrgNm"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_ALFU_Amnt" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_ALFU_Amnt"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:monetaryItemOnlyRublesType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_ALF_UsFnds" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_ALF_UsFnds"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_A_N2" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_A_N2"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_AO_BlncIn" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_AO_BlncIn"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:decimalItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_AO_BlncOut" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_AO_BlncOut"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:decimalItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_AO_Bss" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_AO_Bss"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_AO_BssOthr" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_AO_BssOthr"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_AO_Clrng" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_AO_Clrng"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_AO_ClrngRgstr" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_AO_ClrngRgstr"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_AO_ClrngRgstrSctn" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_AO_ClrngRgstrSctn"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_AO_Dt" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_AO_Dt"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:dateItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_AO_FctDt" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_AO_FctDt"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:dateItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_AO_FctTm" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_AO_FctTm"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_AO_OprtnPrps" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_AO_OprtnPrps"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_AO_PlnDt" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_AO_PlnDt"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:dateItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_AO_PlnTm" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_AO_PlnTm"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_A_Opn" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_A_Opn"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:dateItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_A_Optn" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_A_Optn"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_AO_Qntt" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_AO_Qntt"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:decimalItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_AO_QnttDspsl" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_AO_QnttDspsl"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:decimalItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_AO_QnttRcpt" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_AO_QnttRcpt"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:decimalItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_AO_RcptOrDspsl" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_AO_RcptOrDspsl"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_A_OrgNmIn" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_A_OrgNmIn"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_A_OrgNmOut" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_A_OrgNmOut"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_AO_Tm" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_AO_Tm"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_A_Prtfl" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_A_Prtfl"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_A_PrtflCdNm" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_A_PrtflCdNm"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_A_PrtflN" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_A_PrtflN"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:integerItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_A_Sctn2" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_A_Sctn2"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Asst_Amnt" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Asst_Amnt"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:monetaryItemOnlyRublesType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Asst_Amnt_CS" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Asst_Amnt_CS"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:monetaryItemOnlyRublesType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Asst_AmntRU_CS" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Asst_AmntRU_CS"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:monetaryItemOnlyRublesType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Asst_AmntRU_Sz_CS" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Asst_AmntRU_Sz_CS"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:monetaryItemOnlyRublesType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Asst_CFI" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Asst_CFI"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Asst_CrncEnumerator" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Asst_CrncEnumerator"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/enum:enumerationItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Asst_Crnc2Enumerator" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Asst_Crnc2Enumerator"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/enum:enumerationItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Asst_ExchgRt" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Asst_ExchgRt"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:decimalItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Asst_ISIN" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Asst_ISIN"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Asst_LnFltPlUpPrLmt" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Asst_LnFltPlUpPrLmt"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:monetaryItemOnlyRublesType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Asst_LnRtFltCd" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Asst_LnRtFltCd"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Asst_LnRtFltNm" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Asst_LnRtFltNm"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Asst_LnRtFxd" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Asst_LnRtFxd"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:decimalItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Asst_LnRtTp" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Asst_LnRtTp"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Asst_Nm" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Asst_Nm"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_AsstNxt_DFITp" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_AsstNxt_DFITp"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_AsstNxt_Id" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_AsstNxt_Id"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_AsstNxt_LtSz" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_AsstNxt_LtSz"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:decimalItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_AsstNxt_Nm" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_AsstNxt_Nm"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_AsstNxt_Tp" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_AsstNxt_Tp"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_AsstOthr_Dscr" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_AsstOthr_Dscr"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Asst_Prc" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Asst_Prc"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:decimalItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Asst_PrcRU" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Asst_PrcRU"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:monetaryItemOnlyRublesType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Asst_QlfdDt" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Asst_QlfdDt"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:dateItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Asst_QlfdInvstr" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Asst_QlfdInvstr"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Asst_ScrtBN" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Asst_ScrtBN"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Asst_ScrtBS" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Asst_ScrtBS"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Asst_ScrtNmnlCpnYld" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Asst_ScrtNmnlCpnYld"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:monetaryItemOnlyRublesType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Asst_ScrtREPORt" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Asst_ScrtREPORt"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:decimalItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Asst_ScrtTpEnumerator" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Asst_ScrtTpEnumerator"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/enum:enumerationItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Asst_Sz" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Asst_Sz"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:decimalItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Asst_Sz_CS" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Asst_Sz_CS"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:decimalItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Asst_Tp" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Asst_Tp"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Asst_TpNtEnumerator" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Asst_TpNtEnumerator"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/enum:enumerationItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_A_StrgAcntgReq" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_A_StrgAcntgReq"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_C_Cd2" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_C_Cd2"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_C_Nm" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_C_Nm"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_C_Nm2" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_C_Nm2"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Cntrct_BDt" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Cntrct_BDt"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:dateItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Cntrct_EDt" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Cntrct_EDt"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:dateItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Cntrct_Frgn" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Cntrct_Frgn"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Cntrct_FrxDlr" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Cntrct_FrxDlr"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Cntrct_Gds" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Cntrct_Gds"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Cntrct_IIA" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Cntrct_IIA"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Cntrct_Mrgn" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Cntrct_Mrgn"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Cntrct_N" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Cntrct_N"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Cntrct_Optn" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Cntrct_Optn"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Cntrct_Othr" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Cntrct_Othr"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Cntrct_Prtfl" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Cntrct_Prtfl"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Cntrct_SprtAccntngPB" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Cntrct_SprtAccntngPB"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Cntrct_SprtAccntngTMS" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Cntrct_SprtAccntngTMS"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Cntrct_Trsfr" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Cntrct_Trsfr"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Cntrct_Unscrd" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Cntrct_Unscrd"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_CQlfdInvstr" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_CQlfdInvstr"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Crnc_IdEnumerator" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Crnc_IdEnumerator"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/enum:enumerationItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Crnc_Id2Enumerator" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Crnc_Id2Enumerator"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/enum:enumerationItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_CRskLvl" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_CRskLvl"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_DFI_BgnDt" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_DFI_BgnDt"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:dateItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_DFI_ExcDt" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_DFI_ExcDt"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:dateItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_DFI_OCtgr" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_DFI_OCtgr"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_DFI_PmntTrms" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_DFI_PmntTrms"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_DFI_Rslt" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_DFI_Rslt"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_DFI_RsltOthr" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_DFI_RsltOthr"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_DFI_STp" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_DFI_STp"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_DFI_Tp" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_DFI_Tp"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_DFI_TpOthr" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_DFI_TpOthr"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_DFI_VrtnMrgn" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_DFI_VrtnMrgn"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_FP_CdTrd" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_FP_CdTrd"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_FP_CntrctrIntrnl" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_FP_CntrctrIntrnl"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Inf_PO" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Inf_PO"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_INN_PrimBrk" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_INN_PrimBrk"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_MsrUntEnumerator" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_MsrUntEnumerator"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/enum:enumerationItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_OtvZaPrInf_ElPoch" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_OtvZaPrInf_ElPoch"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_OtvZaPrInf_FIO" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_OtvZaPrInf_FIO"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_OtvZaPrInf_Tlf" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_OtvZaPrInf_Tlf"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_PeriodEnd_Dt" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_PeriodEnd_Dt"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:dateItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_PeriodStart_Dt" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_PeriodStart_Dt"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:dateItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_PI_OrgNm" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_PI_OrgNm"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_PrInfDannye" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_PrInfDannye"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_PrInfPokazatel" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_PrInfPokazatel"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_PR7Enumerator" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_PR7Enumerator"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/enum:enumerationItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_PSMP_INN" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_PSMP_INN"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_PSMP_Nm" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_PSMP_Nm"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_R_DcmDt" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_R_DcmDt"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:dateItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_R_DcmN" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_R_DcmN"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_R_DcmNm" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_R_DcmNm"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_R_DcmTm" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_R_DcmTm"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_R_Dt" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_R_Dt"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:dateItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_R_Grnd" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_R_Grnd"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_R_Mthd" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_R_Mthd"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Rqst_Amnt" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Rqst_Amnt"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:monetaryItemOnlyRublesType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Rqst_AsstTp" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Rqst_AsstTp"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Rqst_BgnDt" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Rqst_BgnDt"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:dateItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Rqst_BgnTm" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Rqst_BgnTm"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Rqst_Dt" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Rqst_Dt"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:dateItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Rqst_EndDt" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Rqst_EndDt"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:dateItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Rqst_EndTm" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Rqst_EndTm"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Rqst_Icbrg" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Rqst_Icbrg"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:integerItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Rqst_Mthd" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Rqst_Mthd"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Rqst_NTrdAsstTp" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Rqst_NTrdAsstTp"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Rqst_NTrdRcptOrDspsl" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Rqst_NTrdRcptOrDspsl"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Rqst_NTrdRsltOthr" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Rqst_NTrdRsltOthr"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Rqst_OrgEndCndtn" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Rqst_OrgEndCndtn"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Rqst_OrgNm" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Rqst_OrgNm"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Rqst_OrgTp" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Rqst_OrgTp"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Rqst_OrgTpOthr" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Rqst_OrgTpOthr"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Rqst_OrgVldt" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Rqst_OrgVldt"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Rqst_OrgVldtOthr" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Rqst_OrgVldtOthr"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Rqst_Othr" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Rqst_Othr"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Rqst_Rslt" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Rqst_Rslt"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Rqst_RsltOthr" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Rqst_RsltOthr"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Rqst_Tp" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Rqst_Tp"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Rqst_TpOthr" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Rqst_TpOthr"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Rqst_Trd" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Rqst_Trd"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Rqst_TrdAddrss" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Rqst_TrdAddrss"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Rqst_TrdBgnDt" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Rqst_TrdBgnDt"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:dateItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Rqst_TrdBgnTm" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Rqst_TrdBgnTm"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Rqst_TrdUsr" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Rqst_TrdUsr"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Rqst_YrsEnumerator2" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Rqst_YrsEnumerator2"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/enum2:enumerationSetItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Rspns_Dt" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Rspns_Dt"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:dateItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_R_Tm" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_R_Tm"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_R_TmZn" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_R_TmZn"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_R_VrfDt" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_R_VrfDt"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:dateItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_R_WrkrId" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_R_WrkrId"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_R1Enumerator" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_R1Enumerator"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/enum:enumerationItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_R10Enumerator" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_R10Enumerator"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/enum:enumerationItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_R11Enumerator" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_R11Enumerator"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/enum:enumerationItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_R2Enumerator" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_R2Enumerator"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/enum:enumerationItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_R3Enumerator" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_R3Enumerator"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/enum:enumerationItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_R4Enumerator" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_R4Enumerator"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/enum:enumerationItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_R5Enumerator" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_R5Enumerator"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/enum:enumerationItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_R6Enumerator" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_R6Enumerator"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/enum:enumerationItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_R8Enumerator" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_R8Enumerator"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/enum:enumerationItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_R9Enumerator" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_R9Enumerator"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/enum:enumerationItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_SA_AsstId" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_SA_AsstId"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_SA_AsstN" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_SA_AsstN"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:integerItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_SA_Id" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_SA_Id"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_SA_OrgCntrEnumerator" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_SA_OrgCntrEnumerator"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/enum:enumerationItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_SA_OrgINN" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_SA_OrgINN"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_SA_OrgNm" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_SA_OrgNm"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_SA_Tp" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_SA_Tp"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Scrt_BBgnDt" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Scrt_BBgnDt"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:dateItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Scrt_BNBl" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Scrt_BNBl"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Scrt_InOut" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Scrt_InOut"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Scrt_IssrCntrEnumerator" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Scrt_IssrCntrEnumerator"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/enum:enumerationItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Scrt_IssrINN" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Scrt_IssrINN"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Scrt_IssrNm" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Scrt_IssrNm"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Scrt_NmnlCrncEnumerator" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Scrt_NmnlCrncEnumerator"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/enum:enumerationItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Scrt_NmnlPrc" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Scrt_NmnlPrc"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:monetaryItemOnlyRublesType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Scrt_RgNmb" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Scrt_RgNmb"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Scrt_Rpmnt" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Scrt_Rpmnt"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Scrt_RpmntBgnDt" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Scrt_RpmntBgnDt"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:dateItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_Scrt_RpmntEndDt" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_Scrt_RpmntEndDt"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:dateItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_SP_CntrctrCd" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_SP_CntrctrCd"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_SP_CntrctrCdTrd" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_SP_CntrctrCdTrd"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_SP_CntrctrCntrctCdClnt" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_SP_CntrctrCntrctCdClnt"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_SP_CntrctrCntrEnumerator" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_SP_CntrctrCntrEnumerator"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/enum:enumerationItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_SP_CntrctrINN" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_SP_CntrctrINN"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_SP_CntrctrNm" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_SP_CntrctrNm"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_SP_CntrctrRsd" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_SP_CntrctrRsd"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_SP_CntrctrTp" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_SP_CntrctrTp"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_SP_CntrEnumerator" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_SP_CntrEnumerator"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/enum:enumerationItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_SP_DcmDt" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_SP_DcmDt"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:dateItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_SP_DcmEntNm" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_SP_DcmEntNm"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_SP_DcmN" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_SP_DcmN"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_SP_DcmSrs" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_SP_DcmSrs"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_SP_DcmTp" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_SP_DcmTp"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_SP_DcmTpOthr" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_SP_DcmTpOthr"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_SP_DcmUntCd" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_SP_DcmUntCd"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_SP_FTp" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_SP_FTp"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_SP_INN" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_SP_INN"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_SP_NalogRez" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_SP_NalogRez"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_SP_Rsd" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_SP_Rsd"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_T_Br" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_T_Br"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_T_Bss" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_T_Bss"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_T_CntrlCntrprt" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_T_CntrlCntrprt"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_T_CntrlCntrprtNm" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_T_CntrlCntrprtNm"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_T_CrncEnumerator" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_T_CrncEnumerator"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/enum:enumerationItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_T_CrncLwrLmt" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_T_CrncLwrLmt"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:monetaryItemOnlyRublesType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_T_CrncMthd" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_T_CrncMthd"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_T_CrncUpprLmt" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_T_CrncUpprLmt"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:monetaryItemOnlyRublesType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_T_DFIAsstPrc" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_T_DFIAsstPrc"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:monetaryItemOnlyRublesType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_T_DFIOStrkPrc" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_T_DFIOStrkPrc"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:monetaryItemOnlyRublesType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_T_Dt" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_T_Dt"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:dateItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_T_Dt_CS" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_T_Dt_CS"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:dateItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_T_IdNoTrdOrg" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_T_IdNoTrdOrg"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_T_IdTrdOrgNttng" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_T_IdTrdOrgNttng"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_T_Mthd" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_T_Mthd"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_T_NOrg" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_T_NOrg"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_T_OrgNm" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_T_OrgNm"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_T_PmntDtN" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_T_PmntDtN"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:integerItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_T_PmntFctDt" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_T_PmntFctDt"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:dateItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_T_PmntPlnDt" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_T_PmntPlnDt"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:dateItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_T_Prcdr" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_T_Prcdr"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_T_Prd" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_T_Prd"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:integerItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_T_Prsn" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_T_Prsn"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_T_PrsnOthr" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_T_PrsnOthr"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_T_RghtDtN" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_T_RghtDtN"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:integerItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_T_RghtFctDt" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_T_RghtFctDt"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:dateItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_T_RghtPlnDt" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_T_RghtPlnDt"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:dateItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_T_Rslt" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_T_Rslt"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_T_RsltOthr" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_T_RsltOthr"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_T_SttlmNm" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_T_SttlmNm"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_T_SttlmTp" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_T_SttlmTp"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_T_Tm" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_T_Tm"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_T_Tp" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_T_Tp"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_T_TpOthr" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_T_TpOthr"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_T_Trd" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_T_Trd"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_T_TrdBrd" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_T_TrdBrd"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "concept_purcb-dic_T_TrdOrgSctn" : {
+      "type" : "object",
+      "properties" : {
+        "xbrl:concept" : {
+          "type" : "string",
+          "const" : "purcb-dic_T_TrdOrgSctn"
+        },
+        "type" : {
+          "$ref" : "xbrl-types.def.json#/$defs/xbrli:stringItemType"
+        }
+      },
+      "additionalProperties" : false
+    }
+  }
+}

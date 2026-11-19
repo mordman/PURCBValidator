@@ -1,0 +1,189 @@
+{
+  "$schema" : "https://json-schema.org/draft/2020-12/schema",
+  "$id" : "http://www.cbr.ru/xbrl_csv/20260403/20260430/ep_nso_purcb_oper_nr_uod_reestr.def.json",
+  "description" : "Определение точки входа, создан 2026-03-02T11:43:56.056Z",
+  "properties" : {
+    "@context" : {
+      "type" : "string",
+      "const" : "www.cbr.ru/xbrl_csv2"
+    },
+    "header" : {
+      "$ref" : "#/$defs/headerType"
+    },
+    "dtsReferences" : {
+      "$ref" : "#/$defs/dtsReferencesType"
+    },
+    "tables" : {
+      "type" : "array",
+      "uniqueItems" : true,
+      "minItems" : 1,
+      "prefixItems" : [
+        {
+          "anyOf" : [
+            {
+              "$ref" : "./tab/nso/purcb/sr_R5.def.json#/$defs/table_sr_R5"
+            },
+            {
+              "$ref" : "./tab/nso/purcb/sr_R4.def.json#/$defs/table_sr_R4"
+            },
+            {
+              "$ref" : "./tab/nso/purcb/sr_R8.def.json#/$defs/table_sr_R8"
+            },
+            {
+              "$ref" : "./tab/nso/purcb/sr_R11.def.json#/$defs/table_sr_R11"
+            },
+            {
+              "$ref" : "./tab/nso/purcb/sr_R1.def.json#/$defs/table_sr_R1"
+            },
+            {
+              "$ref" : "./tab/nso/purcb/sr_R3.def.json#/$defs/table_sr_R3"
+            },
+            {
+              "$ref" : "./tab/nso/purcb/sr_sved_purcb.def.json#/$defs/table_sr_sved_purcb"
+            },
+            {
+              "$ref" : "./tab/nso/purcb/sr_R7.def.json#/$defs/table_sr_R7"
+            },
+            {
+              "$ref" : "./tab/nso/purcb/sr_R9.def.json#/$defs/table_sr_R9"
+            },
+            {
+              "$ref" : "./tab/nso/purcb/sr_R6.def.json#/$defs/table_sr_R6"
+            },
+            {
+              "$ref" : "./tab/nso/purcb/sr_R2.def.json#/$defs/table_sr_R2"
+            },
+            {
+              "$ref" : "./tab/nso/purcb/sr_R10.def.json#/$defs/table_sr_R10"
+            }
+          ]
+        }
+      ],
+      "items" : {
+        "anyOf" : [
+          {
+            "$ref" : "./tab/nso/purcb/sr_R5.def.json#/$defs/table_sr_R5"
+          },
+          {
+            "$ref" : "./tab/nso/purcb/sr_R4.def.json#/$defs/table_sr_R4"
+          },
+          {
+            "$ref" : "./tab/nso/purcb/sr_R8.def.json#/$defs/table_sr_R8"
+          },
+          {
+            "$ref" : "./tab/nso/purcb/sr_R11.def.json#/$defs/table_sr_R11"
+          },
+          {
+            "$ref" : "./tab/nso/purcb/sr_R1.def.json#/$defs/table_sr_R1"
+          },
+          {
+            "$ref" : "./tab/nso/purcb/sr_R3.def.json#/$defs/table_sr_R3"
+          },
+          {
+            "$ref" : "./tab/nso/purcb/sr_sved_purcb.def.json#/$defs/table_sr_sved_purcb"
+          },
+          {
+            "$ref" : "./tab/nso/purcb/sr_R7.def.json#/$defs/table_sr_R7"
+          },
+          {
+            "$ref" : "./tab/nso/purcb/sr_R9.def.json#/$defs/table_sr_R9"
+          },
+          {
+            "$ref" : "./tab/nso/purcb/sr_R6.def.json#/$defs/table_sr_R6"
+          },
+          {
+            "$ref" : "./tab/nso/purcb/sr_R2.def.json#/$defs/table_sr_R2"
+          },
+          {
+            "$ref" : "./tab/nso/purcb/sr_R10.def.json#/$defs/table_sr_R10"
+          }
+        ]
+      },
+      "additionalProperties" : false
+    }
+  },
+  "additionalProperties" : false,
+  "required" : [
+    "@context",
+    "dtsReferences",
+    "tables"
+  ],
+  "$defs" : {
+    "headerType" : {
+      "description" : "Определение заголовка сервисного файла",
+      "type" : "object",
+      "properties" : {
+        "encoding" : {
+          "type" : "string",
+          "enum" : [
+            "UTF-8"
+          ]
+        },
+        "delimiter" : {
+          "type" : "string",
+          "enum" : [
+            ",",
+            "|"
+          ]
+        },
+        "reportDate" : {
+          "$ref" : "./dic/xbrl-types.def.json#/$defs/ISO_8601_date"
+        },
+        "textQualifier" : {
+          "type" : "string",
+          "const" : "\""
+        },
+        "documentVersion" : {
+          "type" : "string",
+          "const" : "http://www.cbr.ru/xbrl_csv2/20260403/20260430/difp"
+        },
+        "textValueLengthLimit" : {
+          "type" : "integer",
+          "const" : 8192
+        },
+        "identifier" : {
+          "type" : "string",
+          "pattern" : "^(3\\d{14}|[15]\\d{12}|\\d{12}|\\d{10}|\\d{10}(\\d{2})?)$"
+        },
+        "identifierPredecessor" : {
+          "type" : "string",
+          "pattern" : "^(3\\d{14}|[15]\\d{12}|\\d{12}|\\d{10}|\\d{10}(\\d{2})?)$"
+        },
+        "requestNumberDifp" : {
+          "type" : "string",
+          "pattern" : "^\\d{5}_\\d{2}$"
+        }
+      },
+      "required" : [
+        "encoding",
+        "delimiter",
+        "reportDate",
+        "textQualifier",
+        "documentVersion",
+        "textValueLengthLimit",
+        "identifier",
+        "requestNumberDifp"
+      ]
+    },
+    "dtsReferencesType" : {
+      "description" : "Определение URI точки входа",
+      "type" : "object",
+      "properties" : {
+        "type" : {
+          "type" : "string",
+          "const" : "schema"
+        },
+        "href" : {
+          "type" : "string",
+          "format" : "uri",
+          "const" : "http://www.cbr.ru/xbrl_csv/20260403/20260430/ep_nso_purcb_oper_nr_uod_reestr.def.json"
+        }
+      },
+      "required" : [
+        "type",
+        "href"
+      ],
+      "additionalProperties" : false
+    }
+  }
+}

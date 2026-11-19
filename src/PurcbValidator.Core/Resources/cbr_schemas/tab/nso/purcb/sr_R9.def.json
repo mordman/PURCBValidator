@@ -1,0 +1,1167 @@
+{
+  "$schema" : "https://json-schema.org/draft/2020-12/schema",
+  "$id" : "http://www.cbr.ru/xbrl_csv/20260403/20260430/tab/nso/purcb/sr_R9.def.json",
+  "description" : "Определение гиперкуба, создан 2026-03-02T11:44:07.007Z",
+  "$defs" : {
+    "column_purcb-dic_AA_BlncIn_dimGrp_1_periodGrp_1" : {
+      "properties" : {
+        "columnId" : {
+          "type" : "string",
+          "const" : "purcb_dic_AA_BlncIn_dimGrp_1_periodGrp_1"
+        },
+        "aspect" : {
+          "$ref" : "./../../../dic/concepts.def.json#/$defs/concept_purcb-dic_AA_BlncIn"
+        },
+        "flatDimension" : {
+          "type" : "boolean",
+          "const" : true
+        },
+        "xbrli:period" : {
+          "type" : "object",
+          "properties" : {
+            "periodType" : {
+              "type" : "string",
+              "const" : "instant"
+            },
+            "xbrli:instant" : {
+              "type" : "string",
+              "const" : "$par:refPeriodEnd"
+            }
+          },
+          "required" : [
+            "periodType",
+            "xbrli:instant"
+          ]
+        }
+      },
+      "additionalProperties" : false,
+      "required" : [
+        "columnId"
+      ]
+    },
+    "column_purcb-dic_AA_BlncOut_dimGrp_1_periodGrp_1" : {
+      "properties" : {
+        "columnId" : {
+          "type" : "string",
+          "const" : "purcb_dic_AA_BlncOut_dimGrp_1_periodGrp_1"
+        },
+        "aspect" : {
+          "$ref" : "./../../../dic/concepts.def.json#/$defs/concept_purcb-dic_AA_BlncOut"
+        },
+        "flatDimension" : {
+          "type" : "boolean",
+          "const" : true
+        },
+        "xbrli:period" : {
+          "type" : "object",
+          "properties" : {
+            "periodType" : {
+              "type" : "string",
+              "const" : "instant"
+            },
+            "xbrli:instant" : {
+              "type" : "string",
+              "const" : "$par:refPeriodEnd"
+            }
+          },
+          "required" : [
+            "periodType",
+            "xbrli:instant"
+          ]
+        }
+      },
+      "additionalProperties" : false,
+      "required" : [
+        "columnId"
+      ]
+    },
+    "column_purcb-dic_AA_BlncOutBlk_dimGrp_1_periodGrp_1" : {
+      "properties" : {
+        "columnId" : {
+          "type" : "string",
+          "const" : "purcb_dic_AA_BlncOutBlk_dimGrp_1_periodGrp_1"
+        },
+        "aspect" : {
+          "$ref" : "./../../../dic/concepts.def.json#/$defs/concept_purcb-dic_AA_BlncOutBlk"
+        },
+        "flatDimension" : {
+          "type" : "boolean",
+          "const" : true
+        },
+        "xbrli:period" : {
+          "type" : "object",
+          "properties" : {
+            "periodType" : {
+              "type" : "string",
+              "const" : "instant"
+            },
+            "xbrli:instant" : {
+              "type" : "string",
+              "const" : "$par:refPeriodEnd"
+            }
+          },
+          "required" : [
+            "periodType",
+            "xbrli:instant"
+          ]
+        }
+      },
+      "additionalProperties" : false,
+      "required" : [
+        "columnId"
+      ]
+    },
+    "column_purcb-dic_AA_BlncOutDbt_dimGrp_1_periodGrp_1" : {
+      "properties" : {
+        "columnId" : {
+          "type" : "string",
+          "const" : "purcb_dic_AA_BlncOutDbt_dimGrp_1_periodGrp_1"
+        },
+        "aspect" : {
+          "$ref" : "./../../../dic/concepts.def.json#/$defs/concept_purcb-dic_AA_BlncOutDbt"
+        },
+        "flatDimension" : {
+          "type" : "boolean",
+          "const" : true
+        },
+        "xbrli:period" : {
+          "type" : "object",
+          "properties" : {
+            "periodType" : {
+              "type" : "string",
+              "const" : "instant"
+            },
+            "xbrli:instant" : {
+              "type" : "string",
+              "const" : "$par:refPeriodEnd"
+            }
+          },
+          "required" : [
+            "periodType",
+            "xbrli:instant"
+          ]
+        }
+      },
+      "additionalProperties" : false,
+      "required" : [
+        "columnId"
+      ]
+    },
+    "column_purcb-dic_AA_BlncOutDbtMrgn_dimGrp_1_periodGrp_1" : {
+      "properties" : {
+        "columnId" : {
+          "type" : "string",
+          "const" : "purcb_dic_AA_BlncOutDbtMrgn_dimGrp_1_periodGrp_1"
+        },
+        "aspect" : {
+          "$ref" : "./../../../dic/concepts.def.json#/$defs/concept_purcb-dic_AA_BlncOutDbtMrgn"
+        },
+        "flatDimension" : {
+          "type" : "boolean",
+          "const" : true
+        },
+        "xbrli:period" : {
+          "type" : "object",
+          "properties" : {
+            "periodType" : {
+              "type" : "string",
+              "const" : "instant"
+            },
+            "xbrli:instant" : {
+              "type" : "string",
+              "const" : "$par:refPeriodEnd"
+            }
+          },
+          "required" : [
+            "periodType",
+            "xbrli:instant"
+          ]
+        }
+      },
+      "additionalProperties" : false,
+      "required" : [
+        "columnId"
+      ]
+    },
+    "column_purcb-dic_AA_BlncOutGrnt_dimGrp_1_periodGrp_1" : {
+      "properties" : {
+        "columnId" : {
+          "type" : "string",
+          "const" : "purcb_dic_AA_BlncOutGrnt_dimGrp_1_periodGrp_1"
+        },
+        "aspect" : {
+          "$ref" : "./../../../dic/concepts.def.json#/$defs/concept_purcb-dic_AA_BlncOutGrnt"
+        },
+        "flatDimension" : {
+          "type" : "boolean",
+          "const" : true
+        },
+        "xbrli:period" : {
+          "type" : "object",
+          "properties" : {
+            "periodType" : {
+              "type" : "string",
+              "const" : "instant"
+            },
+            "xbrli:instant" : {
+              "type" : "string",
+              "const" : "$par:refPeriodEnd"
+            }
+          },
+          "required" : [
+            "periodType",
+            "xbrli:instant"
+          ]
+        }
+      },
+      "additionalProperties" : false,
+      "required" : [
+        "columnId"
+      ]
+    },
+    "column_purcb-dic_AA_QnttDspsl_dimGrp_1_periodGrp_1" : {
+      "properties" : {
+        "columnId" : {
+          "type" : "string",
+          "const" : "purcb_dic_AA_QnttDspsl_dimGrp_1_periodGrp_1"
+        },
+        "aspect" : {
+          "$ref" : "./../../../dic/concepts.def.json#/$defs/concept_purcb-dic_AA_QnttDspsl"
+        },
+        "flatDimension" : {
+          "type" : "boolean",
+          "const" : true
+        },
+        "xbrli:period" : {
+          "type" : "object",
+          "properties" : {
+            "periodType" : {
+              "type" : "string",
+              "const" : "instant"
+            },
+            "xbrli:instant" : {
+              "type" : "string",
+              "const" : "$par:refPeriodEnd"
+            }
+          },
+          "required" : [
+            "periodType",
+            "xbrli:instant"
+          ]
+        }
+      },
+      "additionalProperties" : false,
+      "required" : [
+        "columnId"
+      ]
+    },
+    "column_purcb-dic_AA_QnttRcpt_dimGrp_1_periodGrp_1" : {
+      "properties" : {
+        "columnId" : {
+          "type" : "string",
+          "const" : "purcb_dic_AA_QnttRcpt_dimGrp_1_periodGrp_1"
+        },
+        "aspect" : {
+          "$ref" : "./../../../dic/concepts.def.json#/$defs/concept_purcb-dic_AA_QnttRcpt"
+        },
+        "flatDimension" : {
+          "type" : "boolean",
+          "const" : true
+        },
+        "xbrli:period" : {
+          "type" : "object",
+          "properties" : {
+            "periodType" : {
+              "type" : "string",
+              "const" : "instant"
+            },
+            "xbrli:instant" : {
+              "type" : "string",
+              "const" : "$par:refPeriodEnd"
+            }
+          },
+          "required" : [
+            "periodType",
+            "xbrli:instant"
+          ]
+        }
+      },
+      "additionalProperties" : false,
+      "required" : [
+        "columnId"
+      ]
+    },
+    "column_purcb-dic_A_BlncInPstn_dimGrp_1_periodGrp_1" : {
+      "properties" : {
+        "columnId" : {
+          "type" : "string",
+          "const" : "purcb_dic_A_BlncInPstn_dimGrp_1_periodGrp_1"
+        },
+        "aspect" : {
+          "$ref" : "./../../../dic/concepts.def.json#/$defs/concept_purcb-dic_A_BlncInPstn"
+        },
+        "flatDimension" : {
+          "type" : "boolean",
+          "const" : true
+        },
+        "xbrli:period" : {
+          "type" : "object",
+          "properties" : {
+            "periodType" : {
+              "type" : "string",
+              "const" : "instant"
+            },
+            "xbrli:instant" : {
+              "type" : "string",
+              "const" : "$par:refPeriodEnd"
+            }
+          },
+          "required" : [
+            "periodType",
+            "xbrli:instant"
+          ]
+        }
+      },
+      "additionalProperties" : false,
+      "required" : [
+        "columnId"
+      ]
+    },
+    "column_purcb-dic_A_BlncInPstnR_dimGrp_1_periodGrp_1" : {
+      "properties" : {
+        "columnId" : {
+          "type" : "string",
+          "const" : "purcb_dic_A_BlncInPstnR_dimGrp_1_periodGrp_1"
+        },
+        "aspect" : {
+          "$ref" : "./../../../dic/concepts.def.json#/$defs/concept_purcb-dic_A_BlncInPstnR"
+        },
+        "flatDimension" : {
+          "type" : "boolean",
+          "const" : true
+        },
+        "xbrli:period" : {
+          "type" : "object",
+          "properties" : {
+            "periodType" : {
+              "type" : "string",
+              "const" : "instant"
+            },
+            "xbrli:instant" : {
+              "type" : "string",
+              "const" : "$par:refPeriodEnd"
+            }
+          },
+          "required" : [
+            "periodType",
+            "xbrli:instant"
+          ]
+        }
+      },
+      "additionalProperties" : false,
+      "required" : [
+        "columnId"
+      ]
+    },
+    "column_purcb-dic_A_BlncOutPstn_dimGrp_1_periodGrp_1" : {
+      "properties" : {
+        "columnId" : {
+          "type" : "string",
+          "const" : "purcb_dic_A_BlncOutPstn_dimGrp_1_periodGrp_1"
+        },
+        "aspect" : {
+          "$ref" : "./../../../dic/concepts.def.json#/$defs/concept_purcb-dic_A_BlncOutPstn"
+        },
+        "flatDimension" : {
+          "type" : "boolean",
+          "const" : true
+        },
+        "xbrli:period" : {
+          "type" : "object",
+          "properties" : {
+            "periodType" : {
+              "type" : "string",
+              "const" : "instant"
+            },
+            "xbrli:instant" : {
+              "type" : "string",
+              "const" : "$par:refPeriodEnd"
+            }
+          },
+          "required" : [
+            "periodType",
+            "xbrli:instant"
+          ]
+        }
+      },
+      "additionalProperties" : false,
+      "required" : [
+        "columnId"
+      ]
+    },
+    "column_purcb-dic_A_BlncOutPstnR_dimGrp_1_periodGrp_1" : {
+      "properties" : {
+        "columnId" : {
+          "type" : "string",
+          "const" : "purcb_dic_A_BlncOutPstnR_dimGrp_1_periodGrp_1"
+        },
+        "aspect" : {
+          "$ref" : "./../../../dic/concepts.def.json#/$defs/concept_purcb-dic_A_BlncOutPstnR"
+        },
+        "flatDimension" : {
+          "type" : "boolean",
+          "const" : true
+        },
+        "xbrli:period" : {
+          "type" : "object",
+          "properties" : {
+            "periodType" : {
+              "type" : "string",
+              "const" : "instant"
+            },
+            "xbrli:instant" : {
+              "type" : "string",
+              "const" : "$par:refPeriodEnd"
+            }
+          },
+          "required" : [
+            "periodType",
+            "xbrli:instant"
+          ]
+        }
+      },
+      "additionalProperties" : false,
+      "required" : [
+        "columnId"
+      ]
+    },
+    "column_purcb-dic_A_ExchgRtInPstn_dimGrp_1_periodGrp_1" : {
+      "properties" : {
+        "columnId" : {
+          "type" : "string",
+          "const" : "purcb_dic_A_ExchgRtInPstn_dimGrp_1_periodGrp_1"
+        },
+        "aspect" : {
+          "$ref" : "./../../../dic/concepts.def.json#/$defs/concept_purcb-dic_A_ExchgRtInPstn"
+        },
+        "flatDimension" : {
+          "type" : "boolean",
+          "const" : true
+        },
+        "xbrli:period" : {
+          "type" : "object",
+          "properties" : {
+            "periodType" : {
+              "type" : "string",
+              "const" : "instant"
+            },
+            "xbrli:instant" : {
+              "type" : "string",
+              "const" : "$par:refPeriodEnd"
+            }
+          },
+          "required" : [
+            "periodType",
+            "xbrli:instant"
+          ]
+        }
+      },
+      "additionalProperties" : false,
+      "required" : [
+        "columnId"
+      ]
+    },
+    "column_purcb-dic_A_ExchgRtOutPstn_dimGrp_1_periodGrp_1" : {
+      "properties" : {
+        "columnId" : {
+          "type" : "string",
+          "const" : "purcb_dic_A_ExchgRtOutPstn_dimGrp_1_periodGrp_1"
+        },
+        "aspect" : {
+          "$ref" : "./../../../dic/concepts.def.json#/$defs/concept_purcb-dic_A_ExchgRtOutPstn"
+        },
+        "flatDimension" : {
+          "type" : "boolean",
+          "const" : true
+        },
+        "xbrli:period" : {
+          "type" : "object",
+          "properties" : {
+            "periodType" : {
+              "type" : "string",
+              "const" : "instant"
+            },
+            "xbrli:instant" : {
+              "type" : "string",
+              "const" : "$par:refPeriodEnd"
+            }
+          },
+          "required" : [
+            "periodType",
+            "xbrli:instant"
+          ]
+        }
+      },
+      "additionalProperties" : false,
+      "required" : [
+        "columnId"
+      ]
+    },
+    "column_purcb-dic_AO_BlncIn_dimGrp_1_periodGrp_1" : {
+      "properties" : {
+        "columnId" : {
+          "type" : "string",
+          "const" : "purcb_dic_AO_BlncIn_dimGrp_1_periodGrp_1"
+        },
+        "aspect" : {
+          "$ref" : "./../../../dic/concepts.def.json#/$defs/concept_purcb-dic_AO_BlncIn"
+        },
+        "flatDimension" : {
+          "type" : "boolean",
+          "const" : true
+        },
+        "xbrli:period" : {
+          "type" : "object",
+          "properties" : {
+            "periodType" : {
+              "type" : "string",
+              "const" : "instant"
+            },
+            "xbrli:instant" : {
+              "type" : "string",
+              "const" : "$par:refPeriodEnd"
+            }
+          },
+          "required" : [
+            "periodType",
+            "xbrli:instant"
+          ]
+        }
+      },
+      "additionalProperties" : false,
+      "required" : [
+        "columnId"
+      ]
+    },
+    "column_purcb-dic_AO_BlncOut_dimGrp_1_periodGrp_1" : {
+      "properties" : {
+        "columnId" : {
+          "type" : "string",
+          "const" : "purcb_dic_AO_BlncOut_dimGrp_1_periodGrp_1"
+        },
+        "aspect" : {
+          "$ref" : "./../../../dic/concepts.def.json#/$defs/concept_purcb-dic_AO_BlncOut"
+        },
+        "flatDimension" : {
+          "type" : "boolean",
+          "const" : true
+        },
+        "xbrli:period" : {
+          "type" : "object",
+          "properties" : {
+            "periodType" : {
+              "type" : "string",
+              "const" : "instant"
+            },
+            "xbrli:instant" : {
+              "type" : "string",
+              "const" : "$par:refPeriodEnd"
+            }
+          },
+          "required" : [
+            "periodType",
+            "xbrli:instant"
+          ]
+        }
+      },
+      "additionalProperties" : false,
+      "required" : [
+        "columnId"
+      ]
+    },
+    "column_purcb-dic_AO_QnttDspsl_dimGrp_1_periodGrp_1" : {
+      "properties" : {
+        "columnId" : {
+          "type" : "string",
+          "const" : "purcb_dic_AO_QnttDspsl_dimGrp_1_periodGrp_1"
+        },
+        "aspect" : {
+          "$ref" : "./../../../dic/concepts.def.json#/$defs/concept_purcb-dic_AO_QnttDspsl"
+        },
+        "flatDimension" : {
+          "type" : "boolean",
+          "const" : true
+        },
+        "xbrli:period" : {
+          "type" : "object",
+          "properties" : {
+            "periodType" : {
+              "type" : "string",
+              "const" : "instant"
+            },
+            "xbrli:instant" : {
+              "type" : "string",
+              "const" : "$par:refPeriodEnd"
+            }
+          },
+          "required" : [
+            "periodType",
+            "xbrli:instant"
+          ]
+        }
+      },
+      "additionalProperties" : false,
+      "required" : [
+        "columnId"
+      ]
+    },
+    "column_purcb-dic_AO_QnttRcpt_dimGrp_1_periodGrp_1" : {
+      "properties" : {
+        "columnId" : {
+          "type" : "string",
+          "const" : "purcb_dic_AO_QnttRcpt_dimGrp_1_periodGrp_1"
+        },
+        "aspect" : {
+          "$ref" : "./../../../dic/concepts.def.json#/$defs/concept_purcb-dic_AO_QnttRcpt"
+        },
+        "flatDimension" : {
+          "type" : "boolean",
+          "const" : true
+        },
+        "xbrli:period" : {
+          "type" : "object",
+          "properties" : {
+            "periodType" : {
+              "type" : "string",
+              "const" : "instant"
+            },
+            "xbrli:instant" : {
+              "type" : "string",
+              "const" : "$par:refPeriodEnd"
+            }
+          },
+          "required" : [
+            "periodType",
+            "xbrli:instant"
+          ]
+        }
+      },
+      "additionalProperties" : false,
+      "required" : [
+        "columnId"
+      ]
+    },
+    "column_purcb-dic_A_OrgNmIn_dimGrp_1_periodGrp_1" : {
+      "properties" : {
+        "columnId" : {
+          "type" : "string",
+          "const" : "purcb_dic_A_OrgNmIn_dimGrp_1_periodGrp_1"
+        },
+        "aspect" : {
+          "$ref" : "./../../../dic/concepts.def.json#/$defs/concept_purcb-dic_A_OrgNmIn"
+        },
+        "flatDimension" : {
+          "type" : "boolean",
+          "const" : true
+        },
+        "xbrli:period" : {
+          "type" : "object",
+          "properties" : {
+            "periodType" : {
+              "type" : "string",
+              "const" : "instant"
+            },
+            "xbrli:instant" : {
+              "type" : "string",
+              "const" : "$par:refPeriodEnd"
+            }
+          },
+          "required" : [
+            "periodType",
+            "xbrli:instant"
+          ]
+        }
+      },
+      "additionalProperties" : false,
+      "required" : [
+        "columnId"
+      ]
+    },
+    "column_purcb-dic_A_OrgNmOut_dimGrp_1_periodGrp_1" : {
+      "properties" : {
+        "columnId" : {
+          "type" : "string",
+          "const" : "purcb_dic_A_OrgNmOut_dimGrp_1_periodGrp_1"
+        },
+        "aspect" : {
+          "$ref" : "./../../../dic/concepts.def.json#/$defs/concept_purcb-dic_A_OrgNmOut"
+        },
+        "flatDimension" : {
+          "type" : "boolean",
+          "const" : true
+        },
+        "xbrli:period" : {
+          "type" : "object",
+          "properties" : {
+            "periodType" : {
+              "type" : "string",
+              "const" : "instant"
+            },
+            "xbrli:instant" : {
+              "type" : "string",
+              "const" : "$par:refPeriodEnd"
+            }
+          },
+          "required" : [
+            "periodType",
+            "xbrli:instant"
+          ]
+        }
+      },
+      "additionalProperties" : false,
+      "required" : [
+        "columnId"
+      ]
+    },
+    "column_purcb-dic_MsrUntEnumerator_dimGrp_1_periodGrp_1" : {
+      "properties" : {
+        "columnId" : {
+          "type" : "string",
+          "const" : "purcb_dic_MsrUntEnumerator_dimGrp_1_periodGrp_1"
+        },
+        "aspect" : {
+          "$ref" : "./../../../dic/concepts.def.json#/$defs/concept_purcb-dic_MsrUntEnumerator"
+        },
+        "flatDimension" : {
+          "type" : "boolean",
+          "const" : true
+        },
+        "xbrli:period" : {
+          "type" : "object",
+          "properties" : {
+            "periodType" : {
+              "type" : "string",
+              "const" : "instant"
+            },
+            "xbrli:instant" : {
+              "type" : "string",
+              "const" : "$par:refPeriodEnd"
+            }
+          },
+          "required" : [
+            "periodType",
+            "xbrli:instant"
+          ]
+        }
+      },
+      "additionalProperties" : false,
+      "required" : [
+        "columnId"
+      ]
+    },
+    "column_purcb-dic_PrInfDannye_dimGrp_1_periodGrp_1" : {
+      "properties" : {
+        "columnId" : {
+          "type" : "string",
+          "const" : "purcb_dic_PrInfDannye_dimGrp_1_periodGrp_1"
+        },
+        "aspect" : {
+          "$ref" : "./../../../dic/concepts.def.json#/$defs/concept_purcb-dic_PrInfDannye"
+        },
+        "flatDimension" : {
+          "type" : "boolean",
+          "const" : true
+        },
+        "xbrli:period" : {
+          "type" : "object",
+          "properties" : {
+            "periodType" : {
+              "type" : "string",
+              "const" : "instant"
+            },
+            "xbrli:instant" : {
+              "type" : "string",
+              "const" : "$par:refPeriodEnd"
+            }
+          },
+          "required" : [
+            "periodType",
+            "xbrli:instant"
+          ]
+        }
+      },
+      "additionalProperties" : false,
+      "required" : [
+        "columnId"
+      ]
+    },
+    "column_purcb-dic_PrInfPokazatel_dimGrp_1_periodGrp_1" : {
+      "properties" : {
+        "columnId" : {
+          "type" : "string",
+          "const" : "purcb_dic_PrInfPokazatel_dimGrp_1_periodGrp_1"
+        },
+        "aspect" : {
+          "$ref" : "./../../../dic/concepts.def.json#/$defs/concept_purcb-dic_PrInfPokazatel"
+        },
+        "flatDimension" : {
+          "type" : "boolean",
+          "const" : true
+        },
+        "xbrli:period" : {
+          "type" : "object",
+          "properties" : {
+            "periodType" : {
+              "type" : "string",
+              "const" : "instant"
+            },
+            "xbrli:instant" : {
+              "type" : "string",
+              "const" : "$par:refPeriodEnd"
+            }
+          },
+          "required" : [
+            "periodType",
+            "xbrli:instant"
+          ]
+        }
+      },
+      "additionalProperties" : false,
+      "required" : [
+        "columnId"
+      ]
+    },
+    "column_openAxis_dim-int_AA_PrdBgnTaxis" : {
+      "description" : "Описание открытой оси: dim-int_AA_PrdBgnTaxis",
+      "properties" : {
+        "columnId" : {
+          "type" : "string",
+          "const" : "dim_int_AA_PrdBgnTaxis"
+        },
+        "xbrldi:typedMember" : {
+          "type" : "object",
+          "properties" : {
+            "dimension" : {
+              "type" : "string",
+              "const" : "dim-int_AA_PrdBgnTaxis"
+            },
+            "typedDomain" : {
+              "type" : "string",
+              "const" : "dim-int_AA_PrdBgnTypedName"
+            }
+          },
+          "additionalProperties" : false,
+          "required" : [
+            "dimension",
+            "typedDomain"
+          ]
+        }
+      },
+      "additionalProperties" : false,
+      "required" : [
+        "columnId"
+      ]
+    },
+    "column_openAxis_dim-int_AA_PrdEndTaxis" : {
+      "description" : "Описание открытой оси: dim-int_AA_PrdEndTaxis",
+      "properties" : {
+        "columnId" : {
+          "type" : "string",
+          "const" : "dim_int_AA_PrdEndTaxis"
+        },
+        "xbrldi:typedMember" : {
+          "type" : "object",
+          "properties" : {
+            "dimension" : {
+              "type" : "string",
+              "const" : "dim-int_AA_PrdEndTaxis"
+            },
+            "typedDomain" : {
+              "type" : "string",
+              "const" : "dim-int_AA_PrdEndTypedName"
+            }
+          },
+          "additionalProperties" : false,
+          "required" : [
+            "dimension",
+            "typedDomain"
+          ]
+        }
+      },
+      "additionalProperties" : false,
+      "required" : [
+        "columnId"
+      ]
+    },
+    "column_openAxis_dim-int_A_PrtflCdTaxis" : {
+      "description" : "Описание открытой оси: dim-int_A_PrtflCdTaxis",
+      "properties" : {
+        "columnId" : {
+          "type" : "string",
+          "const" : "dim_int_A_PrtflCdTaxis"
+        },
+        "xbrldi:typedMember" : {
+          "type" : "object",
+          "properties" : {
+            "dimension" : {
+              "type" : "string",
+              "const" : "dim-int_A_PrtflCdTaxis"
+            },
+            "typedDomain" : {
+              "type" : "string",
+              "const" : "dim-int_A_PrtflCdTypedName"
+            }
+          },
+          "additionalProperties" : false,
+          "required" : [
+            "dimension",
+            "typedDomain"
+          ]
+        }
+      },
+      "additionalProperties" : false,
+      "required" : [
+        "columnId"
+      ]
+    },
+    "column_openAxis_dim-int_Asst_IdTaxis" : {
+      "description" : "Описание открытой оси: dim-int_Asst_IdTaxis",
+      "properties" : {
+        "columnId" : {
+          "type" : "string",
+          "const" : "dim_int_Asst_IdTaxis"
+        },
+        "xbrldi:typedMember" : {
+          "type" : "object",
+          "properties" : {
+            "dimension" : {
+              "type" : "string",
+              "const" : "dim-int_Asst_IdTaxis"
+            },
+            "typedDomain" : {
+              "type" : "string",
+              "const" : "dim-int_IDAktivaTypedName"
+            }
+          },
+          "additionalProperties" : false,
+          "required" : [
+            "dimension",
+            "typedDomain"
+          ]
+        }
+      },
+      "additionalProperties" : false,
+      "required" : [
+        "columnId"
+      ]
+    },
+    "column_openAxis_dim-int_C_CdTaxis" : {
+      "description" : "Описание открытой оси: dim-int_C_CdTaxis",
+      "properties" : {
+        "columnId" : {
+          "type" : "string",
+          "const" : "dim_int_C_CdTaxis"
+        },
+        "xbrldi:typedMember" : {
+          "type" : "object",
+          "properties" : {
+            "dimension" : {
+              "type" : "string",
+              "const" : "dim-int_C_CdTaxis"
+            },
+            "typedDomain" : {
+              "type" : "string",
+              "const" : "dim-int_ID_FL_YUL_ReestrTypedName"
+            }
+          },
+          "additionalProperties" : false,
+          "required" : [
+            "dimension",
+            "typedDomain"
+          ]
+        }
+      },
+      "additionalProperties" : false,
+      "required" : [
+        "columnId"
+      ]
+    },
+    "column_openAxis_dim-int_Cntrct_CdTaxis" : {
+      "description" : "Описание открытой оси: dim-int_Cntrct_CdTaxis",
+      "properties" : {
+        "columnId" : {
+          "type" : "string",
+          "const" : "dim_int_Cntrct_CdTaxis"
+        },
+        "xbrldi:typedMember" : {
+          "type" : "object",
+          "properties" : {
+            "dimension" : {
+              "type" : "string",
+              "const" : "dim-int_Cntrct_CdTaxis"
+            },
+            "typedDomain" : {
+              "type" : "string",
+              "const" : "dim-int_ID_Dogovora_Typedname"
+            }
+          },
+          "additionalProperties" : false,
+          "required" : [
+            "dimension",
+            "typedDomain"
+          ]
+        }
+      },
+      "additionalProperties" : false,
+      "required" : [
+        "columnId"
+      ]
+    },
+    "table_sr_R9" : {
+      "description" : "Таблица csv мапинга колонок sr_R9",
+      "type" : "object",
+      "properties" : {
+        "roleUri" : {
+          "type" : "string",
+          "const" : "http://www.cbr.ru/xbrl/nso/purcb/rep/2026-04-03/tab/sr_R9"
+        },
+        "typedFiltering" : {
+          "$comment" : "Флаг наличия в гиперкубе открытых осей",
+          "type" : "boolean",
+          "const" : true
+        },
+        "uri" : {
+          "$comment" : "Имя файла данных csv",
+          "type" : "string",
+          "const" : "sr_R9.csv"
+        },
+        "csvRowsCount" : {
+          "$comment" : "Количество строк в csv файле, не включая заголовка",
+          "type" : "integer",
+          "minimum" : 1
+        },
+        "columns" : {
+          "type" : "array",
+          "minItems" : 1,
+          "maxItems" : 10000,
+          "uniqueItems" : true,
+          "prefixItems" : [
+            {
+              "$ref" : "#/$defs/column_openAxis_dim-int_AA_PrdBgnTaxis",
+              "type" : "object"
+            },
+            {
+              "$ref" : "#/$defs/column_openAxis_dim-int_AA_PrdEndTaxis",
+              "type" : "object"
+            },
+            {
+              "$ref" : "#/$defs/column_openAxis_dim-int_A_PrtflCdTaxis",
+              "type" : "object"
+            },
+            {
+              "$ref" : "#/$defs/column_openAxis_dim-int_Asst_IdTaxis",
+              "type" : "object"
+            },
+            {
+              "$ref" : "#/$defs/column_openAxis_dim-int_C_CdTaxis",
+              "type" : "object"
+            },
+            {
+              "$ref" : "#/$defs/column_openAxis_dim-int_Cntrct_CdTaxis",
+              "type" : "object"
+            }
+          ],
+          "items" : {
+            "not" : {
+              "type" : [
+                "string",
+                "number",
+                "boolean",
+                "null"
+              ]
+            },
+            "anyOf" : [
+              {
+                "$ref" : "#/$defs/column_purcb-dic_AA_BlncIn_dimGrp_1_periodGrp_1"
+              },
+              {
+                "$ref" : "#/$defs/column_purcb-dic_AA_BlncOut_dimGrp_1_periodGrp_1"
+              },
+              {
+                "$ref" : "#/$defs/column_purcb-dic_AA_BlncOutBlk_dimGrp_1_periodGrp_1"
+              },
+              {
+                "$ref" : "#/$defs/column_purcb-dic_AA_BlncOutDbt_dimGrp_1_periodGrp_1"
+              },
+              {
+                "$ref" : "#/$defs/column_purcb-dic_AA_BlncOutDbtMrgn_dimGrp_1_periodGrp_1"
+              },
+              {
+                "$ref" : "#/$defs/column_purcb-dic_AA_BlncOutGrnt_dimGrp_1_periodGrp_1"
+              },
+              {
+                "$ref" : "#/$defs/column_purcb-dic_AA_QnttDspsl_dimGrp_1_periodGrp_1"
+              },
+              {
+                "$ref" : "#/$defs/column_purcb-dic_AA_QnttRcpt_dimGrp_1_periodGrp_1"
+              },
+              {
+                "$ref" : "#/$defs/column_purcb-dic_A_BlncInPstn_dimGrp_1_periodGrp_1"
+              },
+              {
+                "$ref" : "#/$defs/column_purcb-dic_A_BlncInPstnR_dimGrp_1_periodGrp_1"
+              },
+              {
+                "$ref" : "#/$defs/column_purcb-dic_A_BlncOutPstn_dimGrp_1_periodGrp_1"
+              },
+              {
+                "$ref" : "#/$defs/column_purcb-dic_A_BlncOutPstnR_dimGrp_1_periodGrp_1"
+              },
+              {
+                "$ref" : "#/$defs/column_purcb-dic_A_ExchgRtInPstn_dimGrp_1_periodGrp_1"
+              },
+              {
+                "$ref" : "#/$defs/column_purcb-dic_A_ExchgRtOutPstn_dimGrp_1_periodGrp_1"
+              },
+              {
+                "$ref" : "#/$defs/column_purcb-dic_AO_BlncIn_dimGrp_1_periodGrp_1"
+              },
+              {
+                "$ref" : "#/$defs/column_purcb-dic_AO_BlncOut_dimGrp_1_periodGrp_1"
+              },
+              {
+                "$ref" : "#/$defs/column_purcb-dic_AO_QnttDspsl_dimGrp_1_periodGrp_1"
+              },
+              {
+                "$ref" : "#/$defs/column_purcb-dic_AO_QnttRcpt_dimGrp_1_periodGrp_1"
+              },
+              {
+                "$ref" : "#/$defs/column_purcb-dic_A_OrgNmIn_dimGrp_1_periodGrp_1"
+              },
+              {
+                "$ref" : "#/$defs/column_purcb-dic_A_OrgNmOut_dimGrp_1_periodGrp_1"
+              },
+              {
+                "$ref" : "#/$defs/column_purcb-dic_MsrUntEnumerator_dimGrp_1_periodGrp_1"
+              },
+              {
+                "$ref" : "#/$defs/column_purcb-dic_PrInfDannye_dimGrp_1_periodGrp_1"
+              },
+              {
+                "$ref" : "#/$defs/column_purcb-dic_PrInfPokazatel_dimGrp_1_periodGrp_1"
+              }
+            ]
+          }
+        }
+      },
+      "additionalProperties" : false,
+      "required" : [
+        "roleUri",
+        "typedFiltering",
+        "uri",
+        "csvRowsCount",
+        "columns"
+      ]
+    }
+  }
+}

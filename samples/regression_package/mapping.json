@@ -1,0 +1,927 @@
+{
+ "@context": "www.cbr.ru/xbrl_csv2",
+ "header": {
+  "encoding": "UTF-8",
+  "delimiter": "|",
+  "reportDate": "2026-11-17",
+  "textQualifier": "\"",
+  "documentVersion": "http://www.cbr.ru/xbrl_csv2/20260403/20260430/difp",
+  "textValueLengthLimit": 8192,
+  "identifier": "1000000000001",
+  "requestNumberDifp": "00001_01"
+ },
+ "dtsReferences": {
+  "type": "schema",
+  "href": "http://www.cbr.ru/xbrl_csv/20260403/20260430/ep_nso_purcb_oper_nr_uod_reestr.def.json"
+ },
+ "tables": [
+  {
+   "uri": "sr_R1.csv",
+   "roleUri": "http://www.cbr.ru/xbrl/nso/purcb/rep/2026-04-03/tab/sr_R1",
+   "csvRowsCount": 3,
+   "typedFiltering": true,
+   "columns": [
+    {
+     "columnId": "dim_int_A_PrtflCdTaxis"
+    },
+    {
+     "columnId": "dim_int_C_CdTaxis"
+    },
+    {
+     "columnId": "dim_int_Cntrct_CdTaxis"
+    },
+    {
+     "columnId": "dim_int_Cntrct_DtTaxis"
+    },
+    {
+     "columnId": "purcb_dic_Actvts_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_Cntrct_BDt_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_Cntrct_Frgn_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_Cntrct_FrxDlr_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_Cntrct_Gds_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_Cntrct_IIA_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_Cntrct_Mrgn_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_Cntrct_N_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_Cntrct_Optn_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_Cntrct_Prtfl_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_Cntrct_SprtAccntngPB_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_Cntrct_SprtAccntngTMS_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_Cntrct_Trsfr_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_Cntrct_Unscrd_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_CRskLvl_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_PrInfDannye_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_PrInfPokazatel_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_R_Dt_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_R_Mthd_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_R_Tm_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_R_TmZn_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_R_WrkrId_dimGrp_1_periodGrp_1"
+    }
+   ]
+  },
+  {
+   "uri": "sr_R2.csv",
+   "roleUri": "http://www.cbr.ru/xbrl/nso/purcb/rep/2026-04-03/tab/sr_R2",
+   "csvRowsCount": 3,
+   "typedFiltering": true,
+   "columns": [
+    {
+     "columnId": "dim_int_A_PrtflCdTaxis"
+    },
+    {
+     "columnId": "dim_int_Asst_IdTaxis"
+    },
+    {
+     "columnId": "dim_int_C_CdTaxis"
+    },
+    {
+     "columnId": "dim_int_Cntrct_CdTaxis"
+    },
+    {
+     "columnId": "dim_int_Rqst_IdTaxis"
+    },
+    {
+     "columnId": "dim_int_Rqst_IdTrdTaxis"
+    },
+    {
+     "columnId": "purcb_dic_Asst_Amnt_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_Asst_CrncEnumerator_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_Asst_Prc_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_Asst_Sz_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_Asst_TpNtEnumerator_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_R_Dt_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_R_Grnd_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_R_Mthd_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_Rqst_AsstTp_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_Rqst_BgnDt_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_Rqst_BgnTm_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_Rqst_EndDt_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_Rqst_EndTm_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_Rqst_Mthd_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_Rqst_OrgNm_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_Rqst_OrgTp_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_Rqst_OrgVldt_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_Rqst_Rslt_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_Rqst_Tp_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_Rqst_Trd_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_Rqst_TrdAddrss_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_Rqst_TrdBgnDt_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_Rqst_TrdBgnTm_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_Rqst_TrdUsr_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_R_Tm_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_R_TmZn_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_R_WrkrId_dimGrp_1_periodGrp_1"
+    }
+   ]
+  },
+  {
+   "uri": "sr_R3.csv",
+   "roleUri": "http://www.cbr.ru/xbrl/nso/purcb/rep/2026-04-03/tab/sr_R3",
+   "csvRowsCount": 3,
+   "typedFiltering": true,
+   "columns": [
+    {
+     "columnId": "dim_int_A_PrtflCdTaxis"
+    },
+    {
+     "columnId": "dim_int_Asst_IdTaxis"
+    },
+    {
+     "columnId": "dim_int_C_CdTaxis"
+    },
+    {
+     "columnId": "dim_int_Cntrct_CdTaxis"
+    },
+    {
+     "columnId": "dim_int_ID_strokiTaxis"
+    },
+    {
+     "columnId": "dim_int_Rqst_IdTaxis"
+    },
+    {
+     "columnId": "dim_int_Rqst_IdTrdTaxis"
+    },
+    {
+     "columnId": "dim_int_T_IdTaxis"
+    },
+    {
+     "columnId": "dim_int_T_IdTrdTaxis"
+    },
+    {
+     "columnId": "purcb_dic_Asst_Amnt_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_Asst_Amnt_CS_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_Asst_AmntRU_CS_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_Asst_AmntRU_Sz_CS_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_Asst_CrncEnumerator_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_Asst_Crnc2Enumerator_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_Asst_ExchgRt_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_Asst_Prc_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_Asst_ScrtNmnlCpnYld_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_Asst_ScrtREPORt_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_Asst_Sz_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_Asst_Sz_CS_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_Asst_Tp_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_Asst_TpNtEnumerator_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_FP_CdTrd_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_FP_CntrctrIntrnl_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_INN_PrimBrk_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_R_DcmDt_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_R_DcmN_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_R_DcmNm_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_R_DcmTm_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_R_Dt_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_R_Grnd_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_R_Mthd_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_Rqst_TrdAddrss_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_Rqst_TrdUsr_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_R_Tm_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_R_TmZn_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_R_WrkrId_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_T_Br_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_T_Bss_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_T_CntrlCntrprt_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_T_CrncMthd_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_T_Dt_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_T_Dt_CS_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_T_Mthd_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_T_NOrg_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_T_OrgNm_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_T_PmntDtN_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_T_PmntFctDt_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_T_PmntPlnDt_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_T_Prcdr_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_T_Prd_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_T_Prsn_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_T_RghtDtN_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_T_RghtFctDt_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_T_RghtPlnDt_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_T_Rslt_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_T_SttlmTp_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_T_Tm_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_T_Tp_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_T_Trd_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_T_TrdBrd_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_T_TrdOrgSctn_dimGrp_1_periodGrp_1"
+    }
+   ]
+  },
+  {
+   "uri": "sr_R4.csv",
+   "roleUri": "http://www.cbr.ru/xbrl/nso/purcb/rep/2026-04-03/tab/sr_R4",
+   "csvRowsCount": 3,
+   "typedFiltering": true,
+   "columns": [
+    {
+     "columnId": "dim_int_A_NTaxis"
+    },
+    {
+     "columnId": "dim_int_A_PrtflCdTaxis"
+    },
+    {
+     "columnId": "dim_int_A_SctnTaxis"
+    },
+    {
+     "columnId": "dim_int_C_CdTaxis"
+    },
+    {
+     "columnId": "dim_int_Cntrct_CdTaxis"
+    },
+    {
+     "columnId": "purcb_dic_A_Cls_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_A_IndctCd_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_A_IndctDscr_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_A_IndvdlInvstmnt_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_ALF_Grpng_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_ALF_LctnNm_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_ALF_LctnTp_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_ALF_OrgAccnt_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_ALF_OrgINN_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_ALF_OrgNm_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_ALF_UsFnds_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_A_N2_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_A_Opn_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_A_Optn_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_A_Prtfl_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_A_PrtflN_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_A_Sctn2_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_A_StrgAcntgReq_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_PrInfDannye_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_PrInfPokazatel_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_R_Dt_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_R_Mthd_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_R_Tm_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_R_TmZn_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_R_WrkrId_dimGrp_1_periodGrp_1"
+    }
+   ]
+  },
+  {
+   "uri": "sr_R5.csv",
+   "roleUri": "http://www.cbr.ru/xbrl/nso/purcb/rep/2026-04-03/tab/sr_R5",
+   "csvRowsCount": 3,
+   "typedFiltering": true,
+   "columns": [
+    {
+     "columnId": "dim_int_A_NTaxis"
+    },
+    {
+     "columnId": "dim_int_A_PrtflCdTaxis"
+    },
+    {
+     "columnId": "dim_int_A_SctnTaxis"
+    },
+    {
+     "columnId": "dim_int_Asst_IdTaxis"
+    },
+    {
+     "columnId": "dim_int_C_CdTaxis"
+    },
+    {
+     "columnId": "dim_int_Cntrct_CdTaxis"
+    },
+    {
+     "columnId": "dim_int_ID_strokiTaxis"
+    },
+    {
+     "columnId": "dim_int_Rqst_IdTaxis"
+    },
+    {
+     "columnId": "dim_int_T_IdTaxis"
+    },
+    {
+     "columnId": "dim_int_T_IdTrdTaxis"
+    },
+    {
+     "columnId": "purcb_dic_AA_AsstNttng_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_AA_BlncIn_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_AA_BlncOut_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_AA_BlncPln_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_AA_Bss_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_AA_Ctgrs_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_AA_Dt_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_AA_OprtnPrps_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_AA_OprtnTp_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_AA_Qntt_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_AA_RcptOrDspsl_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_AA_Tm_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_A_IndctCd_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_A_N2_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_A_Sctn2_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_Asst_CrncEnumerator_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_Asst_Tp_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_MsrUntEnumerator_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_R_DcmDt_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_R_DcmN_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_R_DcmNm_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_R_Dt_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_R_Mthd_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_R_Tm_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_R_TmZn_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_R_WrkrId_dimGrp_1_periodGrp_1"
+    }
+   ]
+  },
+  {
+   "uri": "sr_R6.csv",
+   "roleUri": "http://www.cbr.ru/xbrl/nso/purcb/rep/2026-04-03/tab/sr_R6",
+   "csvRowsCount": 10,
+   "typedFiltering": true,
+   "columns": [
+    {
+     "columnId": "dim_int_A_NTaxis"
+    },
+    {
+     "columnId": "dim_int_A_PrtflCdTaxis"
+    },
+    {
+     "columnId": "dim_int_A_SctnTaxis"
+    },
+    {
+     "columnId": "dim_int_Asst_IdTaxis"
+    },
+    {
+     "columnId": "dim_int_C_CdTaxis"
+    },
+    {
+     "columnId": "dim_int_Cntrct_CdTaxis"
+    },
+    {
+     "columnId": "dim_int_ID_strokiTaxis"
+    },
+    {
+     "columnId": "dim_int_T_IdTaxis"
+    },
+    {
+     "columnId": "dim_int_T_IdTrdTaxis"
+    },
+    {
+     "columnId": "purcb_dic_A_IndctCd_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_AO_BlncIn_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_AO_BlncOut_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_AO_Bss_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_AO_Dt_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_AO_FctDt_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_AO_OprtnPrps_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_AO_PlnDt_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_AO_Qntt_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_AO_RcptOrDspsl_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_AO_Tm_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_Asst_CrncEnumerator_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_Asst_Tp_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_MsrUntEnumerator_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_R_DcmDt_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_R_DcmN_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_R_DcmNm_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_R_Dt_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_R_Grnd_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_R_Mthd_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_R_Tm_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_R_TmZn_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_R_WrkrId_dimGrp_1_periodGrp_1"
+    }
+   ]
+  },
+  {
+   "uri": "sr_R7.csv",
+   "roleUri": "http://www.cbr.ru/xbrl/nso/purcb/rep/2026-04-03/tab/sr_R7",
+   "csvRowsCount": 3,
+   "typedFiltering": true,
+   "columns": [
+    {
+     "columnId": "dim_int_ALF_ClntAmnt_DtTaxis"
+    },
+    {
+     "columnId": "dim_int_A_PrtflCdTaxis"
+    },
+    {
+     "columnId": "dim_int_Asst_IdTaxis"
+    },
+    {
+     "columnId": "dim_int_C_CdTaxis"
+    },
+    {
+     "columnId": "purcb_dic_ALF_ClntAmnt_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_A_N2_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_A_Sctn2_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_Asst_CrncEnumerator_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_MsrUntEnumerator_dimGrp_1_periodGrp_1"
+    }
+   ]
+  },
+  {
+   "uri": "sr_R10.csv",
+   "roleUri": "http://www.cbr.ru/xbrl/nso/purcb/rep/2026-04-03/tab/sr_R10",
+   "csvRowsCount": 3,
+   "typedFiltering": true,
+   "columns": [
+    {
+     "columnId": "dim_int_Asst_IdTaxis"
+    },
+    {
+     "columnId": "purcb_dic_Asst_CFI_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_Asst_ISIN_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_Asst_Nm_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_Asst_QlfdInvstr_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_Asst_ScrtTpEnumerator_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_Asst_Tp_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_Crnc_IdEnumerator_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_Crnc_Id2Enumerator_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_MsrUntEnumerator_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_Scrt_NmnlCrncEnumerator_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_Scrt_NmnlPrc_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_Scrt_RgNmb_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_Scrt_RpmntBgnDt_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_Scrt_RpmntEndDt_dimGrp_1_periodGrp_1"
+    }
+   ]
+  },
+  {
+   "uri": "sr_R11.csv",
+   "roleUri": "http://www.cbr.ru/xbrl/nso/purcb/rep/2026-04-03/tab/sr_R11",
+   "csvRowsCount": 3,
+   "typedFiltering": true,
+   "columns": [
+    {
+     "columnId": "dim_int_C_CdTaxis"
+    },
+    {
+     "columnId": "purcb_dic_C_Nm_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_CQlfdInvstr_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_SP_CntrEnumerator_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_SP_DcmTp_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_SP_DcmTpOthr_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_SP_DcmUntCd_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_SP_FTp_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_SP_NalogRez_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_SP_Rsd_dimGrp_1_periodGrp_1"
+    }
+   ]
+  },
+  {
+   "uri": "sr_sved_purcb.csv",
+   "roleUri": "http://www.cbr.ru/xbrl/nso/purcb/rep/2026-04-03/tab/sr_sved_purcb",
+   "csvRowsCount": 1,
+   "typedFiltering": false,
+   "columns": [
+    {
+     "columnId": "purcb_dic_Inf_PO_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_OtvZaPrInf_ElPoch_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_OtvZaPrInf_FIO_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_OtvZaPrInf_Tlf_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_PeriodEnd_Dt_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_PeriodStart_Dt_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_PR7Enumerator_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_PSMP_INN_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_PSMP_Nm_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_Rqst_Dt_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_Rqst_YrsEnumerator2_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_Rspns_Dt_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_R1Enumerator_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_R10Enumerator_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_R11Enumerator_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_R2Enumerator_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_R3Enumerator_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_R4Enumerator_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_R5Enumerator_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_R6Enumerator_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_R8Enumerator_dimGrp_1_periodGrp_1"
+    },
+    {
+     "columnId": "purcb_dic_R9Enumerator_dimGrp_1_periodGrp_1"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,9 @@
+{
+  "documentVersion" : "http://www.cbr.ru/xbrl_csv2/20260403/20260430/difp",
+  "entrypointsList" : [
+    {
+      "xbrlEntrypoint" : "http://www.cbr.ru/xbrl/nso/purcb/rep/2026-04-03/ep/ep_nso_purcb_oper_nr_uod_reestr.xsd",
+      "xbrlCsvEntrypoint" : "http://www.cbr.ru/xbrl_csv/20260403/20260430/ep_nso_purcb_oper_nr_uod_reestr.def.json"
+    }
+  ]
+}
