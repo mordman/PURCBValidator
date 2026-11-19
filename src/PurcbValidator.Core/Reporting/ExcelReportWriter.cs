@@ -133,6 +133,7 @@ public sealed class ExcelReportWriter
         }
 
         Pair("Файл пакета", p.MappingPath);
+        Pair("Версия таксономии", p.TaxonomyVersion.Length > 0 ? $"{p.TaxonomyVersionName} ({p.TaxonomyVersionSource})" : null);
         Pair("Дата отчетного момента (reportDate)", p.ReportDate);
         Pair("Идентификатор организации", p.Identifier);
         Pair("Номер запроса ДИФП", p.RequestNumberDifp);

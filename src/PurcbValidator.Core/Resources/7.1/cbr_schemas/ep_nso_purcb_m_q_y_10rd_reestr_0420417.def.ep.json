@@ -1,0 +1,68 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "http://www.cbr.ru/xbrl_csv/2025-12-30/20251230/ep_nso_purcb_m_q_y_10rd_reestr_0420417.def.ep.json",
+	"description": "Схема проверки json файлов xbrl-csv отчетности: Таксономия XBRL Банка России версия 7.1 (финальная корректировочная) по точке входа ep_nso_purcb_m_q_y_10rd_reestr_0420417",
+	"allOf": [
+		{
+			"$ref": "xbrl-csv.json#/definitions/documentType"
+		},
+		{
+			"$ref": "xbrl-csv.json#/definitions/prefixesType"
+		},
+		{
+			"properties": {
+				"@context": {
+					"type": "string",
+					"const": "http://www.w3.org/ns/csvw"
+				},
+				"dtsReferences": {
+					"$ref": "#/definitions/dtsReferencesType"
+				},
+				"tables": {
+					"type": "array",
+					"minItems": 1,
+					"uniqueItems": true,
+					"items": [
+ 							 {
+							 "anyOf": [
+                                                                    {"$ref": "tab/nso/nfo/sr_soprovod_types.def_ep_nso_purcb_m_q_y_10rd_reestr_0420417.def.ep.json#/definitions/table_w_open_axis_hyp_ID_strokiTaxis"}, {"$ref": "tab/nso/purcb/SR_0420417_types.def_ep_nso_purcb_m_q_y_10rd_reestr_0420417.def.ep.json#/definitions/table_w_open_axis_hyp_ID_NomeraInformSoobshheniyaOSdelkeTaxis"}, {"$ref": "tab/nso/purcb/SR_0420459_types.def_ep_nso_purcb_m_q_y_10rd_reestr_0420417.def.ep.json#/definitions/table_w_open_axis_hyp_ID_CzennojBumagiTaxis"},{"$ref": "tab/nso/purcb/SR_0420459_types.def_ep_nso_purcb_m_q_y_10rd_reestr_0420417.def.ep.json#/definitions/table_w_open_axis_hyp_IDczifrovogoSvidetelstvaTaxis"},{"$ref": "tab/nso/purcb/SR_0420459_types.def_ep_nso_purcb_m_q_y_10rd_reestr_0420417.def.ep.json#/definitions/table_w_open_axis_hyp_IDvypuskaDFA_UDR_DGRTaxis"}, {"$ref": "tab/nso/purcb/SR_INFO_types.def_ep_nso_purcb_m_q_y_10rd_reestr_0420417.def.ep.json#/definitions/table_wo_open_axis_hyp_SR_INFO"}, {"$ref": "tab/nso/purcb/SR_Sved_ObOtchOrg_OtvLicza_types.def_ep_nso_purcb_m_q_y_10rd_reestr_0420417.def.ep.json#/definitions/table_wo_open_axis_hyp_SR_Sved_ObOtchOrg_OtvLicza"}
+							 ]
+						 }
+ 					],
+					"additionalItems": {
+							   "anyOf": [
+                                                                      {"$ref": "tab/nso/nfo/sr_soprovod_types.def_ep_nso_purcb_m_q_y_10rd_reestr_0420417.def.ep.json#/definitions/table_w_open_axis_hyp_ID_strokiTaxis"}, {"$ref": "tab/nso/purcb/SR_0420417_types.def_ep_nso_purcb_m_q_y_10rd_reestr_0420417.def.ep.json#/definitions/table_w_open_axis_hyp_ID_NomeraInformSoobshheniyaOSdelkeTaxis"}, {"$ref": "tab/nso/purcb/SR_0420459_types.def_ep_nso_purcb_m_q_y_10rd_reestr_0420417.def.ep.json#/definitions/table_w_open_axis_hyp_ID_CzennojBumagiTaxis"},{"$ref": "tab/nso/purcb/SR_0420459_types.def_ep_nso_purcb_m_q_y_10rd_reestr_0420417.def.ep.json#/definitions/table_w_open_axis_hyp_IDczifrovogoSvidetelstvaTaxis"},{"$ref": "tab/nso/purcb/SR_0420459_types.def_ep_nso_purcb_m_q_y_10rd_reestr_0420417.def.ep.json#/definitions/table_w_open_axis_hyp_IDvypuskaDFA_UDR_DGRTaxis"}, {"$ref": "tab/nso/purcb/SR_INFO_types.def_ep_nso_purcb_m_q_y_10rd_reestr_0420417.def.ep.json#/definitions/table_wo_open_axis_hyp_SR_INFO"}, {"$ref": "tab/nso/purcb/SR_Sved_ObOtchOrg_OtvLicza_types.def_ep_nso_purcb_m_q_y_10rd_reestr_0420417.def.ep.json#/definitions/table_wo_open_axis_hyp_SR_Sved_ObOtchOrg_OtvLicza"}
+							   ]
+					}
+				}
+			},
+			"required": [
+				"@context",
+				"dtsReferences",
+				"tables"
+			]
+		}
+	],
+	"definitions": {
+		"dtsReferencesType": {
+			"description": "Определение URI точки входа",
+			"type": "object",
+			"properties": {
+				"type": {
+					"type": "string",
+					"const": "schema"
+				},
+				"href": {
+					"type": "string",
+					"format": "uri",
+					"const": "http://www.cbr.ru/xbrl_csv/2025-12-30/20251230/ep_nso_purcb_m_q_y_10rd_reestr_0420417.def.ep.json"
+				}
+			},
+			"required": [
+				"type",
+				"href"
+			]
+		}
+	},
+	"innerVersion": "http://www.cbr.ru/xbrl_csv/2025-12-30/20251230"
+}

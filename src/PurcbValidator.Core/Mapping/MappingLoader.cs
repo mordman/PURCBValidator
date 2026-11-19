@@ -78,6 +78,8 @@ public sealed class MappingLoader
         }
 
         doc.SourcePath = path;
+        // приведение форматов 6.1 (header/columnId) и 7.1 (верхний уровень/name) к единому виду
+        doc.Normalize();
         Validate(doc, text, issues);
         return doc;
     }
@@ -88,20 +90,21 @@ public sealed class MappingLoader
 
         if (doc.Context is null)
             issues.Add(Error("MAP-006", path, "Отсутствует обязательное поле \"@context\""));
-        else if (doc.Context != "www.cbr.ru/xbrl_csv2")
+        else if (doc.Context != "www.cbr.ru/xbrl_csv2" && doc.Context != "http://www.w3.org/ns/csvw")
             issues.Add(new ValidationIssue
             {
                 Layer = ValidationLayer.MappingStructure,
                 Severity = IssueSeverity.Warning,
                 Code = "MAP-007",
                 File = path,
-                Message = $"Неожиданное значение \"@context\"=\"{doc.Context}\"; ожидается \"www.cbr.ru/xbrl_csv2\" (XBRL-CSV 2.0 Банка России)",
+                Message = $"Неожиданное значение \"@context\"=\"{doc.Context}\"; ожидается \"www.cbr.ru/xbrl_csv2\" (XBRL-CSV 2.0, УОД 6.1.0.10) или \"http://www.w3.org/ns/csvw\" (таксономия 7.1)",
             });
 
         // --- header ---
         if (doc.Header is null)
         {
-            issues.Add(Error("MAP-008", path, "Отсутствует обязательный блок \"header\""));
+            issues.Add(Error("MAP-008", path,
+                "Отсутствуют обязательные реквизиты пакета: блок \"header\" (формат УОД 6.1.0.10) или поля encoding/delimiter/reportDate на верхнем уровне (формат 7.1)"));
         }
         else
         {
@@ -154,27 +157,32 @@ public sealed class MappingLoader
                 });
             }
 
-            if (string.IsNullOrEmpty(h.RequestNumberDifp))
+            // requestNumberDifp обязателен только для УОД (отчётность по запросам ДИФП);
+            // в формате 7.1 (10-РД — регулярная отчётность) поле отсутствует
+            if (!doc.FlatHeaderFormat)
             {
-                issues.Add(new ValidationIssue
+                if (string.IsNullOrEmpty(h.RequestNumberDifp))
                 {
-                    Layer = ValidationLayer.MappingStructure,
-                    Severity = IssueSeverity.Warning,
-                    Code = "MAP-019",
-                    File = path,
-                    Message = "Не задан номер запроса ДИФП \"requestNumberDifp\" (обязателен для отчетности по запросам)",
-                });
-            }
-            else if (!System.Text.RegularExpressions.Regex.IsMatch(h.RequestNumberDifp, @"^\d{5}_\d{2}$"))
-            {
-                issues.Add(new ValidationIssue
+                    issues.Add(new ValidationIssue
+                    {
+                        Layer = ValidationLayer.MappingStructure,
+                        Severity = IssueSeverity.Warning,
+                        Code = "MAP-019",
+                        File = path,
+                        Message = "Не задан номер запроса ДИФП \"requestNumberDifp\" (обязателен для отчетности по запросам)",
+                    });
+                }
+                else if (!System.Text.RegularExpressions.Regex.IsMatch(h.RequestNumberDifp, @"^\d{5}_\d{2}$"))
                 {
-                    Layer = ValidationLayer.MappingStructure,
-                    Severity = IssueSeverity.Warning,
-                    Code = "MAP-020",
-                    File = path,
-                    Message = $"Номер запроса \"{h.RequestNumberDifp}\" не соответствует формату ННННН_ПП (5 цифр, подчёркивание, 2 цифры)",
-                });
+                    issues.Add(new ValidationIssue
+                    {
+                        Layer = ValidationLayer.MappingStructure,
+                        Severity = IssueSeverity.Warning,
+                        Code = "MAP-020",
+                        File = path,
+                        Message = $"Номер запроса \"{h.RequestNumberDifp}\" не соответствует формату ННННН_ПП (5 цифр, подчёркивание, 2 цифры)",
+                    });
+                }
             }
         }
 

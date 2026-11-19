@@ -14,6 +14,7 @@ public sealed class MainForm : Form
     private readonly Button _validateButton = new();
     private readonly Button _exportButton = new();
     private readonly CheckBox _schemaCheck = new();
+    private readonly ComboBox _taxonomyVersion = new();
     private readonly ComboBox _severityFilter = new();
     private readonly ComboBox _layerFilter = new();
     private readonly DataGridView _grid = new();
@@ -28,7 +29,7 @@ public sealed class MainForm : Form
 
     public MainForm()
     {
-        Text = "Валидатор отчётности ПУРЦБ — УОД, XBRL-CSV 2.0 (таксономия ЦБ РФ 6.1.0.10)";
+        Text = "Валидатор отчётности ПУРЦБ — XBRL-CSV (УОД 6.1.0.10 / 10-РД 7.1, таксономии ЦБ РФ)";
         MinimumSize = new Size(1000, 640);
         StartPosition = FormStartPosition.CenterScreen;
         Font = new Font("Segoe UI", 9F);
@@ -47,7 +48,7 @@ public sealed class MainForm : Form
         var top = new TableLayoutPanel
         {
             Dock = DockStyle.Top,
-            Height = 78,
+            Height = 106,
             Padding = new Padding(10, 8, 10, 6),
             ColumnCount = 5,
         };
@@ -56,6 +57,7 @@ public sealed class MainForm : Form
         top.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));       // «Обзор…»
         top.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));       // «Проверить»
         top.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));       // «Экспорт…»
+        top.RowStyles.Add(new RowStyle(SizeType.AutoSize));
         top.RowStyles.Add(new RowStyle(SizeType.AutoSize));
         top.RowStyles.Add(new RowStyle(SizeType.AutoSize));
 
@@ -98,6 +100,23 @@ public sealed class MainForm : Form
         _schemaCheck.Checked = true;
         _schemaCheck.Margin = new Padding(3, 6, 3, 0);
 
+        // выбор версии таксономии: автоопределение по пакету либо вручную
+        var versionLabel = new Label
+        {
+            Text = "Версия таксономии:",
+            AutoSize = true,
+            Anchor = AnchorStyles.Left,
+            Margin = new Padding(3, 9, 3, 0),
+        };
+        _taxonomyVersion.DropDownStyle = ComboBoxStyle.DropDownList;
+        _taxonomyVersion.Width = 420;
+        _taxonomyVersion.Margin = new Padding(3, 6, 3, 0);
+        _taxonomyVersion.Anchor = AnchorStyles.Left;
+        _taxonomyVersion.Items.Add("Авто — по ссылке dtsReferences пакета");
+        foreach (var v in TaxonomyVersions.All)
+            _taxonomyVersion.Items.Add(v.DisplayName);
+        _taxonomyVersion.SelectedIndex = 0;
+
         top.Controls.Add(pathLabel, 0, 0);
         top.Controls.Add(_pathBox, 1, 0);
         top.Controls.Add(_browseButton, 2, 0);
@@ -105,6 +124,9 @@ public sealed class MainForm : Form
         top.Controls.Add(_exportButton, 4, 0);
         top.Controls.Add(_schemaCheck, 1, 1);
         top.SetColumnSpan(_schemaCheck, 4);
+        top.Controls.Add(versionLabel, 1, 2);
+        top.Controls.Add(_taxonomyVersion, 2, 2);
+        top.SetColumnSpan(_taxonomyVersion, 3);
 
         // панель сводки
         var summary = new Panel { Dock = DockStyle.Top, Height = 56, Padding = new Padding(10, 6, 10, 6), BackColor = Color.FromArgb(0xF2, 0xF6, 0xFA) };
@@ -208,6 +230,7 @@ public sealed class MainForm : Form
         {
             Path = path,
             UseCbrSchema = _schemaCheck.Checked,
+            TaxonomyVersion = SelectedTaxonomyVersion(),
         };
 
         var sw = Stopwatch.StartNew();
@@ -247,12 +270,18 @@ public sealed class MainForm : Form
         SetStatus($"Проверка завершена за {sw.Elapsed.TotalSeconds:0.0} с");
     }
 
+    /// <summary>Выбранная версия таксономии (null — автоопределение по пакету).</summary>
+    private string? SelectedTaxonomyVersion()
+        => _taxonomyVersion.SelectedIndex <= 0
+            ? null
+            : TaxonomyVersions.All[_taxonomyVersion.SelectedIndex - 1].Id;
+
     private void BindReport(TimeSpan elapsed)
     {
         var r = _report!;
         var verdict = r.Passed ? "ПАКЕТ ПРОШЁЛ ПРОВЕРКУ" : "ПАКЕТ НЕ ПРОШЁЛ ПРОВЕРКУ";
         var color = r.Passed ? Color.FromArgb(0x1E, 0x7B, 0x34) : Color.FromArgb(0xB3, 0x1B, 0x1B);
-        _summaryLabel.Text = $"{verdict}   •   Ошибок: {r.ErrorCount}   •   Предупреждений: {r.WarningCount}   •   Инфо: {r.InfoCount}   •   Время: {elapsed.TotalSeconds:0.0} с";
+        _summaryLabel.Text = $"{verdict}   •   Ошибок: {r.ErrorCount}   •   Предупреждений: {r.WarningCount}   •   Инфо: {r.InfoCount}   •   {r.Package.TaxonomyVersionName}   •   Время: {elapsed.TotalSeconds:0.0} с";
         _summaryLabel.ForeColor = color;
 
         // фильтры по слоям

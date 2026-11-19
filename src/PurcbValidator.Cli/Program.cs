@@ -11,6 +11,7 @@ namespace PurcbValidator.Cli;
 /// Параметры:
 ///   --no-schema      не проверять по официальным JSON-схемам ЦБ
 ///   --rules &lt;файл&gt;   альтернативный файл правил rules.json
+///   --taxonomy &lt;версия&gt; версия таксономии: auto, 6.1.0.10 (УОД), 7.1 (10-РД)
 ///   --out &lt;файл&gt;     сохранить отчёт (.md — Markdown или .xlsx — Excel)
 ///   --quiet          не печатать полный список замечаний
 /// </summary>
@@ -26,6 +27,7 @@ internal static class Program
             Console.WriteLine("Использование: purcb-validator <путь к mapping.json или папке пакета> [параметры]");
             Console.WriteLine("  --no-schema      не проверять по официальным JSON-схемам ЦБ");
             Console.WriteLine("  --rules <файл>   альтернативный файл правил rules.json");
+            Console.WriteLine("  --taxonomy <вер> версия таксономии: auto (по умолчанию), 6.1.0.10, 7.1");
             Console.WriteLine("  --out <файл>     сохранить отчёт (.md — Markdown или .xlsx — Excel)");
             Console.WriteLine("  --quiet          печатать только сводку");
             return 0;
@@ -35,6 +37,7 @@ internal static class Program
         var useSchema = true;
         string? rulesFile = null;
         string? outFile = null;
+        string? taxonomy = null;
         var quiet = false;
 
         for (var i = 1; i < args.Length; i++)
@@ -43,6 +46,7 @@ internal static class Program
             {
                 case "--no-schema": useSchema = false; break;
                 case "--rules" when i + 1 < args.Length: rulesFile = args[++i]; break;
+                case "--taxonomy" when i + 1 < args.Length: taxonomy = args[++i]; break;
                 case "--out" when i + 1 < args.Length: outFile = args[++i]; break;
                 case "--quiet": quiet = true; break;
                 default:
@@ -62,6 +66,7 @@ internal static class Program
         Console.WriteLine();
         Console.WriteLine("══════════════ ИТОГИ ПРОВЕРКИ ══════════════");
         Console.WriteLine($"Файл пакета:        {report.Package.MappingPath}");
+        Console.WriteLine($"Версия таксономии:  {report.Package.TaxonomyVersionName} ({report.Package.TaxonomyVersionSource})");
         Console.WriteLine($"Дата отчётности:    {report.Package.ReportDate ?? "—"}");
         Console.WriteLine($"Идентификатор:      {report.Package.Identifier ?? "—"}");
         Console.WriteLine($"Номер запроса ДИФП: {report.Package.RequestNumberDifp ?? "—"}");

@@ -75,6 +75,15 @@ public sealed class PackageInfo
     public long? TextValueLengthLimit { get; init; }
     public List<PackageTableInfo> Tables { get; init; } = new();
     public string MappingForm { get; init; } = "";   // "полная" | "краткая" | ""
+
+    /// <summary>Идентификатор версии таксономии, которой проверялся пакет ("6.1.0.10", "7.1").</summary>
+    public string TaxonomyVersion { get; init; } = "";
+
+    /// <summary>Человекочитаемое название версии таксономии.</summary>
+    public string TaxonomyVersionName { get; init; } = "";
+
+    /// <summary>Как определена версия: "автоопределение по пакету", "выбрана вручную", …</summary>
+    public string TaxonomyVersionSource { get; init; } = "";
 }
 
 /// <summary>Сводка по одной таблице пакета.</summary>

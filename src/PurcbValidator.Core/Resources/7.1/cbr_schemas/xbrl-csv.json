@@ -1,0 +1,4186 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"%id": "http://www.cbr.ru/xbrl_csv/2025-12-30/20251230/xbrl-csv.json",
+	"description": "XBRL-csv Базовая схема с определениями типов данных",
+	"properties": {
+		"innerVersion": {
+			"$ref": "#/definitions/versionType"
+		}
+	},
+	"required": [
+		"innerVersion"
+	],
+	"definitions": {
+		"versionType": {
+			"title": "Версия иформационной модели документа, должна присутствовать во всех вышестоящих схемах",
+			"description": "Версия документа",
+			"readOnly": true,
+			"type": "string",
+			"const": "http://www.cbr.ru/xbrl_csv/2025-12-30/20251230"
+		},
+		"ISO_8601_date": {
+			"description": "ISO8601 date",
+			"type": "string",
+			"pattern": "^(19|20)\\d{2}-((0[1-9])|(1[0-2]))-((0[1-9])|([1-2][0-9])|(3[0-1]))$",
+			"format": "date"
+		},
+		"ISO_8601_dateTime": {
+			"description": "ISO8601 dateTime",
+			"type": "string",
+			"pattern": "^(19|20)\\d{2}-((0[1-9])|(1[0-2]))-((0[1-9])|([1-2][0-9])|(3[0-1]))T(([0-1][0-9])|(2[0-3])):([0-5][0-9]):([0-5][0-9])$",
+			"format": "date-time"
+		},
+		"identifierType": {
+			"description": "Вариантный тип - идентификатор организации",
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 256
+		},
+		"nameType": {
+			"description": "Скалярный тип - имя",
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 256
+		},
+		"periodDurationType": {
+			"description": "Скалярный тип определения периода показателя",
+			"type": "object",
+			"properties": {
+				"xbrl:periodStart": {
+					"$ref": "#/definitions/ISO_8601_date"
+				},
+				"xbrl:periodEnd": {
+					"$ref": "#/definitions/ISO_8601_date"
+				}
+			},
+			"required": [
+				"xbrl:periodStart",
+				"xbrl:periodEnd"
+			]
+		},
+		"periodInstatType": {
+			"description": "Скалярный тип определения даты показателя",
+			"type": "object",
+			"properties": {
+				"xbrli:instant": {
+					"$ref": "#/definitions/ISO_8601_date"
+				}
+			},
+			"required": [
+				"xbrli:instant"
+			]
+		},
+		"enum:enumerationItemType": {
+			"description": "Скалярный тип csv - перечисление",
+			"type": "object",
+			"properties": {
+				"datatype": {
+					"type": "string",
+					"const": "string"
+				},
+				"http://www.cbr.ru/xbrl-csv/model#columnType": {
+					"type": "string",
+					"const": "enum:enumerationItemType"
+				}
+			},
+			"required": [
+				"datatype",
+				"http://www.cbr.ru/xbrl-csv/model#columnType"
+			]
+		},
+		"enum2:enumerationSetItemType": {
+			"description": "Скалярный тип csv - перечисление второго типа Extensible Enumerations 2.0",
+			"type": "object",
+			"properties": {
+				"datatype": {
+					"type": "string",
+					"const": "string"
+				},
+				"http://www.cbr.ru/xbrl-csv/model#columnType": {
+					"type": "string",
+					"const": "enum2:enumerationSetItemType"
+				}
+			},
+			"required": [
+				"datatype",
+				"http://www.cbr.ru/xbrl-csv/model#columnType"
+			]
+		},
+
+		"xbrli:stringItemType": {
+			"description": "Скалярный тип csv - строка",
+			"type": "object",
+			"properties": {
+				"datatype": {
+					"type": "string",
+					"const": "string"
+				},
+				"http://www.cbr.ru/xbrl-csv/model#columnType": {
+					"type": "string",
+					"const": "xbrli:stringItemType"
+				}
+			},
+			"required": [
+				"datatype",
+				"http://www.cbr.ru/xbrl-csv/model#columnType"
+			]
+		},
+		"xbrli:pureItemType": {
+			"description": "Скалярный тип csv - десятичное число",
+			"type": "object",
+			"properties": {
+				"datatype": {
+					"type": "string",
+					"const": "decimal"
+				},
+				"http://www.cbr.ru/xbrl-csv/model#columnType": {
+					"type": "string",
+					"const": "xbrli:pureItemType"
+				},
+				"xbrli:unit": {
+					"type": "object",
+					"properties": {
+						"id": {
+							"type": "string",
+							"const": "PURE"
+						},
+						"xbrli:measure": {
+							"type": "string",
+							"const": "xbrli:pure"
+						}
+					},
+					"required": [
+						"id",
+						"xbrli:measure"
+					]
+				},
+				"decimals": {
+					"type": "integer"
+				}
+			},
+			"required": [
+				"datatype",
+				"http://www.cbr.ru/xbrl-csv/model#columnType",
+				"xbrli:unit",
+				"decimals"
+			]
+		},
+		"xbrli:decimalItemType": {
+			"description": "Скалярный тип csv - десятичное число",
+			"type": "object",
+			"properties": {
+				"datatype": {
+					"type": "string",
+					"const": "decimal"
+				},
+				"http://www.cbr.ru/xbrl-csv/model#columnType": {
+					"type": "string",
+					"const": "xbrli:decimalItemType"
+				},
+				"xbrli:unit": {
+					"type": "object",
+					"properties": {
+						"id": {
+							"type": "string",
+							"const": "PURE"
+						},
+						"xbrli:measure": {
+							"type": "string",
+							"const": "xbrli:pure"
+						}
+					},
+					"required": [
+						"id",
+						"xbrli:measure"
+					]
+				},
+				"decimals": {
+					"type": "integer"
+				}
+			},
+			"required": [
+				"datatype",
+				"http://www.cbr.ru/xbrl-csv/model#columnType",
+				"xbrli:unit",
+				"decimals"
+			]
+		},
+		"iso4217Type": {
+			"title": "https://www.iso.org/iso-4217-currency-codes.html",
+			"description": "Тип описывающий стандарт iso4217",
+			"$comment": "Published: August 29, 2018",
+			"type": "object",
+			"properties": {
+				"xbrli:unit": {
+					"type": "object",
+					"oneOf": [
+				{
+							"title": "Currency:AED",
+							"description": "iso4217 standart for AED code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "AED"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:AED"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:AFN",
+							"description": "iso4217 standart for AFN code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "AFN"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:AFN"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:ALL",
+							"description": "iso4217 standart for ALL code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "ALL"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:ALL"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:AMD",
+							"description": "iso4217 standart for AMD code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "AMD"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:AMD"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:ANG",
+							"description": "iso4217 standart for ANG code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "ANG"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:ANG"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:AOA",
+							"description": "iso4217 standart for AOA code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "AOA"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:AOA"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:ARS",
+							"description": "iso4217 standart for ARS code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "ARS"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:ARS"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:AUD",
+							"description": "iso4217 standart for AUD code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "AUD"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:AUD"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:AWG",
+							"description": "iso4217 standart for AWG code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "AWG"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:AWG"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:AZN",
+							"description": "iso4217 standart for AZN code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "AZN"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:AZN"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:BAM",
+							"description": "iso4217 standart for BAM code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "BAM"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:BAM"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:BBD",
+							"description": "iso4217 standart for BBD code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "BBD"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:BBD"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:BDT",
+							"description": "iso4217 standart for BDT code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "BDT"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:BDT"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:BGN",
+							"description": "iso4217 standart for BGN code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "BGN"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:BGN"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:BHD",
+							"description": "iso4217 standart for BHD code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "BHD"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:BHD"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:BIF",
+							"description": "iso4217 standart for BIF code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "BIF"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:BIF"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:BMD",
+							"description": "iso4217 standart for BMD code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "BMD"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:BMD"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:BND",
+							"description": "iso4217 standart for BND code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "BND"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:BND"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:BOB",
+							"description": "iso4217 standart for BOB code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "BOB"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:BOB"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:BOV",
+							"description": "iso4217 standart for BOV code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "BOV"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:BOV"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:BRL",
+							"description": "iso4217 standart for BRL code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "BRL"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:BRL"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:BSD",
+							"description": "iso4217 standart for BSD code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "BSD"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:BSD"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:BTN",
+							"description": "iso4217 standart for BTN code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "BTN"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:BTN"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:BWP",
+							"description": "iso4217 standart for BWP code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "BWP"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:BWP"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:BYN",
+							"description": "iso4217 standart for BYN code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "BYN"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:BYN"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:BZD",
+							"description": "iso4217 standart for BZD code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "BZD"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:BZD"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:CAD",
+							"description": "iso4217 standart for CAD code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "CAD"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:CAD"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:CDF",
+							"description": "iso4217 standart for CDF code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "CDF"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:CDF"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:CHE",
+							"description": "iso4217 standart for CHE code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "CHE"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:CHE"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:CHF",
+							"description": "iso4217 standart for CHF code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "CHF"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:CHF"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:CHW",
+							"description": "iso4217 standart for CHW code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "CHW"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:CHW"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:CLF",
+							"description": "iso4217 standart for CLF code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "CLF"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:CLF"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:CLP",
+							"description": "iso4217 standart for CLP code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "CLP"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:CLP"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:CNY",
+							"description": "iso4217 standart for CNY code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "CNY"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:CNY"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:COP",
+							"description": "iso4217 standart for COP code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "COP"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:COP"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:COU",
+							"description": "iso4217 standart for COU code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "COU"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:COU"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:CRC",
+							"description": "iso4217 standart for CRC code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "CRC"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:CRC"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:CUC",
+							"description": "iso4217 standart for CUC code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "CUC"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:CUC"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:CUP",
+							"description": "iso4217 standart for CUP code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "CUP"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:CUP"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:CVE",
+							"description": "iso4217 standart for CVE code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "CVE"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:CVE"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:CZK",
+							"description": "iso4217 standart for CZK code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "CZK"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:CZK"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:DJF",
+							"description": "iso4217 standart for DJF code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "DJF"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:DJF"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:DKK",
+							"description": "iso4217 standart for DKK code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "DKK"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:DKK"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:DOP",
+							"description": "iso4217 standart for DOP code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "DOP"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:DOP"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:DZD",
+							"description": "iso4217 standart for DZD code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "DZD"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:DZD"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:EGP",
+							"description": "iso4217 standart for EGP code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "EGP"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:EGP"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:ERN",
+							"description": "iso4217 standart for ERN code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "ERN"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:ERN"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:ETB",
+							"description": "iso4217 standart for ETB code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "ETB"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:ETB"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:EUR",
+							"description": "iso4217 standart for EUR code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "EUR"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:EUR"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:FJD",
+							"description": "iso4217 standart for FJD code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "FJD"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:FJD"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:FKP",
+							"description": "iso4217 standart for FKP code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "FKP"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:FKP"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:GBP",
+							"description": "iso4217 standart for GBP code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "GBP"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:GBP"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:GEL",
+							"description": "iso4217 standart for GEL code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "GEL"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:GEL"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:GHS",
+							"description": "iso4217 standart for GHS code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "GHS"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:GHS"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:GIP",
+							"description": "iso4217 standart for GIP code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "GIP"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:GIP"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:GMD",
+							"description": "iso4217 standart for GMD code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "GMD"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:GMD"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:GNF",
+							"description": "iso4217 standart for GNF code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "GNF"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:GNF"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:GTQ",
+							"description": "iso4217 standart for GTQ code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "GTQ"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:GTQ"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:GYD",
+							"description": "iso4217 standart for GYD code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "GYD"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:GYD"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:HKD",
+							"description": "iso4217 standart for HKD code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "HKD"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:HKD"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:HNL",
+							"description": "iso4217 standart for HNL code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "HNL"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:HNL"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:HRK",
+							"description": "iso4217 standart for HRK code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "HRK"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:HRK"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:HTG",
+							"description": "iso4217 standart for HTG code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "HTG"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:HTG"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:HUF",
+							"description": "iso4217 standart for HUF code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "HUF"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:HUF"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:IDR",
+							"description": "iso4217 standart for IDR code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "IDR"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:IDR"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:ILS",
+							"description": "iso4217 standart for ILS code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "ILS"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:ILS"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:INR",
+							"description": "iso4217 standart for INR code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "INR"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:INR"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:IQD",
+							"description": "iso4217 standart for IQD code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "IQD"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:IQD"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:IRR",
+							"description": "iso4217 standart for IRR code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "IRR"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:IRR"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:ISK",
+							"description": "iso4217 standart for ISK code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "ISK"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:ISK"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:JMD",
+							"description": "iso4217 standart for JMD code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "JMD"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:JMD"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:JOD",
+							"description": "iso4217 standart for JOD code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "JOD"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:JOD"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:JPY",
+							"description": "iso4217 standart for JPY code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "JPY"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:JPY"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:KES",
+							"description": "iso4217 standart for KES code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "KES"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:KES"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:KGS",
+							"description": "iso4217 standart for KGS code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "KGS"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:KGS"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:KHR",
+							"description": "iso4217 standart for KHR code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "KHR"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:KHR"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:KMF",
+							"description": "iso4217 standart for KMF code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "KMF"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:KMF"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:KPW",
+							"description": "iso4217 standart for KPW code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "KPW"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:KPW"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:KRW",
+							"description": "iso4217 standart for KRW code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "KRW"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:KRW"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:KWD",
+							"description": "iso4217 standart for KWD code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "KWD"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:KWD"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:KYD",
+							"description": "iso4217 standart for KYD code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "KYD"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:KYD"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:KZT",
+							"description": "iso4217 standart for KZT code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "KZT"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:KZT"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:LAK",
+							"description": "iso4217 standart for LAK code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "LAK"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:LAK"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:LBP",
+							"description": "iso4217 standart for LBP code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "LBP"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:LBP"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:LKR",
+							"description": "iso4217 standart for LKR code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "LKR"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:LKR"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:LRD",
+							"description": "iso4217 standart for LRD code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "LRD"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:LRD"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:LSL",
+							"description": "iso4217 standart for LSL code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "LSL"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:LSL"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:LYD",
+							"description": "iso4217 standart for LYD code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "LYD"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:LYD"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:MAD",
+							"description": "iso4217 standart for MAD code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "MAD"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:MAD"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:MDL",
+							"description": "iso4217 standart for MDL code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "MDL"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:MDL"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:MGA",
+							"description": "iso4217 standart for MGA code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "MGA"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:MGA"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:MKD",
+							"description": "iso4217 standart for MKD code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "MKD"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:MKD"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:MMK",
+							"description": "iso4217 standart for MMK code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "MMK"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:MMK"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:MNT",
+							"description": "iso4217 standart for MNT code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "MNT"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:MNT"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:MOP",
+							"description": "iso4217 standart for MOP code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "MOP"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:MOP"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:MRU",
+							"description": "iso4217 standart for MRU code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "MRU"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:MRU"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:MUR",
+							"description": "iso4217 standart for MUR code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "MUR"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:MUR"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:MVR",
+							"description": "iso4217 standart for MVR code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "MVR"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:MVR"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:MWK",
+							"description": "iso4217 standart for MWK code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "MWK"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:MWK"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:MXN",
+							"description": "iso4217 standart for MXN code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "MXN"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:MXN"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:MXV",
+							"description": "iso4217 standart for MXV code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "MXV"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:MXV"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:MYR",
+							"description": "iso4217 standart for MYR code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "MYR"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:MYR"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:MZN",
+							"description": "iso4217 standart for MZN code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "MZN"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:MZN"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:NAD",
+							"description": "iso4217 standart for NAD code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "NAD"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:NAD"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:NGN",
+							"description": "iso4217 standart for NGN code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "NGN"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:NGN"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:NIO",
+							"description": "iso4217 standart for NIO code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "NIO"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:NIO"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:NOK",
+							"description": "iso4217 standart for NOK code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "NOK"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:NOK"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:NPR",
+							"description": "iso4217 standart for NPR code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "NPR"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:NPR"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:NZD",
+							"description": "iso4217 standart for NZD code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "NZD"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:NZD"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:OMR",
+							"description": "iso4217 standart for OMR code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "OMR"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:OMR"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:PAB",
+							"description": "iso4217 standart for PAB code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "PAB"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:PAB"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:PEN",
+							"description": "iso4217 standart for PEN code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "PEN"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:PEN"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:PGK",
+							"description": "iso4217 standart for PGK code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "PGK"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:PGK"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:PHP",
+							"description": "iso4217 standart for PHP code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "PHP"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:PHP"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:PKR",
+							"description": "iso4217 standart for PKR code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "PKR"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:PKR"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:PLN",
+							"description": "iso4217 standart for PLN code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "PLN"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:PLN"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:PYG",
+							"description": "iso4217 standart for PYG code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "PYG"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:PYG"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:QAR",
+							"description": "iso4217 standart for QAR code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "QAR"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:QAR"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:RON",
+							"description": "iso4217 standart for RON code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "RON"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:RON"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:RSD",
+							"description": "iso4217 standart for RSD code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "RSD"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:RSD"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:RUB",
+							"description": "iso4217 standart for RUB code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "RUB"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:RUB"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:RWF",
+							"description": "iso4217 standart for RWF code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "RWF"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:RWF"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:SAR",
+							"description": "iso4217 standart for SAR code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "SAR"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:SAR"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:SBD",
+							"description": "iso4217 standart for SBD code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "SBD"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:SBD"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:SCR",
+							"description": "iso4217 standart for SCR code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "SCR"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:SCR"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:SDG",
+							"description": "iso4217 standart for SDG code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "SDG"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:SDG"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:SEK",
+							"description": "iso4217 standart for SEK code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "SEK"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:SEK"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:SGD",
+							"description": "iso4217 standart for SGD code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "SGD"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:SGD"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:SHP",
+							"description": "iso4217 standart for SHP code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "SHP"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:SHP"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:SLL",
+							"description": "iso4217 standart for SLL code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "SLL"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:SLL"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:SOS",
+							"description": "iso4217 standart for SOS code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "SOS"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:SOS"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:SRD",
+							"description": "iso4217 standart for SRD code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "SRD"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:SRD"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:SSP",
+							"description": "iso4217 standart for SSP code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "SSP"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:SSP"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:STN",
+							"description": "iso4217 standart for STN code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "STN"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:STN"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:SVC",
+							"description": "iso4217 standart for SVC code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "SVC"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:SVC"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:SYP",
+							"description": "iso4217 standart for SYP code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "SYP"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:SYP"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:SZL",
+							"description": "iso4217 standart for SZL code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "SZL"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:SZL"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:THB",
+							"description": "iso4217 standart for THB code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "THB"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:THB"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:TJS",
+							"description": "iso4217 standart for TJS code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "TJS"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:TJS"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:TMT",
+							"description": "iso4217 standart for TMT code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "TMT"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:TMT"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:TND",
+							"description": "iso4217 standart for TND code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "TND"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:TND"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:TOP",
+							"description": "iso4217 standart for TOP code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "TOP"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:TOP"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:TRY",
+							"description": "iso4217 standart for TRY code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "TRY"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:TRY"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:TTD",
+							"description": "iso4217 standart for TTD code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "TTD"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:TTD"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:TWD",
+							"description": "iso4217 standart for TWD code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "TWD"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:TWD"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:TZS",
+							"description": "iso4217 standart for TZS code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "TZS"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:TZS"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:UAH",
+							"description": "iso4217 standart for UAH code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "UAH"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:UAH"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:UGX",
+							"description": "iso4217 standart for UGX code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "UGX"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:UGX"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:USD",
+							"description": "iso4217 standart for USD code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "USD"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:USD"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:USN",
+							"description": "iso4217 standart for USN code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "USN"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:USN"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:UYI",
+							"description": "iso4217 standart for UYI code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "UYI"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:UYI"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:UYU",
+							"description": "iso4217 standart for UYU code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "UYU"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:UYU"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:UYW",
+							"description": "iso4217 standart for UYW code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "UYW"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:UYW"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:UZS",
+							"description": "iso4217 standart for UZS code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "UZS"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:UZS"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:VES",
+							"description": "iso4217 standart for VES code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "VES"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:VES"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:VND",
+							"description": "iso4217 standart for VND code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "VND"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:VND"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:VUV",
+							"description": "iso4217 standart for VUV code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "VUV"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:VUV"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:WST",
+							"description": "iso4217 standart for WST code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "WST"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:WST"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:XAF",
+							"description": "iso4217 standart for XAF code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "XAF"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:XAF"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:XAG",
+							"description": "iso4217 standart for XAG code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "XAG"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:XAG"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:XAU",
+							"description": "iso4217 standart for XAU code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "XAU"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:XAU"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:XBA",
+							"description": "iso4217 standart for XBA code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "XBA"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:XBA"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:XBB",
+							"description": "iso4217 standart for XBB code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "XBB"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:XBB"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:XBC",
+							"description": "iso4217 standart for XBC code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "XBC"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:XBC"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:XBD",
+							"description": "iso4217 standart for XBD code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "XBD"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:XBD"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:XCD",
+							"description": "iso4217 standart for XCD code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "XCD"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:XCD"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:XDR",
+							"description": "iso4217 standart for XDR code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "XDR"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:XDR"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:XOF",
+							"description": "iso4217 standart for XOF code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "XOF"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:XOF"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:XPD",
+							"description": "iso4217 standart for XPD code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "XPD"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:XPD"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:XPF",
+							"description": "iso4217 standart for XPF code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "XPF"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:XPF"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:XPT",
+							"description": "iso4217 standart for XPT code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "XPT"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:XPT"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:XSU",
+							"description": "iso4217 standart for XSU code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "XSU"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:XSU"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:XTS",
+							"description": "iso4217 standart for XTS code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "XTS"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:XTS"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:XUA",
+							"description": "iso4217 standart for XUA code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "XUA"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:XUA"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:XXX",
+							"description": "iso4217 standart for XXX code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "XXX"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:XXX"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:YER",
+							"description": "iso4217 standart for YER code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "YER"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:YER"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:ZAR",
+							"description": "iso4217 standart for ZAR code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "ZAR"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:ZAR"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:ZMW",
+							"description": "iso4217 standart for ZMW code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "ZMW"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:ZMW"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						},
+{
+							"title": "Currency:ZWL",
+							"description": "iso4217 standart for ZWL code",
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"const": "ZWL"
+								},
+								"xbrli:measure": {
+									"type": "string",
+									"const": "iso4217:ZWL"
+								}
+							},
+							"required": [
+								"id",
+								"xbrli:measure"
+							]
+						}
+					]
+				}
+			},
+			"required": [
+				"xbrli:unit"
+			]
+		},
+		"xbrli:monetaryItemType": {
+			"description": "Скалярный тип csv - десятичное число монетарное",
+			"type": "object",
+			"properties": {
+				"datatype": {
+					"type": "string",
+					"const": "decimal"
+				},
+				"http://www.cbr.ru/xbrl-csv/model#columnType": {
+					"type": "string",
+					"const": "xbrli:monetaryItemType"
+				},
+				"decimals": {
+					"type": "integer"
+				}
+			},
+			"required": [
+				"datatype",
+				"http://www.cbr.ru/xbrl-csv/model#columnType",
+				"decimals"
+			],
+			"allOf": [
+				{
+					"$ref": "#/definitions/iso4217Type"
+				}
+			]
+		},
+		"xbrli:dateItemType": {
+			"description": "Скалярный тип csv - дата",
+			"type": "object",
+			"properties": {
+				"datatype": {
+					"type": "string",
+					"const": "date"
+				},
+				"http://www.cbr.ru/xbrl-csv/model#columnType": {
+					"type": "string",
+					"const": "xbrli:dateItemType"
+				}
+			},
+			"required": [
+				"datatype",
+				"http://www.cbr.ru/xbrl-csv/model#columnType"
+			]
+		},
+		"xbrli:dateTimeItemType": {
+			"description": "Скалярный тип csv - дата-время",
+			"type": "object",
+			"properties": {
+				"datatype": {
+					"type": "string",
+					"const": "date"
+				},
+				"http://www.cbr.ru/xbrl-csv/model#columnType": {
+					"type": "string",
+					"const": "xbrli:dateTimeItemType"
+				}
+			},
+			"required": [
+				"datatype",
+				"http://www.cbr.ru/xbrl-csv/model#columnType"
+			]
+		},
+		"xbrli:timeItemType": {
+			"description": "Скалярный тип csv - время",
+			"type": "object",
+			"properties": {
+				"datatype": {
+					"type": "string",
+					"const": "date"
+				},
+				"http://www.cbr.ru/xbrl-csv/model#columnType": {
+					"type": "string",
+					"const": "xbrli:timeItemType"
+				}
+			},
+			"required": [
+				"datatype",
+				"http://www.cbr.ru/xbrl-csv/model#columnType"
+			]
+		},
+		"xbrli:integerItemType": {
+			"description": "Скалярный тип csv - целое число",
+			"type": "object",
+			"properties": {
+				"datatype": {
+					"type": "string",
+					"const": "integer"
+				},
+				"http://www.cbr.ru/xbrl-csv/model#columnType": {
+					"type": "string",
+					"const": "xbrli:integerItemType"
+				}
+			},
+			"required": [
+				"datatype",
+				"http://www.cbr.ru/xbrl-csv/model#columnType"
+			]
+		},
+		"documentType": {
+			"description": "Комплексный тип - описание заголовка документа",
+			"type": "object",
+			"properties": {
+				"documentType": {
+					"type": "string",
+					"const": "http://www.cbr.ru/2025-12-30/xbrl-csv"
+				},
+				"reportDate": {
+					"innerComment": "Отчетная дата документа",
+					"$ref": "#/definitions/ISO_8601_date"
+				},
+				"delimiter": {
+					"innerComment": "Разделитель колонок csv файлов",
+					"$ref": "#/definitions/delimiterType"
+				},
+				"encoding": {
+					"innerComment": "Допустимая кодировка csv файлов",
+					"$ref": "#/definitions/encodingType"
+				},
+				"textQualifier": {
+					"$ref": "#/definitions/textQualifierType"
+				},
+				"documentVersion": {
+					"$ref": "#/definitions/versionType"
+				},
+				"textValueLengthLimit": {
+					"$ref": "#/definitions/textValueLengthLimitType"
+				},
+				"identifier": {
+					"$ref": "#/definitions/identifierType"
+				}
+			},
+			"required": [
+				"documentType",
+				"reportDate",
+				"delimiter",
+				"encoding",
+				"textQualifier",
+				"documentVersion",
+				"identifier"
+			]
+		},
+		"schemaURIType": {
+			"description": "Тип описывающий пространство имен schema",
+			"type": "object",
+			"properties": {
+				"schema": {
+					"type": "string",
+					"format": "uri",
+					"const": "http://xbrl.org/entity/identification/scheme"
+				}
+			},
+			"required": [
+				"schema"
+			]
+		},
+		"iso4217URIType": {
+			"description": "Тип описывающий пространство имен iso4217",
+			"type": "object",
+			"properties": {
+				"iso4217": {
+					"type": "string",
+					"format": "uri",
+					"const": "http://www.xbrl.org/2003/iso4217"
+				}
+			},
+			"required": [
+				"iso4217"
+			]
+		},
+		"npf-dicURIType": {
+			"description": "Тип описывающий пространство имен npf-dic",
+			"type": "object",
+			"properties": {
+				"npf-dic": {
+					"type": "string",
+					"format": "uri",
+					"const": "http://www.cbr.ru/xbrl/nso/npf/dic"
+				}
+			},
+			"required": [
+				"npf-dic"
+			]
+		},
+		"mem-intURIType": {
+			"description": "Тип описывающий пространство имен mem-int",
+			"type": "object",
+			"properties": {
+				"mem-int": {
+					"type": "string",
+					"format": "uri",
+					"const": "http://www.cbr.ru/xbrl/udr/dom/mem-int"
+				}
+			},
+			"required": [
+				"mem-int"
+			]
+		},
+		"dim-intURIType": {
+			"description": "Тип описывающий пространство имен dim-int",
+			"type": "object",
+			"properties": {
+				"dim-int": {
+					"type": "string",
+					"format": "uri",
+					"const": "http://www.cbr.ru/xbrl/udr/dim/dim-int"
+				}
+			},
+			"required": [
+				"dim-int"
+			]
+		},
+		"enumURIType": {
+			"description": "Тип описывающий пространство имен enum",
+			"type": "object",
+			"properties": {
+				"enum": {
+					"type": "string",
+					"format": "uri",
+					"const": "http://xbrl.org/2014/extensible-enumerations"
+				}
+			},
+			"required": [
+				"enum"
+			]
+		},
+		"enum2URIType": {
+			"description": "Тип описывающий пространство имен enum2",
+			"type": "object",
+			"properties": {
+				"enum2": {
+					"type": "string",
+					"format": "uri",
+					"const": "http://xbrl.org/PWD/2017-09-05/extensible-enumerations-2.0"
+				}
+			},
+			"required": [
+				"enum2"
+			]
+		},
+		"xbrlURIType": {
+			"description": "Тип описывающий пространство имен xbrl",
+			"type": "object",
+			"properties": {
+				"xbrl": {
+					"type": "string",
+					"format": "uri",
+					"const": "http://www.xbrl.org"
+				}
+			},
+			"required": [
+				"xbrl"
+			]
+		},
+		"xbrliURIType": {
+			"description": "Тип описывающий пространство имен xbrli",
+			"type": "object",
+			"properties": {
+				"xbrli": {
+					"type": "string",
+					"format": "uri",
+					"const": "http://www.xbrl.org/2003/instance"
+				}
+			},
+			"required": [
+				"xbrli"
+			]
+		},
+		"purcb-dicURIType": {
+			"description": "Тип описывающий пространство имен purcb-dic",
+			"type": "object",
+			"properties": {
+				"purcb-dic": {
+					"type": "string",
+					"format": "uri",
+					"const": "http://www.cbr.ru/xbrl/nso/purcb/dic"
+				}
+			},
+			"required": [
+				"purcb-dic"
+			]
+		},
+		"nfo-dicURIType": {
+			"description": "Тип описывающий пространство имен nfo-dic",
+			"type": "object",
+			"properties": {
+				"nfo-dic": {
+					"type": "string",
+					"format": "uri",
+					"const": "http://www.cbr.ru/xbrl/nso/nfo/dic"
+				}
+			},
+			"required": [
+				"nfo-dic"
+			]
+		},
+		"bki-dicURIType": {
+			"description": "Тип описывающий пространство имен bki-dic",
+			"type": "object",
+			"properties": {
+				"bki-dic": {
+					"type": "string",
+					"format": "uri",
+					"const": "http://www.cbr.ru/xbrl/nso/bki/dic"
+				}
+			},
+			"required": [
+				"bki-dic"
+			]
+		},
+		"ins-dicURIType": {
+			"description": "Тип описывающий пространство имен ins-dic",
+			"type": "object",
+			"properties": {
+				"ins-dic": {
+					"type": "string",
+					"format": "uri",
+					"const": "http://www.cbr.ru/xbrl/nso/ins/dic/ins-dic"
+				}
+			},
+			"required": [
+				"ins-dic"
+			]
+		},
+		"xbrldiURIType": {
+			"description": "Тип описывающий пространство имен xbrldi",
+			"type": "object",
+			"properties": {
+				"xbrldi": {
+					"type": "string",
+					"format": "uri",
+					"const": "http://xbrl.org/2006/xbrldi"
+				}
+			},
+			"required": [
+				"xbrldi"
+			]
+		},
+"brk-dicURIType": {
+			"description": "Тип описывающий пространство имен brk-dic",
+			"type": "object",
+			"properties": {
+				"brk-dic": {
+					"type": "string",
+					"format": "uri",
+					"const": "http://www.cbr.ru/xbrl/nso/brk/dic/brk-dic"
+				}
+			},
+			"required": [
+				"brk-dic"
+			]
+		},
+"kra-dicURIType": {
+			"description": "Тип описывающий пространство имен kra-dic",
+			"type": "object",
+			"properties": {
+				"kra-dic": {
+					"type": "string",
+					"format": "uri",
+					"const": "http://www.cbr.ru/xbrl/nso/kra/dic/kra-dic"
+				}
+			},
+			"required": [
+				"kra-dic"
+			]
+		},
+"oper-dicURIType": {
+			"description": "Тип описывающий пространство имен oper-dic",
+			"type": "object",
+			"properties": {
+				"oper-dic": {
+					"type": "string",
+					"format": "uri",
+					"const": "http://www.cbr.ru/xbrl/nso/operatory/dic"
+				}
+			},
+			"required": [
+				"oper-dic"
+			]
+		},
+"srki-dicURIType": {
+			"description": "Тип описывающий пространство имен srki-dic",
+			"type": "object",
+			"properties": {
+				"srki-dic": {
+					"type": "string",
+					"format": "uri",
+					"const": "http://www.cbr.ru/xbrl/nso/srki/srki-dic"
+				}
+			},
+			"required": [
+				"srki-dic"
+			]
+		},
+"sro-dicURIType": {
+			"description": "Тип описывающий пространство имен sro-dic",
+			"type": "object",
+			"properties": {
+				"sro-dic": {
+					"type": "string",
+					"format": "uri",
+					"const": "http://www.cbr.ru/xbrl/nso/sro/dic"
+				}
+			},
+			"required": [
+				"sro-dic"
+			]
+		},
+"uk-dicURIType": {
+			"description": "Тип описывающий пространство имен uk-dic",
+			"type": "object",
+			"properties": {
+				"uk-dic": {
+					"type": "string",
+					"format": "uri",
+					"const": "http://www.cbr.ru/xbrl/nso/uk/dic"
+				}
+			},
+			"required": [
+				"uk-dic"
+			]
+		},
+		"prefixesType": {
+			"description": "Тип описывающий массив пространств имен",
+			"type": "object",
+			"properties": {
+				"prefixes": {
+					"type": "array",
+					"items": [
+						{
+							"$ref": "#/definitions/schemaURIType"
+						},
+						{
+							"$ref": "#/definitions/iso4217URIType"
+						},
+						{
+							"$ref": "#/definitions/mem-intURIType"
+						},
+						{
+							"$ref": "#/definitions/dim-intURIType"
+						},
+						{
+							"$ref": "#/definitions/xbrliURIType"
+						},
+						{
+							"$ref": "#/definitions/xbrldiURIType"
+						},
+						{
+							"$ref": "#/definitions/enumURIType"
+						},
+						{
+							"$ref": "#/definitions/enum2URIType"
+						},
+						{
+							"$ref": "#/definitions/xbrlURIType"
+						}
+					],
+					"additionalItems": {
+						"anyOf": [
+							{
+								"$ref": "#/definitions/npf-dicURIType"
+							},
+							{
+								"$ref": "#/definitions/purcb-dicURIType"
+							},
+							{
+								"$ref": "#/definitions/bki-dicURIType"
+							},
+							{
+								"$ref": "#/definitions/nfo-dicURIType"
+							},
+							{
+								"$ref": "#/definitions/ins-dicURIType"
+							},
+							{
+								"$ref": "#/definitions/brk-dicURIType"
+							},
+							{
+								"$ref": "#/definitions/kra-dicURIType"
+							},
+							{
+								"$ref": "#/definitions/oper-dicURIType"
+							},
+							{
+								"$ref": "#/definitions/srki-dicURIType"
+							},
+							{
+								"$ref": "#/definitions/sro-dicURIType"
+							},
+							{
+								"$ref": "#/definitions/uk-dicURIType"
+							}
+						]
+					}
+				}
+			}
+		},
+		"tableURIType": {
+			"description": "Тип атрибута \"Имя csv файла\"",
+			"type": "object",
+			"properties": {
+				"uri": {
+					"type": "string",
+					"pattern": "^[\\w,\\s-]+\\.csv$"
+				},
+				"csvRowsCount": {
+					"$comment": "Количество строк в csv файле, не включая заголовка",
+					"type": "integer",
+					"minimum": 1
+				}
+			},
+			"required": [
+				"uri",
+      	"csvRowsCount"
+			]
+		},
+		"delimiterType": {
+			"description": "Тип - список допустимых разделителей в csv",
+			"type": "string",
+			"enum": [
+				";",
+				",",
+				"|"
+			]
+		},
+		"encodingType": {
+			"description": "Тип - список допустимых кодировок csv файлов",
+			"type": "string",
+			"enum": [
+				"UTF-8"
+			]
+		},
+		"textQualifierType": {
+			"description": "Тип - список допустымых квалификаторов текстовых значений",
+			"type": "string",
+			"enum": [
+				"\"",
+				"none"
+			]
+		},
+		"textValueLengthLimitType": {
+			"description": "Тип - максимально допустимая длина значения в символах csv файла",
+			"type": "number",
+			"minimum": 1,
+			"maximum": 8000
+		},
+		"notSpecifiedDomainType": {
+			"description": "Тип - флаг отсутствия явных измерений в контексте показателя",
+			"type": "object",
+			"properties": {
+				"not_specified_domain": {
+					"type": "boolean",
+					"const": true
+				}
+			},
+			"required": [
+				"not_specified_domain"
+			]
+		}
+	},
+	"innerVersion": "20251230"
+}

@@ -1,0 +1,2477 @@
+{
+                         "$schema": "http://json-schema.org/draft-07/schema#",
+                         "$id": "http://www.cbr.ru/xbrl_csv/2025-12-30/20251230/tab/nso/purcb/SR_0420459_types.def_ep_nso_purcb_m_q_y_10rd_reestr_0420417.def.ep.json",
+                         "description": "Схема описания типов для разделов http://www.cbr.ru/xbrl/nso/purcb/rep/2025-12-30/tab/SR_0420459",
+                         "innerVersion": "http://www.cbr.ru/xbrl_csv/2025-12-30/20251230",
+                         "definitions": {
+
+                          
+                             "conceptName_purcb-dic_Data_sostavleniya_Rek_veks": {
+                               "description": "Описание концепта purcb-dic:Data_sostavleniya_Rek_veks",
+                               "type": "object",
+                               "properties": {
+                                 "xbrl:concept": {
+                                   "type": "string",
+                                   "const": "purcb-dic:Data_sostavleniya_Rek_veks"
+                                 },
+                                 "xbrli:periodType": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/periodInstatType"
+                                 },
+                                 "type": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/xbrli:dateItemType"
+                                 }
+                               },
+                               "required": [
+                                 "xbrl:concept",
+                                 "xbrli:periodType",
+                                 "type"
+                               ]
+                             },
+                             "conceptName_purcb-dic_Den_1_Rek_veks": {
+                               "description": "Описание концепта purcb-dic:Den_1_Rek_veks",
+                               "type": "object",
+                               "properties": {
+                                 "xbrl:concept": {
+                                   "type": "string",
+                                   "const": "purcb-dic:Den_1_Rek_veks"
+                                 },
+                                 "xbrli:periodType": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/periodInstatType"
+                                 },
+                                 "type": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/xbrli:dateItemType"
+                                 }
+                               },
+                               "required": [
+                                 "xbrl:concept",
+                                 "xbrli:periodType",
+                                 "type"
+                               ]
+                             },
+                             "conceptName_purcb-dic_Den_2_Rek_veks": {
+                               "description": "Описание концепта purcb-dic:Den_2_Rek_veks",
+                               "type": "object",
+                               "properties": {
+                                 "xbrl:concept": {
+                                   "type": "string",
+                                   "const": "purcb-dic:Den_2_Rek_veks"
+                                 },
+                                 "xbrli:periodType": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/periodInstatType"
+                                 },
+                                 "type": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/xbrli:dateItemType"
+                                 }
+                               },
+                               "required": [
+                                 "xbrl:concept",
+                                 "xbrli:periodType",
+                                 "type"
+                               ]
+                             },
+                             "conceptName_nfo-dic_FIO": {
+                               "description": "Описание концепта nfo-dic:FIO",
+                               "type": "object",
+                               "properties": {
+                                 "xbrl:concept": {
+                                   "type": "string",
+                                   "const": "nfo-dic:FIO"
+                                 },
+                                 "xbrli:periodType": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/periodInstatType"
+                                 },
+                                 "type": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/xbrli:stringItemType"
+                                 }
+                               },
+                               "required": [
+                                 "xbrl:concept",
+                                 "xbrli:periodType",
+                                 "type"
+                               ]
+                             },
+                             "conceptName_nfo-dic_GosRegNomerVyp": {
+                               "description": "Описание концепта nfo-dic:GosRegNomerVyp",
+                               "type": "object",
+                               "properties": {
+                                 "xbrl:concept": {
+                                   "type": "string",
+                                   "const": "nfo-dic:GosRegNomerVyp"
+                                 },
+                                 "xbrli:periodType": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/periodInstatType"
+                                 },
+                                 "type": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/xbrli:stringItemType"
+                                 }
+                               },
+                               "required": [
+                                 "xbrl:concept",
+                                 "xbrli:periodType",
+                                 "type"
+                               ]
+                             },
+                             "conceptName_purcb-dic_IDCzbvOsnDR": {
+                               "description": "Описание концепта purcb-dic:IDCzbvOsnDR",
+                               "type": "object",
+                               "properties": {
+                                 "xbrl:concept": {
+                                   "type": "string",
+                                   "const": "purcb-dic:IDCzbvOsnDR"
+                                 },
+                                 "xbrli:periodType": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/periodInstatType"
+                                 },
+                                 "type": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/xbrli:stringItemType"
+                                 }
+                               },
+                               "required": [
+                                 "xbrl:concept",
+                                 "xbrli:periodType",
+                                 "type"
+                               ]
+                             },
+                             "conceptName_purcb-dic_IDEmisCZB": {
+                               "description": "Описание концепта purcb-dic:IDEmisCZB",
+                               "type": "object",
+                               "properties": {
+                                 "xbrl:concept": {
+                                   "type": "string",
+                                   "const": "purcb-dic:IDEmisCZB"
+                                 },
+                                 "xbrli:periodType": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/periodInstatType"
+                                 },
+                                 "type": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/xbrli:stringItemType"
+                                 }
+                               },
+                               "required": [
+                                 "xbrl:concept",
+                                 "xbrli:periodType",
+                                 "type"
+                               ]
+                             },
+                             "conceptName_purcb-dic_IDNomerVypuska_DFA_UDR_DGR": {
+                               "description": "Описание концепта purcb-dic:IDNomerVypuska_DFA_UDR_DGR",
+                               "type": "object",
+                               "properties": {
+                                 "xbrl:concept": {
+                                   "type": "string",
+                                   "const": "purcb-dic:IDNomerVypuska_DFA_UDR_DGR"
+                                 },
+                                 "xbrli:periodType": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/periodInstatType"
+                                 },
+                                 "type": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/xbrli:stringItemType"
+                                 }
+                               },
+                               "required": [
+                                 "xbrl:concept",
+                                 "xbrli:periodType",
+                                 "type"
+                               ]
+                             },
+                             "conceptName_purcb-dic_IDnomerUDRvOsnoveCzifrovogoSvidetelstva": {
+                               "description": "Описание концепта purcb-dic:IDnomerUDRvOsnoveCzifrovogoSvidetelstva",
+                               "type": "object",
+                               "properties": {
+                                 "xbrl:concept": {
+                                   "type": "string",
+                                   "const": "purcb-dic:IDnomerUDRvOsnoveCzifrovogoSvidetelstva"
+                                 },
+                                 "xbrli:periodType": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/periodInstatType"
+                                 },
+                                 "type": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/xbrli:stringItemType"
+                                 }
+                               },
+                               "required": [
+                                 "xbrl:concept",
+                                 "xbrli:periodType",
+                                 "type"
+                               ]
+                             },
+                             "conceptName_nfo-dic_INN": {
+                               "description": "Описание концепта nfo-dic:INN для раздела http://www.cbr.ru/xbrl/nso/purcb/rep/2025-12-30/tab/SR_0420459_R1_2 ",
+                               "type": "object",
+                               "properties": {
+                                 "xbrl:concept": {
+                                   "type": "string",
+                                   "const": "nfo-dic:INN"
+                                 },
+                                 "xbrli:periodType": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/periodInstatType"
+                                 },
+                                 "type": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/xbrli:stringItemType"
+                                 }
+                               },
+                               "required": [
+                                 "xbrl:concept",
+                                 "xbrli:periodType",
+                                 "type"
+                               ]
+                             },
+                             "conceptName_purcb-dic_INN_2": {
+                               "description": "Описание концепта purcb-dic:INN для раздела http://www.cbr.ru/xbrl/nso/purcb/rep/2025-12-30/tab/SR_0420459_R1_2 ",
+                               "type": "object",
+                               "properties": {
+                                 "xbrl:concept": {
+                                   "type": "string",
+                                   "const": "purcb-dic:INN"
+                                 },
+                                 "xbrli:periodType": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/periodInstatType"
+                                 },
+                                 "type": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/xbrli:stringItemType"
+                                 }
+                               },
+                               "required": [
+                                 "xbrl:concept",
+                                 "xbrli:periodType",
+                                 "type"
+                               ]
+                             },
+                             "conceptName_nfo-dic_INN_3": {
+                               "description": "Описание концепта nfo-dic:INN для раздела http://www.cbr.ru/xbrl/nso/purcb/rep/2025-12-30/tab/SR_0420459_R2 ",
+                               "type": "object",
+                               "properties": {
+                                 "xbrl:concept": {
+                                   "type": "string",
+                                   "const": "nfo-dic:INN"
+                                 },
+                                 "xbrli:periodType": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/periodInstatType"
+                                 },
+                                 "type": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/xbrli:stringItemType"
+                                 }
+                               },
+                               "required": [
+                                 "xbrl:concept",
+                                 "xbrli:periodType",
+                                 "type"
+                               ]
+                             },
+                             "conceptName_purcb-dic_INNDepVygCZifrSvid": {
+                               "description": "Описание концепта purcb-dic:INNDepVygCZifrSvid",
+                               "type": "object",
+                               "properties": {
+                                 "xbrl:concept": {
+                                   "type": "string",
+                                   "const": "purcb-dic:INNDepVygCZifrSvid"
+                                 },
+                                 "xbrli:periodType": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/periodInstatType"
+                                 },
+                                 "type": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/xbrli:stringItemType"
+                                 }
+                               },
+                               "required": [
+                                 "xbrl:concept",
+                                 "xbrli:periodType",
+                                 "type"
+                               ]
+                             },
+                             "conceptName_nfo-dic_INN_TIN": {
+                               "description": "Описание концепта nfo-dic:INN_TIN",
+                               "type": "object",
+                               "properties": {
+                                 "xbrl:concept": {
+                                   "type": "string",
+                                   "const": "nfo-dic:INN_TIN"
+                                 },
+                                 "xbrli:periodType": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/periodInstatType"
+                                 },
+                                 "type": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/xbrli:stringItemType"
+                                 }
+                               },
+                               "required": [
+                                 "xbrl:concept",
+                                 "xbrli:periodType",
+                                 "type"
+                               ]
+                             },
+                             "conceptName_nfo-dic_ISIN": {
+                               "description": "Описание концепта nfo-dic:ISIN",
+                               "type": "object",
+                               "properties": {
+                                 "xbrl:concept": {
+                                   "type": "string",
+                                   "const": "nfo-dic:ISIN"
+                                 },
+                                 "xbrli:periodType": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/periodInstatType"
+                                 },
+                                 "type": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/xbrli:stringItemType"
+                                 }
+                               },
+                               "required": [
+                                 "xbrl:concept",
+                                 "xbrli:periodType",
+                                 "type"
+                               ]
+                             },
+                             "conceptName_purcb-dic_KlassAktOsnDREnumerator": {
+                               "description": "Описание концепта purcb-dic:KlassAktOsnDREnumerator",
+                               "type": "object",
+                               "properties": {
+                                 "xbrl:concept": {
+                                   "type": "string",
+                                   "const": "purcb-dic:KlassAktOsnDREnumerator"
+                                 },
+                                 "xbrli:periodType": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/periodInstatType"
+                                 },
+                                 "type": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/enum:enumerationItemType"
+                                 }
+                               },
+                               "required": [
+                                 "xbrl:concept",
+                                 "xbrli:periodType",
+                                 "type"
+                               ]
+                             },
+                             "conceptName_nfo-dic_KodCFI": {
+                               "description": "Описание концепта nfo-dic:KodCFI",
+                               "type": "object",
+                               "properties": {
+                                 "xbrl:concept": {
+                                   "type": "string",
+                                   "const": "nfo-dic:KodCFI"
+                                 },
+                                 "xbrli:periodType": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/periodInstatType"
+                                 },
+                                 "type": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/xbrli:stringItemType"
+                                 }
+                               },
+                               "required": [
+                                 "xbrl:concept",
+                                 "xbrli:periodType",
+                                 "type"
+                               ]
+                             },
+                             "conceptName_purcb-dic_KodDIGSEnumerator": {
+                               "description": "Описание концепта purcb-dic:KodDIGSEnumerator",
+                               "type": "object",
+                               "properties": {
+                                 "xbrl:concept": {
+                                   "type": "string",
+                                   "const": "purcb-dic:KodDIGSEnumerator"
+                                 },
+                                 "xbrli:periodType": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/periodInstatType"
+                                 },
+                                 "type": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/enum:enumerationItemType"
+                                 }
+                               },
+                               "required": [
+                                 "xbrl:concept",
+                                 "xbrli:periodType",
+                                 "type"
+                               ]
+                             },
+                             "conceptName_purcb-dic_Kod_DGR_DFA_UDREnumerator": {
+                               "description": "Описание концепта purcb-dic:Kod_DGR_DFA_UDREnumerator",
+                               "type": "object",
+                               "properties": {
+                                 "xbrl:concept": {
+                                   "type": "string",
+                                   "const": "purcb-dic:Kod_DGR_DFA_UDREnumerator"
+                                 },
+                                 "xbrli:periodType": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/periodInstatType"
+                                 },
+                                 "type": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/enum:enumerationItemType"
+                                 }
+                               },
+                               "required": [
+                                 "xbrl:concept",
+                                 "xbrli:periodType",
+                                 "type"
+                               ]
+                             },
+                             "conceptName_nfo-dic_Kod_stranEnumerator": {
+                               "description": "Описание концепта nfo-dic:Kod_stranEnumerator для раздела http://www.cbr.ru/xbrl/nso/purcb/rep/2025-12-30/tab/SR_0420459_R1_1 ",
+                               "type": "object",
+                               "properties": {
+                                 "xbrl:concept": {
+                                   "type": "string",
+                                   "const": "nfo-dic:Kod_stranEnumerator"
+                                 },
+                                 "xbrli:periodType": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/periodInstatType"
+                                 },
+                                 "type": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/enum:enumerationItemType"
+                                 }
+                               },
+                               "required": [
+                                 "xbrl:concept",
+                                 "xbrli:periodType",
+                                 "type"
+                               ]
+                             },
+                             "conceptName_nfo-dic_Kod_stranEnumerator_2": {
+                               "description": "Описание концепта nfo-dic:Kod_stranEnumerator для раздела http://www.cbr.ru/xbrl/nso/purcb/rep/2025-12-30/tab/SR_0420459_R1_2 ",
+                               "type": "object",
+                               "properties": {
+                                 "xbrl:concept": {
+                                   "type": "string",
+                                   "const": "nfo-dic:Kod_stranEnumerator"
+                                 },
+                                 "xbrli:periodType": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/periodInstatType"
+                                 },
+                                 "type": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/enum:enumerationItemType"
+                                 }
+                               },
+                               "required": [
+                                 "xbrl:concept",
+                                 "xbrli:periodType",
+                                 "type"
+                               ]
+                             },
+                             "conceptName_nfo-dic_Kod_stranEnumerator_3": {
+                               "description": "Описание концепта nfo-dic:Kod_stranEnumerator для раздела http://www.cbr.ru/xbrl/nso/purcb/rep/2025-12-30/tab/SR_0420459_R2 ",
+                               "type": "object",
+                               "properties": {
+                                 "xbrl:concept": {
+                                   "type": "string",
+                                   "const": "nfo-dic:Kod_stranEnumerator"
+                                 },
+                                 "xbrli:periodType": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/periodInstatType"
+                                 },
+                                 "type": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/enum:enumerationItemType"
+                                 }
+                               },
+                               "required": [
+                                 "xbrl:concept",
+                                 "xbrli:periodType",
+                                 "type"
+                               ]
+                             },
+                             "conceptName_nfo-dic_Kod_valEnumerator": {
+                               "description": "Описание концепта nfo-dic:Kod_valEnumerator для раздела http://www.cbr.ru/xbrl/nso/purcb/rep/2025-12-30/tab/SR_0420459_R1_1 ",
+                               "type": "object",
+                               "properties": {
+                                 "xbrl:concept": {
+                                   "type": "string",
+                                   "const": "nfo-dic:Kod_valEnumerator"
+                                 },
+                                 "xbrli:periodType": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/periodInstatType"
+                                 },
+                                 "type": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/enum:enumerationItemType"
+                                 }
+                               },
+                               "required": [
+                                 "xbrl:concept",
+                                 "xbrli:periodType",
+                                 "type"
+                               ]
+                             },
+                             "conceptName_nfo-dic_Kod_valEnumerator_2": {
+                               "description": "Описание концепта nfo-dic:Kod_valEnumerator для раздела http://www.cbr.ru/xbrl/nso/purcb/rep/2025-12-30/tab/SR_0420459_R1_2 ",
+                               "type": "object",
+                               "properties": {
+                                 "xbrl:concept": {
+                                   "type": "string",
+                                   "const": "nfo-dic:Kod_valEnumerator"
+                                 },
+                                 "xbrli:periodType": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/periodInstatType"
+                                 },
+                                 "type": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/enum:enumerationItemType"
+                                 }
+                               },
+                               "required": [
+                                 "xbrl:concept",
+                                 "xbrli:periodType",
+                                 "type"
+                               ]
+                             },
+                             "conceptName_purcb-dic_KolDIGSvypushDepozitariem": {
+                               "description": "Описание концепта purcb-dic:KolDIGSvypushDepozitariem",
+                               "type": "object",
+                               "properties": {
+                                 "xbrl:concept": {
+                                   "type": "string",
+                                   "const": "purcb-dic:KolDIGSvypushDepozitariem"
+                                 },
+                                 "xbrli:periodType": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/periodInstatType"
+                                 },
+                                 "type": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/xbrli:decimalItemType"
+                                 }
+                               },
+                               "required": [
+                                 "xbrl:concept",
+                                 "xbrli:periodType",
+                                 "type"
+                               ]
+                             },
+                             "conceptName_purcb-dic_KolUDRvOdnomCZifrSvidetelstve": {
+                               "description": "Описание концепта purcb-dic:KolUDRvOdnomCZifrSvidetelstve",
+                               "type": "object",
+                               "properties": {
+                                 "xbrl:concept": {
+                                   "type": "string",
+                                   "const": "purcb-dic:KolUDRvOdnomCZifrSvidetelstve"
+                                 },
+                                 "xbrli:periodType": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/periodInstatType"
+                                 },
+                                 "type": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/xbrli:decimalItemType"
+                                 }
+                               },
+                               "required": [
+                                 "xbrl:concept",
+                                 "xbrli:periodType",
+                                 "type"
+                               ]
+                             },
+                             "conceptName_purcb-dic_Mestonaxozhdenie_emitenta_Rekv_Emit": {
+                               "description": "Описание концепта purcb-dic:Mestonaxozhdenie_emitenta_Rekv_Emit",
+                               "type": "object",
+                               "properties": {
+                                 "xbrl:concept": {
+                                   "type": "string",
+                                   "const": "purcb-dic:Mestonaxozhdenie_emitenta_Rekv_Emit"
+                                 },
+                                 "xbrli:periodType": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/periodInstatType"
+                                 },
+                                 "type": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/xbrli:stringItemType"
+                                 }
+                               },
+                               "required": [
+                                 "xbrl:concept",
+                                 "xbrli:periodType",
+                                 "type"
+                               ]
+                             },
+                             "conceptName_purcb-dic_NaimDFA_UDR_DGR": {
+                               "description": "Описание концепта purcb-dic:NaimDFA_UDR_DGR",
+                               "type": "object",
+                               "properties": {
+                                 "xbrl:concept": {
+                                   "type": "string",
+                                   "const": "purcb-dic:NaimDFA_UDR_DGR"
+                                 },
+                                 "xbrli:periodType": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/periodInstatType"
+                                 },
+                                 "type": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/xbrli:stringItemType"
+                                 }
+                               },
+                               "required": [
+                                 "xbrl:concept",
+                                 "xbrli:periodType",
+                                 "type"
+                               ]
+                             },
+                             "conceptName_purcb-dic_NaimDepVypCZifrSvid": {
+                               "description": "Описание концепта purcb-dic:NaimDepVypCZifrSvid",
+                               "type": "object",
+                               "properties": {
+                                 "xbrl:concept": {
+                                   "type": "string",
+                                   "const": "purcb-dic:NaimDepVypCZifrSvid"
+                                 },
+                                 "xbrli:periodType": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/periodInstatType"
+                                 },
+                                 "type": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/xbrli:stringItemType"
+                                 }
+                               },
+                               "required": [
+                                 "xbrl:concept",
+                                 "xbrli:periodType",
+                                 "type"
+                               ]
+                             },
+                             "conceptName_purcb-dic_NaimInvestPlatform": {
+                               "description": "Описание концепта purcb-dic:NaimInvestPlatform",
+                               "type": "object",
+                               "properties": {
+                                 "xbrl:concept": {
+                                   "type": "string",
+                                   "const": "purcb-dic:NaimInvestPlatform"
+                                 },
+                                 "xbrli:periodType": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/periodInstatType"
+                                 },
+                                 "type": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/xbrli:stringItemType"
+                                 }
+                               },
+                               "required": [
+                                 "xbrl:concept",
+                                 "xbrli:periodType",
+                                 "type"
+                               ]
+                             },
+                             "conceptName_purcb-dic_NaimOIP": {
+                               "description": "Описание концепта purcb-dic:NaimOIP",
+                               "type": "object",
+                               "properties": {
+                                 "xbrl:concept": {
+                                   "type": "string",
+                                   "const": "purcb-dic:NaimOIP"
+                                 },
+                                 "xbrli:periodType": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/periodInstatType"
+                                 },
+                                 "type": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/xbrli:stringItemType"
+                                 }
+                               },
+                               "required": [
+                                 "xbrl:concept",
+                                 "xbrli:periodType",
+                                 "type"
+                               ]
+                             },
+                             "conceptName_nfo-dic_NomBlVeks": {
+                               "description": "Описание концепта nfo-dic:NomBlVeks",
+                               "type": "object",
+                               "properties": {
+                                 "xbrl:concept": {
+                                   "type": "string",
+                                   "const": "nfo-dic:NomBlVeks"
+                                 },
+                                 "xbrli:periodType": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/periodInstatType"
+                                 },
+                                 "type": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/xbrli:stringItemType"
+                                 }
+                               },
+                               "required": [
+                                 "xbrl:concept",
+                                 "xbrli:periodType",
+                                 "type"
+                               ]
+                             },
+                             "conceptName_nfo-dic_NomStOdnCzb": {
+                               "description": "Описание концепта nfo-dic:NomStOdnCzb",
+                               "type": "object",
+                               "properties": {
+                                 "xbrl:concept": {
+                                   "type": "string",
+                                   "const": "nfo-dic:NomStOdnCzb"
+                                 },
+                                 "xbrli:periodType": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/periodInstatType"
+                                 },
+                                 "type": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/xbrli:monetaryItemType"
+                                 }
+                               },
+                               "required": [
+                                 "xbrl:concept",
+                                 "xbrli:periodType",
+                                 "type"
+                               ]
+                             },
+                             "conceptName_nfo-dic_NomVeks": {
+                               "description": "Описание концепта nfo-dic:NomVeks",
+                               "type": "object",
+                               "properties": {
+                                 "xbrl:concept": {
+                                   "type": "string",
+                                   "const": "nfo-dic:NomVeks"
+                                 },
+                                 "xbrli:periodType": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/periodInstatType"
+                                 },
+                                 "type": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/xbrli:stringItemType"
+                                 }
+                               },
+                               "required": [
+                                 "xbrl:concept",
+                                 "xbrli:periodType",
+                                 "type"
+                               ]
+                             },
+                             "conceptName_nfo-dic_OGRN": {
+                               "description": "Описание концепта nfo-dic:OGRN",
+                               "type": "object",
+                               "properties": {
+                                 "xbrl:concept": {
+                                   "type": "string",
+                                   "const": "nfo-dic:OGRN"
+                                 },
+                                 "xbrli:periodType": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/periodInstatType"
+                                 },
+                                 "type": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/xbrli:stringItemType"
+                                 }
+                               },
+                               "required": [
+                                 "xbrl:concept",
+                                 "xbrli:periodType",
+                                 "type"
+                               ]
+                             },
+                             "conceptName_nfo-dic_OGRN_OGRNIP": {
+                               "description": "Описание концепта nfo-dic:OGRN_OGRNIP для раздела http://www.cbr.ru/xbrl/nso/purcb/rep/2025-12-30/tab/SR_0420459_R1_2 ",
+                               "type": "object",
+                               "properties": {
+                                 "xbrl:concept": {
+                                   "type": "string",
+                                   "const": "nfo-dic:OGRN_OGRNIP"
+                                 },
+                                 "xbrli:periodType": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/periodInstatType"
+                                 },
+                                 "type": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/xbrli:stringItemType"
+                                 }
+                               },
+                               "required": [
+                                 "xbrl:concept",
+                                 "xbrli:periodType",
+                                 "type"
+                               ]
+                             },
+                             "conceptName_nfo-dic_OGRN_OGRNIP_2": {
+                               "description": "Описание концепта nfo-dic:OGRN_OGRNIP для раздела http://www.cbr.ru/xbrl/nso/purcb/rep/2025-12-30/tab/SR_0420459_R2 ",
+                               "type": "object",
+                               "properties": {
+                                 "xbrl:concept": {
+                                   "type": "string",
+                                   "const": "nfo-dic:OGRN_OGRNIP"
+                                 },
+                                 "xbrli:periodType": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/periodInstatType"
+                                 },
+                                 "type": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/xbrli:stringItemType"
+                                 }
+                               },
+                               "required": [
+                                 "xbrl:concept",
+                                 "xbrli:periodType",
+                                 "type"
+                               ]
+                             },
+                             "conceptName_nfo-dic_PolnNaim": {
+                               "description": "Описание концепта nfo-dic:PolnNaim",
+                               "type": "object",
+                               "properties": {
+                                 "xbrl:concept": {
+                                   "type": "string",
+                                   "const": "nfo-dic:PolnNaim"
+                                 },
+                                 "xbrli:periodType": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/periodInstatType"
+                                 },
+                                 "type": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/xbrli:stringItemType"
+                                 }
+                               },
+                               "required": [
+                                 "xbrl:concept",
+                                 "xbrli:periodType",
+                                 "type"
+                               ]
+                             },
+                             "conceptName_nfo-dic_PolnNaim_YUL_FL": {
+                               "description": "Описание концепта nfo-dic:PolnNaim_YUL_FL для раздела http://www.cbr.ru/xbrl/nso/purcb/rep/2025-12-30/tab/SR_0420459_R1_2 ",
+                               "type": "object",
+                               "properties": {
+                                 "xbrl:concept": {
+                                   "type": "string",
+                                   "const": "nfo-dic:PolnNaim_YUL_FL"
+                                 },
+                                 "xbrli:periodType": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/periodInstatType"
+                                 },
+                                 "type": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/xbrli:stringItemType"
+                                 }
+                               },
+                               "required": [
+                                 "xbrl:concept",
+                                 "xbrli:periodType",
+                                 "type"
+                               ]
+                             },
+                             "conceptName_nfo-dic_PolnNaim_YUL_FL_2": {
+                               "description": "Описание концепта nfo-dic:PolnNaim_YUL_FL для раздела http://www.cbr.ru/xbrl/nso/purcb/rep/2025-12-30/tab/SR_0420459_R2 ",
+                               "type": "object",
+                               "properties": {
+                                 "xbrl:concept": {
+                                   "type": "string",
+                                   "const": "nfo-dic:PolnNaim_YUL_FL"
+                                 },
+                                 "xbrli:periodType": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/periodInstatType"
+                                 },
+                                 "type": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/xbrli:stringItemType"
+                                 }
+                               },
+                               "required": [
+                                 "xbrl:concept",
+                                 "xbrli:periodType",
+                                 "type"
+                               ]
+                             },
+                             "conceptName_nfo-dic_Primechanie": {
+                               "description": "Описание концепта nfo-dic:Primechanie для раздела http://www.cbr.ru/xbrl/nso/purcb/rep/2025-12-30/tab/SR_0420459_R1_1 ",
+                               "type": "object",
+                               "properties": {
+                                 "xbrl:concept": {
+                                   "type": "string",
+                                   "const": "nfo-dic:Primechanie"
+                                 },
+                                 "xbrli:periodType": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/periodInstatType"
+                                 },
+                                 "type": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/xbrli:stringItemType"
+                                 }
+                               },
+                               "required": [
+                                 "xbrl:concept",
+                                 "xbrli:periodType",
+                                 "type"
+                               ]
+                             },
+                             "conceptName_nfo-dic_Primechanie_2": {
+                               "description": "Описание концепта nfo-dic:Primechanie для раздела http://www.cbr.ru/xbrl/nso/purcb/rep/2025-12-30/tab/SR_0420459_R1_2 ",
+                               "type": "object",
+                               "properties": {
+                                 "xbrl:concept": {
+                                   "type": "string",
+                                   "const": "nfo-dic:Primechanie"
+                                 },
+                                 "xbrli:periodType": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/periodInstatType"
+                                 },
+                                 "type": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/xbrli:stringItemType"
+                                 }
+                               },
+                               "required": [
+                                 "xbrl:concept",
+                                 "xbrli:periodType",
+                                 "type"
+                               ]
+                             },
+                             "conceptName_purcb-dic_Proczentnaya_stavka_po_vekselyu_Rekv_Vekselya": {
+                               "description": "Описание концепта purcb-dic:Proczentnaya_stavka_po_vekselyu_Rekv_Vekselya",
+                               "type": "object",
+                               "properties": {
+                                 "xbrl:concept": {
+                                   "type": "string",
+                                   "const": "purcb-dic:Proczentnaya_stavka_po_vekselyu_Rekv_Vekselya"
+                                 },
+                                 "xbrli:periodType": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/periodInstatType"
+                                 },
+                                 "type": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/xbrli:decimalItemType"
+                                 }
+                               },
+                               "required": [
+                                 "xbrl:concept",
+                                 "xbrli:periodType",
+                                 "type"
+                               ]
+                             },
+                             "conceptName_nfo-dic_SerVeks": {
+                               "description": "Описание концепта nfo-dic:SerVeks",
+                               "type": "object",
+                               "properties": {
+                                 "xbrl:concept": {
+                                   "type": "string",
+                                   "const": "nfo-dic:SerVeks"
+                                 },
+                                 "xbrli:periodType": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/periodInstatType"
+                                 },
+                                 "type": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/xbrli:stringItemType"
+                                 }
+                               },
+                               "required": [
+                                 "xbrl:concept",
+                                 "xbrli:periodType",
+                                 "type"
+                               ]
+                             },
+                             "conceptName_purcb-dic_Srok_Uslovie_platezha_pogasheniyaEnumerator": {
+                               "description": "Описание концепта purcb-dic:Srok_Uslovie_platezha_pogasheniyaEnumerator",
+                               "type": "object",
+                               "properties": {
+                                 "xbrl:concept": {
+                                   "type": "string",
+                                   "const": "purcb-dic:Srok_Uslovie_platezha_pogasheniyaEnumerator"
+                                 },
+                                 "xbrli:periodType": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/periodInstatType"
+                                 },
+                                 "type": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/enum:enumerationItemType"
+                                 }
+                               },
+                               "required": [
+                                 "xbrl:concept",
+                                 "xbrli:periodType",
+                                 "type"
+                               ]
+                             },
+                             "conceptName_nfo-dic_Telefon": {
+                               "description": "Описание концепта nfo-dic:Telefon",
+                               "type": "object",
+                               "properties": {
+                                 "xbrl:concept": {
+                                   "type": "string",
+                                   "const": "nfo-dic:Telefon"
+                                 },
+                                 "xbrli:periodType": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/periodInstatType"
+                                 },
+                                 "type": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/xbrli:stringItemType"
+                                 }
+                               },
+                               "required": [
+                                 "xbrl:concept",
+                                 "xbrli:periodType",
+                                 "type"
+                               ]
+                             },
+                             "conceptName_nfo-dic_TipCZenBumVidFIEnumerator": {
+                               "description": "Описание концепта nfo-dic:TipCZenBumVidFIEnumerator",
+                               "type": "object",
+                               "properties": {
+                                 "xbrl:concept": {
+                                   "type": "string",
+                                   "const": "nfo-dic:TipCZenBumVidFIEnumerator"
+                                 },
+                                 "xbrli:periodType": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/periodInstatType"
+                                 },
+                                 "type": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/enum:enumerationItemType"
+                                 }
+                               },
+                               "required": [
+                                 "xbrl:concept",
+                                 "xbrli:periodType",
+                                 "type"
+                               ]
+                             },
+                             "conceptName_purcb-dic_UnikUslOboznachCZifrSvid": {
+                               "description": "Описание концепта purcb-dic:UnikUslOboznachCZifrSvid",
+                               "type": "object",
+                               "properties": {
+                                 "xbrl:concept": {
+                                   "type": "string",
+                                   "const": "purcb-dic:UnikUslOboznachCZifrSvid"
+                                 },
+                                 "xbrli:periodType": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/periodInstatType"
+                                 },
+                                 "type": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/xbrli:stringItemType"
+                                 }
+                               },
+                               "required": [
+                                 "xbrl:concept",
+                                 "xbrli:periodType",
+                                 "type"
+                               ]
+                             },
+                             "conceptName_purcb-dic_VekselnayaSummaValyutyNominala": {
+                               "description": "Описание концепта purcb-dic:VekselnayaSummaValyutyNominala",
+                               "type": "object",
+                               "properties": {
+                                 "xbrl:concept": {
+                                   "type": "string",
+                                   "const": "purcb-dic:VekselnayaSummaValyutyNominala"
+                                 },
+                                 "xbrli:periodType": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/periodInstatType"
+                                 },
+                                 "type": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/xbrli:monetaryItemType"
+                                 }
+                               },
+                               "required": [
+                                 "xbrl:concept",
+                                 "xbrli:periodType",
+                                 "type"
+                               ]
+                             },
+                             "conceptName_purcb-dic_VidAktiva": {
+                               "description": "Описание концепта purcb-dic:VidAktiva для раздела http://www.cbr.ru/xbrl/nso/purcb/rep/2025-12-30/tab/SR_0420459_R1_2 ",
+                               "type": "object",
+                               "properties": {
+                                 "xbrl:concept": {
+                                   "type": "string",
+                                   "const": "purcb-dic:VidAktiva"
+                                 },
+                                 "xbrli:periodType": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/periodInstatType"
+                                 },
+                                 "type": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/xbrli:stringItemType"
+                                 }
+                               },
+                               "required": [
+                                 "xbrl:concept",
+                                 "xbrli:periodType",
+                                 "type"
+                               ]
+                             },
+                             "conceptName_purcb-dic_VidAktiva_2": {
+                               "description": "Описание концепта purcb-dic:VidAktiva для раздела http://www.cbr.ru/xbrl/nso/purcb/rep/2025-12-30/tab/SR_0420459_R2 ",
+                               "type": "object",
+                               "properties": {
+                                 "xbrl:concept": {
+                                   "type": "string",
+                                   "const": "purcb-dic:VidAktiva"
+                                 },
+                                 "xbrli:periodType": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/periodInstatType"
+                                 },
+                                 "type": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/xbrli:stringItemType"
+                                 }
+                               },
+                               "required": [
+                                 "xbrl:concept",
+                                 "xbrli:periodType",
+                                 "type"
+                               ]
+                             },
+                             "conceptName_purcb-dic_VidInyxCZifrPravVosnovCZifrPrav": {
+                               "description": "Описание концепта purcb-dic:VidInyxCZifrPravVosnovCZifrPrav",
+                               "type": "object",
+                               "properties": {
+                                 "xbrl:concept": {
+                                   "type": "string",
+                                   "const": "purcb-dic:VidInyxCZifrPravVosnovCZifrPrav"
+                                 },
+                                 "xbrli:periodType": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/periodInstatType"
+                                 },
+                                 "type": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/xbrli:stringItemType"
+                                 }
+                               },
+                               "required": [
+                                 "xbrl:concept",
+                                 "xbrli:periodType",
+                                 "type"
+                               ]
+                             }
+
+                          
+
+                          
+
+                         ,  
+                             "columnMapping_wo_explicitDimension_FIO": {
+                             "description": "Описание маппинга концепта FIO без явных измерений",
+                               "properties": {
+				                         "name": {"$ref": "../../../xbrl-csv.json#/definitions/nameType"},
+                                 "http://www.cbr.ru/xbrl-csv/model#properties": {
+                                   "type": "object",
+                                   "allOf": [
+                                     {
+                                       "$ref": "#/definitions/conceptName_nfo-dic_FIO"
+                                     },
+                                     {
+                                       "$ref": "../../../xbrl-csv.json#/definitions/notSpecifiedDomainType"
+                                     }
+                                   ]
+                                 }
+                               },
+                               "required": [
+                                 "name",
+                                 "http://www.cbr.ru/xbrl-csv/model#properties"
+                               ]
+                             },
+                             "columnMapping_wo_explicitDimension_GosRegNomerVyp": {
+                             "description": "Описание маппинга концепта GosRegNomerVyp без явных измерений",
+                               "properties": {
+				                         "name": {"$ref": "../../../xbrl-csv.json#/definitions/nameType"},
+                                 "http://www.cbr.ru/xbrl-csv/model#properties": {
+                                   "type": "object",
+                                   "allOf": [
+                                     {
+                                       "$ref": "#/definitions/conceptName_nfo-dic_GosRegNomerVyp"
+                                     },
+                                     {
+                                       "$ref": "../../../xbrl-csv.json#/definitions/notSpecifiedDomainType"
+                                     }
+                                   ]
+                                 }
+                               },
+                               "required": [
+                                 "name",
+                                 "http://www.cbr.ru/xbrl-csv/model#properties"
+                               ]
+                             },
+                             "columnMapping_wo_explicitDimension_INN_3": {
+                             "description": "Описание маппинга концепта INN для раздела http://www.cbr.ru/xbrl/nso/purcb/rep/2025-12-30/tab/SR_0420459_R2  без явных измерений",
+                               "properties": {
+				                         "name": {"$ref": "../../../xbrl-csv.json#/definitions/nameType"},
+                                 "http://www.cbr.ru/xbrl-csv/model#properties": {
+                                   "type": "object",
+                                   "allOf": [
+                                     {
+                                       "$ref": "#/definitions/conceptName_nfo-dic_INN_3"
+                                     },
+                                     {
+                                       "$ref": "../../../xbrl-csv.json#/definitions/notSpecifiedDomainType"
+                                     }
+                                   ]
+                                 }
+                               },
+                               "required": [
+                                 "name",
+                                 "http://www.cbr.ru/xbrl-csv/model#properties"
+                               ]
+                             },
+                             "columnMapping_wo_explicitDimension_INN": {
+                             "description": "Описание маппинга концепта INN для раздела http://www.cbr.ru/xbrl/nso/purcb/rep/2025-12-30/tab/SR_0420459_R1_2  без явных измерений",
+                               "properties": {
+				                         "name": {"$ref": "../../../xbrl-csv.json#/definitions/nameType"},
+                                 "http://www.cbr.ru/xbrl-csv/model#properties": {
+                                   "type": "object",
+                                   "allOf": [
+                                     {
+                                       "$ref": "#/definitions/conceptName_nfo-dic_INN"
+                                     },
+                                     {
+                                       "$ref": "../../../xbrl-csv.json#/definitions/notSpecifiedDomainType"
+                                     }
+                                   ]
+                                 }
+                               },
+                               "required": [
+                                 "name",
+                                 "http://www.cbr.ru/xbrl-csv/model#properties"
+                               ]
+                             },
+                             "columnMapping_wo_explicitDimension_INN_TIN": {
+                             "description": "Описание маппинга концепта INN_TIN без явных измерений",
+                               "properties": {
+				                         "name": {"$ref": "../../../xbrl-csv.json#/definitions/nameType"},
+                                 "http://www.cbr.ru/xbrl-csv/model#properties": {
+                                   "type": "object",
+                                   "allOf": [
+                                     {
+                                       "$ref": "#/definitions/conceptName_nfo-dic_INN_TIN"
+                                     },
+                                     {
+                                       "$ref": "../../../xbrl-csv.json#/definitions/notSpecifiedDomainType"
+                                     }
+                                   ]
+                                 }
+                               },
+                               "required": [
+                                 "name",
+                                 "http://www.cbr.ru/xbrl-csv/model#properties"
+                               ]
+                             },
+                             "columnMapping_wo_explicitDimension_ISIN": {
+                             "description": "Описание маппинга концепта ISIN без явных измерений",
+                               "properties": {
+				                         "name": {"$ref": "../../../xbrl-csv.json#/definitions/nameType"},
+                                 "http://www.cbr.ru/xbrl-csv/model#properties": {
+                                   "type": "object",
+                                   "allOf": [
+                                     {
+                                       "$ref": "#/definitions/conceptName_nfo-dic_ISIN"
+                                     },
+                                     {
+                                       "$ref": "../../../xbrl-csv.json#/definitions/notSpecifiedDomainType"
+                                     }
+                                   ]
+                                 }
+                               },
+                               "required": [
+                                 "name",
+                                 "http://www.cbr.ru/xbrl-csv/model#properties"
+                               ]
+                             },
+                             "columnMapping_wo_explicitDimension_KodCFI": {
+                             "description": "Описание маппинга концепта KodCFI без явных измерений",
+                               "properties": {
+				                         "name": {"$ref": "../../../xbrl-csv.json#/definitions/nameType"},
+                                 "http://www.cbr.ru/xbrl-csv/model#properties": {
+                                   "type": "object",
+                                   "allOf": [
+                                     {
+                                       "$ref": "#/definitions/conceptName_nfo-dic_KodCFI"
+                                     },
+                                     {
+                                       "$ref": "../../../xbrl-csv.json#/definitions/notSpecifiedDomainType"
+                                     }
+                                   ]
+                                 }
+                               },
+                               "required": [
+                                 "name",
+                                 "http://www.cbr.ru/xbrl-csv/model#properties"
+                               ]
+                             },
+                             "columnMapping_wo_explicitDimension_Kod_stranEnumerator_2": {
+                             "description": "Описание маппинга концепта Kod_stranEnumerator для раздела http://www.cbr.ru/xbrl/nso/purcb/rep/2025-12-30/tab/SR_0420459_R1_2  без явных измерений",
+                               "properties": {
+				                         "name": {"$ref": "../../../xbrl-csv.json#/definitions/nameType"},
+                                 "http://www.cbr.ru/xbrl-csv/model#properties": {
+                                   "type": "object",
+                                   "allOf": [
+                                     {
+                                       "$ref": "#/definitions/conceptName_nfo-dic_Kod_stranEnumerator_2"
+                                     },
+                                     {
+                                       "$ref": "../../../xbrl-csv.json#/definitions/notSpecifiedDomainType"
+                                     }
+                                   ]
+                                 }
+                               },
+                               "required": [
+                                 "name",
+                                 "http://www.cbr.ru/xbrl-csv/model#properties"
+                               ]
+                             },
+                             "columnMapping_wo_explicitDimension_Kod_stranEnumerator": {
+                             "description": "Описание маппинга концепта Kod_stranEnumerator для раздела http://www.cbr.ru/xbrl/nso/purcb/rep/2025-12-30/tab/SR_0420459_R1_1  без явных измерений",
+                               "properties": {
+				                         "name": {"$ref": "../../../xbrl-csv.json#/definitions/nameType"},
+                                 "http://www.cbr.ru/xbrl-csv/model#properties": {
+                                   "type": "object",
+                                   "allOf": [
+                                     {
+                                       "$ref": "#/definitions/conceptName_nfo-dic_Kod_stranEnumerator"
+                                     },
+                                     {
+                                       "$ref": "../../../xbrl-csv.json#/definitions/notSpecifiedDomainType"
+                                     }
+                                   ]
+                                 }
+                               },
+                               "required": [
+                                 "name",
+                                 "http://www.cbr.ru/xbrl-csv/model#properties"
+                               ]
+                             },
+                             "columnMapping_wo_explicitDimension_Kod_stranEnumerator_3": {
+                             "description": "Описание маппинга концепта Kod_stranEnumerator для раздела http://www.cbr.ru/xbrl/nso/purcb/rep/2025-12-30/tab/SR_0420459_R2  без явных измерений",
+                               "properties": {
+				                         "name": {"$ref": "../../../xbrl-csv.json#/definitions/nameType"},
+                                 "http://www.cbr.ru/xbrl-csv/model#properties": {
+                                   "type": "object",
+                                   "allOf": [
+                                     {
+                                       "$ref": "#/definitions/conceptName_nfo-dic_Kod_stranEnumerator_3"
+                                     },
+                                     {
+                                       "$ref": "../../../xbrl-csv.json#/definitions/notSpecifiedDomainType"
+                                     }
+                                   ]
+                                 }
+                               },
+                               "required": [
+                                 "name",
+                                 "http://www.cbr.ru/xbrl-csv/model#properties"
+                               ]
+                             },
+                             "columnMapping_wo_explicitDimension_Kod_valEnumerator_2": {
+                             "description": "Описание маппинга концепта Kod_valEnumerator для раздела http://www.cbr.ru/xbrl/nso/purcb/rep/2025-12-30/tab/SR_0420459_R1_2  без явных измерений",
+                               "properties": {
+				                         "name": {"$ref": "../../../xbrl-csv.json#/definitions/nameType"},
+                                 "http://www.cbr.ru/xbrl-csv/model#properties": {
+                                   "type": "object",
+                                   "allOf": [
+                                     {
+                                       "$ref": "#/definitions/conceptName_nfo-dic_Kod_valEnumerator_2"
+                                     },
+                                     {
+                                       "$ref": "../../../xbrl-csv.json#/definitions/notSpecifiedDomainType"
+                                     }
+                                   ]
+                                 }
+                               },
+                               "required": [
+                                 "name",
+                                 "http://www.cbr.ru/xbrl-csv/model#properties"
+                               ]
+                             },
+                             "columnMapping_wo_explicitDimension_Kod_valEnumerator": {
+                             "description": "Описание маппинга концепта Kod_valEnumerator для раздела http://www.cbr.ru/xbrl/nso/purcb/rep/2025-12-30/tab/SR_0420459_R1_1  без явных измерений",
+                               "properties": {
+				                         "name": {"$ref": "../../../xbrl-csv.json#/definitions/nameType"},
+                                 "http://www.cbr.ru/xbrl-csv/model#properties": {
+                                   "type": "object",
+                                   "allOf": [
+                                     {
+                                       "$ref": "#/definitions/conceptName_nfo-dic_Kod_valEnumerator"
+                                     },
+                                     {
+                                       "$ref": "../../../xbrl-csv.json#/definitions/notSpecifiedDomainType"
+                                     }
+                                   ]
+                                 }
+                               },
+                               "required": [
+                                 "name",
+                                 "http://www.cbr.ru/xbrl-csv/model#properties"
+                               ]
+                             },
+                             "columnMapping_wo_explicitDimension_NomBlVeks": {
+                             "description": "Описание маппинга концепта NomBlVeks без явных измерений",
+                               "properties": {
+				                         "name": {"$ref": "../../../xbrl-csv.json#/definitions/nameType"},
+                                 "http://www.cbr.ru/xbrl-csv/model#properties": {
+                                   "type": "object",
+                                   "allOf": [
+                                     {
+                                       "$ref": "#/definitions/conceptName_nfo-dic_NomBlVeks"
+                                     },
+                                     {
+                                       "$ref": "../../../xbrl-csv.json#/definitions/notSpecifiedDomainType"
+                                     }
+                                   ]
+                                 }
+                               },
+                               "required": [
+                                 "name",
+                                 "http://www.cbr.ru/xbrl-csv/model#properties"
+                               ]
+                             },
+                             "columnMapping_wo_explicitDimension_NomStOdnCzb": {
+                             "description": "Описание маппинга концепта NomStOdnCzb без явных измерений",
+                               "properties": {
+				                         "name": {"$ref": "../../../xbrl-csv.json#/definitions/nameType"},
+                                 "http://www.cbr.ru/xbrl-csv/model#properties": {
+                                   "type": "object",
+                                   "allOf": [
+                                     {
+                                       "$ref": "#/definitions/conceptName_nfo-dic_NomStOdnCzb"
+                                     },
+                                     {
+                                       "$ref": "../../../xbrl-csv.json#/definitions/notSpecifiedDomainType"
+                                     }
+                                   ]
+                                 }
+                               },
+                               "required": [
+                                 "name",
+                                 "http://www.cbr.ru/xbrl-csv/model#properties"
+                               ]
+                             },
+                             "columnMapping_wo_explicitDimension_NomVeks": {
+                             "description": "Описание маппинга концепта NomVeks без явных измерений",
+                               "properties": {
+				                         "name": {"$ref": "../../../xbrl-csv.json#/definitions/nameType"},
+                                 "http://www.cbr.ru/xbrl-csv/model#properties": {
+                                   "type": "object",
+                                   "allOf": [
+                                     {
+                                       "$ref": "#/definitions/conceptName_nfo-dic_NomVeks"
+                                     },
+                                     {
+                                       "$ref": "../../../xbrl-csv.json#/definitions/notSpecifiedDomainType"
+                                     }
+                                   ]
+                                 }
+                               },
+                               "required": [
+                                 "name",
+                                 "http://www.cbr.ru/xbrl-csv/model#properties"
+                               ]
+                             },
+                             "columnMapping_wo_explicitDimension_OGRN": {
+                             "description": "Описание маппинга концепта OGRN без явных измерений",
+                               "properties": {
+				                         "name": {"$ref": "../../../xbrl-csv.json#/definitions/nameType"},
+                                 "http://www.cbr.ru/xbrl-csv/model#properties": {
+                                   "type": "object",
+                                   "allOf": [
+                                     {
+                                       "$ref": "#/definitions/conceptName_nfo-dic_OGRN"
+                                     },
+                                     {
+                                       "$ref": "../../../xbrl-csv.json#/definitions/notSpecifiedDomainType"
+                                     }
+                                   ]
+                                 }
+                               },
+                               "required": [
+                                 "name",
+                                 "http://www.cbr.ru/xbrl-csv/model#properties"
+                               ]
+                             },
+                             "columnMapping_wo_explicitDimension_OGRN_OGRNIP_2": {
+                             "description": "Описание маппинга концепта OGRN_OGRNIP для раздела http://www.cbr.ru/xbrl/nso/purcb/rep/2025-12-30/tab/SR_0420459_R2  без явных измерений",
+                               "properties": {
+				                         "name": {"$ref": "../../../xbrl-csv.json#/definitions/nameType"},
+                                 "http://www.cbr.ru/xbrl-csv/model#properties": {
+                                   "type": "object",
+                                   "allOf": [
+                                     {
+                                       "$ref": "#/definitions/conceptName_nfo-dic_OGRN_OGRNIP_2"
+                                     },
+                                     {
+                                       "$ref": "../../../xbrl-csv.json#/definitions/notSpecifiedDomainType"
+                                     }
+                                   ]
+                                 }
+                               },
+                               "required": [
+                                 "name",
+                                 "http://www.cbr.ru/xbrl-csv/model#properties"
+                               ]
+                             },
+                             "columnMapping_wo_explicitDimension_OGRN_OGRNIP": {
+                             "description": "Описание маппинга концепта OGRN_OGRNIP для раздела http://www.cbr.ru/xbrl/nso/purcb/rep/2025-12-30/tab/SR_0420459_R1_2  без явных измерений",
+                               "properties": {
+				                         "name": {"$ref": "../../../xbrl-csv.json#/definitions/nameType"},
+                                 "http://www.cbr.ru/xbrl-csv/model#properties": {
+                                   "type": "object",
+                                   "allOf": [
+                                     {
+                                       "$ref": "#/definitions/conceptName_nfo-dic_OGRN_OGRNIP"
+                                     },
+                                     {
+                                       "$ref": "../../../xbrl-csv.json#/definitions/notSpecifiedDomainType"
+                                     }
+                                   ]
+                                 }
+                               },
+                               "required": [
+                                 "name",
+                                 "http://www.cbr.ru/xbrl-csv/model#properties"
+                               ]
+                             },
+                             "columnMapping_wo_explicitDimension_PolnNaim": {
+                             "description": "Описание маппинга концепта PolnNaim без явных измерений",
+                               "properties": {
+				                         "name": {"$ref": "../../../xbrl-csv.json#/definitions/nameType"},
+                                 "http://www.cbr.ru/xbrl-csv/model#properties": {
+                                   "type": "object",
+                                   "allOf": [
+                                     {
+                                       "$ref": "#/definitions/conceptName_nfo-dic_PolnNaim"
+                                     },
+                                     {
+                                       "$ref": "../../../xbrl-csv.json#/definitions/notSpecifiedDomainType"
+                                     }
+                                   ]
+                                 }
+                               },
+                               "required": [
+                                 "name",
+                                 "http://www.cbr.ru/xbrl-csv/model#properties"
+                               ]
+                             },
+                             "columnMapping_wo_explicitDimension_PolnNaim_YUL_FL_2": {
+                             "description": "Описание маппинга концепта PolnNaim_YUL_FL для раздела http://www.cbr.ru/xbrl/nso/purcb/rep/2025-12-30/tab/SR_0420459_R2  без явных измерений",
+                               "properties": {
+				                         "name": {"$ref": "../../../xbrl-csv.json#/definitions/nameType"},
+                                 "http://www.cbr.ru/xbrl-csv/model#properties": {
+                                   "type": "object",
+                                   "allOf": [
+                                     {
+                                       "$ref": "#/definitions/conceptName_nfo-dic_PolnNaim_YUL_FL_2"
+                                     },
+                                     {
+                                       "$ref": "../../../xbrl-csv.json#/definitions/notSpecifiedDomainType"
+                                     }
+                                   ]
+                                 }
+                               },
+                               "required": [
+                                 "name",
+                                 "http://www.cbr.ru/xbrl-csv/model#properties"
+                               ]
+                             },
+                             "columnMapping_wo_explicitDimension_PolnNaim_YUL_FL": {
+                             "description": "Описание маппинга концепта PolnNaim_YUL_FL для раздела http://www.cbr.ru/xbrl/nso/purcb/rep/2025-12-30/tab/SR_0420459_R1_2  без явных измерений",
+                               "properties": {
+				                         "name": {"$ref": "../../../xbrl-csv.json#/definitions/nameType"},
+                                 "http://www.cbr.ru/xbrl-csv/model#properties": {
+                                   "type": "object",
+                                   "allOf": [
+                                     {
+                                       "$ref": "#/definitions/conceptName_nfo-dic_PolnNaim_YUL_FL"
+                                     },
+                                     {
+                                       "$ref": "../../../xbrl-csv.json#/definitions/notSpecifiedDomainType"
+                                     }
+                                   ]
+                                 }
+                               },
+                               "required": [
+                                 "name",
+                                 "http://www.cbr.ru/xbrl-csv/model#properties"
+                               ]
+                             },
+                             "columnMapping_wo_explicitDimension_Primechanie_2": {
+                             "description": "Описание маппинга концепта Primechanie для раздела http://www.cbr.ru/xbrl/nso/purcb/rep/2025-12-30/tab/SR_0420459_R1_2  без явных измерений",
+                               "properties": {
+				                         "name": {"$ref": "../../../xbrl-csv.json#/definitions/nameType"},
+                                 "http://www.cbr.ru/xbrl-csv/model#properties": {
+                                   "type": "object",
+                                   "allOf": [
+                                     {
+                                       "$ref": "#/definitions/conceptName_nfo-dic_Primechanie_2"
+                                     },
+                                     {
+                                       "$ref": "../../../xbrl-csv.json#/definitions/notSpecifiedDomainType"
+                                     }
+                                   ]
+                                 }
+                               },
+                               "required": [
+                                 "name",
+                                 "http://www.cbr.ru/xbrl-csv/model#properties"
+                               ]
+                             },
+                             "columnMapping_wo_explicitDimension_Primechanie": {
+                             "description": "Описание маппинга концепта Primechanie для раздела http://www.cbr.ru/xbrl/nso/purcb/rep/2025-12-30/tab/SR_0420459_R1_1  без явных измерений",
+                               "properties": {
+				                         "name": {"$ref": "../../../xbrl-csv.json#/definitions/nameType"},
+                                 "http://www.cbr.ru/xbrl-csv/model#properties": {
+                                   "type": "object",
+                                   "allOf": [
+                                     {
+                                       "$ref": "#/definitions/conceptName_nfo-dic_Primechanie"
+                                     },
+                                     {
+                                       "$ref": "../../../xbrl-csv.json#/definitions/notSpecifiedDomainType"
+                                     }
+                                   ]
+                                 }
+                               },
+                               "required": [
+                                 "name",
+                                 "http://www.cbr.ru/xbrl-csv/model#properties"
+                               ]
+                             },
+                             "columnMapping_wo_explicitDimension_SerVeks": {
+                             "description": "Описание маппинга концепта SerVeks без явных измерений",
+                               "properties": {
+				                         "name": {"$ref": "../../../xbrl-csv.json#/definitions/nameType"},
+                                 "http://www.cbr.ru/xbrl-csv/model#properties": {
+                                   "type": "object",
+                                   "allOf": [
+                                     {
+                                       "$ref": "#/definitions/conceptName_nfo-dic_SerVeks"
+                                     },
+                                     {
+                                       "$ref": "../../../xbrl-csv.json#/definitions/notSpecifiedDomainType"
+                                     }
+                                   ]
+                                 }
+                               },
+                               "required": [
+                                 "name",
+                                 "http://www.cbr.ru/xbrl-csv/model#properties"
+                               ]
+                             },
+                             "columnMapping_wo_explicitDimension_Telefon": {
+                             "description": "Описание маппинга концепта Telefon без явных измерений",
+                               "properties": {
+				                         "name": {"$ref": "../../../xbrl-csv.json#/definitions/nameType"},
+                                 "http://www.cbr.ru/xbrl-csv/model#properties": {
+                                   "type": "object",
+                                   "allOf": [
+                                     {
+                                       "$ref": "#/definitions/conceptName_nfo-dic_Telefon"
+                                     },
+                                     {
+                                       "$ref": "../../../xbrl-csv.json#/definitions/notSpecifiedDomainType"
+                                     }
+                                   ]
+                                 }
+                               },
+                               "required": [
+                                 "name",
+                                 "http://www.cbr.ru/xbrl-csv/model#properties"
+                               ]
+                             },
+                             "columnMapping_wo_explicitDimension_TipCZenBumVidFIEnumerator": {
+                             "description": "Описание маппинга концепта TipCZenBumVidFIEnumerator без явных измерений",
+                               "properties": {
+				                         "name": {"$ref": "../../../xbrl-csv.json#/definitions/nameType"},
+                                 "http://www.cbr.ru/xbrl-csv/model#properties": {
+                                   "type": "object",
+                                   "allOf": [
+                                     {
+                                       "$ref": "#/definitions/conceptName_nfo-dic_TipCZenBumVidFIEnumerator"
+                                     },
+                                     {
+                                       "$ref": "../../../xbrl-csv.json#/definitions/notSpecifiedDomainType"
+                                     }
+                                   ]
+                                 }
+                               },
+                               "required": [
+                                 "name",
+                                 "http://www.cbr.ru/xbrl-csv/model#properties"
+                               ]
+                             },
+                             "columnMapping_wo_explicitDimension_Data_sostavleniya_Rek_veks": {
+                             "description": "Описание маппинга концепта Data_sostavleniya_Rek_veks без явных измерений",
+                               "properties": {
+				                         "name": {"$ref": "../../../xbrl-csv.json#/definitions/nameType"},
+                                 "http://www.cbr.ru/xbrl-csv/model#properties": {
+                                   "type": "object",
+                                   "allOf": [
+                                     {
+                                       "$ref": "#/definitions/conceptName_purcb-dic_Data_sostavleniya_Rek_veks"
+                                     },
+                                     {
+                                       "$ref": "../../../xbrl-csv.json#/definitions/notSpecifiedDomainType"
+                                     }
+                                   ]
+                                 }
+                               },
+                               "required": [
+                                 "name",
+                                 "http://www.cbr.ru/xbrl-csv/model#properties"
+                               ]
+                             },
+                             "columnMapping_wo_explicitDimension_Den_1_Rek_veks": {
+                             "description": "Описание маппинга концепта Den_1_Rek_veks без явных измерений",
+                               "properties": {
+				                         "name": {"$ref": "../../../xbrl-csv.json#/definitions/nameType"},
+                                 "http://www.cbr.ru/xbrl-csv/model#properties": {
+                                   "type": "object",
+                                   "allOf": [
+                                     {
+                                       "$ref": "#/definitions/conceptName_purcb-dic_Den_1_Rek_veks"
+                                     },
+                                     {
+                                       "$ref": "../../../xbrl-csv.json#/definitions/notSpecifiedDomainType"
+                                     }
+                                   ]
+                                 }
+                               },
+                               "required": [
+                                 "name",
+                                 "http://www.cbr.ru/xbrl-csv/model#properties"
+                               ]
+                             },
+                             "columnMapping_wo_explicitDimension_Den_2_Rek_veks": {
+                             "description": "Описание маппинга концепта Den_2_Rek_veks без явных измерений",
+                               "properties": {
+				                         "name": {"$ref": "../../../xbrl-csv.json#/definitions/nameType"},
+                                 "http://www.cbr.ru/xbrl-csv/model#properties": {
+                                   "type": "object",
+                                   "allOf": [
+                                     {
+                                       "$ref": "#/definitions/conceptName_purcb-dic_Den_2_Rek_veks"
+                                     },
+                                     {
+                                       "$ref": "../../../xbrl-csv.json#/definitions/notSpecifiedDomainType"
+                                     }
+                                   ]
+                                 }
+                               },
+                               "required": [
+                                 "name",
+                                 "http://www.cbr.ru/xbrl-csv/model#properties"
+                               ]
+                             },
+                             "columnMapping_wo_explicitDimension_IDCzbvOsnDR": {
+                             "description": "Описание маппинга концепта IDCzbvOsnDR без явных измерений",
+                               "properties": {
+				                         "name": {"$ref": "../../../xbrl-csv.json#/definitions/nameType"},
+                                 "http://www.cbr.ru/xbrl-csv/model#properties": {
+                                   "type": "object",
+                                   "allOf": [
+                                     {
+                                       "$ref": "#/definitions/conceptName_purcb-dic_IDCzbvOsnDR"
+                                     },
+                                     {
+                                       "$ref": "../../../xbrl-csv.json#/definitions/notSpecifiedDomainType"
+                                     }
+                                   ]
+                                 }
+                               },
+                               "required": [
+                                 "name",
+                                 "http://www.cbr.ru/xbrl-csv/model#properties"
+                               ]
+                             },
+                             "columnMapping_wo_explicitDimension_IDEmisCZB": {
+                             "description": "Описание маппинга концепта IDEmisCZB без явных измерений",
+                               "properties": {
+				                         "name": {"$ref": "../../../xbrl-csv.json#/definitions/nameType"},
+                                 "http://www.cbr.ru/xbrl-csv/model#properties": {
+                                   "type": "object",
+                                   "allOf": [
+                                     {
+                                       "$ref": "#/definitions/conceptName_purcb-dic_IDEmisCZB"
+                                     },
+                                     {
+                                       "$ref": "../../../xbrl-csv.json#/definitions/notSpecifiedDomainType"
+                                     }
+                                   ]
+                                 }
+                               },
+                               "required": [
+                                 "name",
+                                 "http://www.cbr.ru/xbrl-csv/model#properties"
+                               ]
+                             },
+                             "columnMapping_wo_explicitDimension_IDNomerVypuska_DFA_UDR_DGR": {
+                             "description": "Описание маппинга концепта IDNomerVypuska_DFA_UDR_DGR без явных измерений",
+                               "properties": {
+				                         "name": {"$ref": "../../../xbrl-csv.json#/definitions/nameType"},
+                                 "http://www.cbr.ru/xbrl-csv/model#properties": {
+                                   "type": "object",
+                                   "allOf": [
+                                     {
+                                       "$ref": "#/definitions/conceptName_purcb-dic_IDNomerVypuska_DFA_UDR_DGR"
+                                     },
+                                     {
+                                       "$ref": "../../../xbrl-csv.json#/definitions/notSpecifiedDomainType"
+                                     }
+                                   ]
+                                 }
+                               },
+                               "required": [
+                                 "name",
+                                 "http://www.cbr.ru/xbrl-csv/model#properties"
+                               ]
+                             },
+                             "columnMapping_wo_explicitDimension_IDnomerUDRvOsnoveCzifrovogoSvidetelstva": {
+                             "description": "Описание маппинга концепта IDnomerUDRvOsnoveCzifrovogoSvidetelstva без явных измерений",
+                               "properties": {
+				                         "name": {"$ref": "../../../xbrl-csv.json#/definitions/nameType"},
+                                 "http://www.cbr.ru/xbrl-csv/model#properties": {
+                                   "type": "object",
+                                   "allOf": [
+                                     {
+                                       "$ref": "#/definitions/conceptName_purcb-dic_IDnomerUDRvOsnoveCzifrovogoSvidetelstva"
+                                     },
+                                     {
+                                       "$ref": "../../../xbrl-csv.json#/definitions/notSpecifiedDomainType"
+                                     }
+                                   ]
+                                 }
+                               },
+                               "required": [
+                                 "name",
+                                 "http://www.cbr.ru/xbrl-csv/model#properties"
+                               ]
+                             },
+                             "columnMapping_wo_explicitDimension_INN_2": {
+                             "description": "Описание маппинга концепта INN для раздела http://www.cbr.ru/xbrl/nso/purcb/rep/2025-12-30/tab/SR_0420459_R1_2  без явных измерений",
+                               "properties": {
+				                         "name": {"$ref": "../../../xbrl-csv.json#/definitions/nameType"},
+                                 "http://www.cbr.ru/xbrl-csv/model#properties": {
+                                   "type": "object",
+                                   "allOf": [
+                                     {
+                                       "$ref": "#/definitions/conceptName_purcb-dic_INN_2"
+                                     },
+                                     {
+                                       "$ref": "../../../xbrl-csv.json#/definitions/notSpecifiedDomainType"
+                                     }
+                                   ]
+                                 }
+                               },
+                               "required": [
+                                 "name",
+                                 "http://www.cbr.ru/xbrl-csv/model#properties"
+                               ]
+                             },
+                             "columnMapping_wo_explicitDimension_INNDepVygCZifrSvid": {
+                             "description": "Описание маппинга концепта INNDepVygCZifrSvid без явных измерений",
+                               "properties": {
+				                         "name": {"$ref": "../../../xbrl-csv.json#/definitions/nameType"},
+                                 "http://www.cbr.ru/xbrl-csv/model#properties": {
+                                   "type": "object",
+                                   "allOf": [
+                                     {
+                                       "$ref": "#/definitions/conceptName_purcb-dic_INNDepVygCZifrSvid"
+                                     },
+                                     {
+                                       "$ref": "../../../xbrl-csv.json#/definitions/notSpecifiedDomainType"
+                                     }
+                                   ]
+                                 }
+                               },
+                               "required": [
+                                 "name",
+                                 "http://www.cbr.ru/xbrl-csv/model#properties"
+                               ]
+                             },
+                             "columnMapping_wo_explicitDimension_KlassAktOsnDREnumerator": {
+                             "description": "Описание маппинга концепта KlassAktOsnDREnumerator без явных измерений",
+                               "properties": {
+				                         "name": {"$ref": "../../../xbrl-csv.json#/definitions/nameType"},
+                                 "http://www.cbr.ru/xbrl-csv/model#properties": {
+                                   "type": "object",
+                                   "allOf": [
+                                     {
+                                       "$ref": "#/definitions/conceptName_purcb-dic_KlassAktOsnDREnumerator"
+                                     },
+                                     {
+                                       "$ref": "../../../xbrl-csv.json#/definitions/notSpecifiedDomainType"
+                                     }
+                                   ]
+                                 }
+                               },
+                               "required": [
+                                 "name",
+                                 "http://www.cbr.ru/xbrl-csv/model#properties"
+                               ]
+                             },
+                             "columnMapping_wo_explicitDimension_KodDIGSEnumerator": {
+                             "description": "Описание маппинга концепта KodDIGSEnumerator без явных измерений",
+                               "properties": {
+				                         "name": {"$ref": "../../../xbrl-csv.json#/definitions/nameType"},
+                                 "http://www.cbr.ru/xbrl-csv/model#properties": {
+                                   "type": "object",
+                                   "allOf": [
+                                     {
+                                       "$ref": "#/definitions/conceptName_purcb-dic_KodDIGSEnumerator"
+                                     },
+                                     {
+                                       "$ref": "../../../xbrl-csv.json#/definitions/notSpecifiedDomainType"
+                                     }
+                                   ]
+                                 }
+                               },
+                               "required": [
+                                 "name",
+                                 "http://www.cbr.ru/xbrl-csv/model#properties"
+                               ]
+                             },
+                             "columnMapping_wo_explicitDimension_Kod_DGR_DFA_UDREnumerator": {
+                             "description": "Описание маппинга концепта Kod_DGR_DFA_UDREnumerator без явных измерений",
+                               "properties": {
+				                         "name": {"$ref": "../../../xbrl-csv.json#/definitions/nameType"},
+                                 "http://www.cbr.ru/xbrl-csv/model#properties": {
+                                   "type": "object",
+                                   "allOf": [
+                                     {
+                                       "$ref": "#/definitions/conceptName_purcb-dic_Kod_DGR_DFA_UDREnumerator"
+                                     },
+                                     {
+                                       "$ref": "../../../xbrl-csv.json#/definitions/notSpecifiedDomainType"
+                                     }
+                                   ]
+                                 }
+                               },
+                               "required": [
+                                 "name",
+                                 "http://www.cbr.ru/xbrl-csv/model#properties"
+                               ]
+                             },
+                             "columnMapping_wo_explicitDimension_KolDIGSvypushDepozitariem": {
+                             "description": "Описание маппинга концепта KolDIGSvypushDepozitariem без явных измерений",
+                               "properties": {
+				                         "name": {"$ref": "../../../xbrl-csv.json#/definitions/nameType"},
+                                 "http://www.cbr.ru/xbrl-csv/model#properties": {
+                                   "type": "object",
+                                   "allOf": [
+                                     {
+                                       "$ref": "#/definitions/conceptName_purcb-dic_KolDIGSvypushDepozitariem"
+                                     },
+                                     {
+                                       "$ref": "../../../xbrl-csv.json#/definitions/notSpecifiedDomainType"
+                                     }
+                                   ]
+                                 }
+                               },
+                               "required": [
+                                 "name",
+                                 "http://www.cbr.ru/xbrl-csv/model#properties"
+                               ]
+                             },
+                             "columnMapping_wo_explicitDimension_KolUDRvOdnomCZifrSvidetelstve": {
+                             "description": "Описание маппинга концепта KolUDRvOdnomCZifrSvidetelstve без явных измерений",
+                               "properties": {
+				                         "name": {"$ref": "../../../xbrl-csv.json#/definitions/nameType"},
+                                 "http://www.cbr.ru/xbrl-csv/model#properties": {
+                                   "type": "object",
+                                   "allOf": [
+                                     {
+                                       "$ref": "#/definitions/conceptName_purcb-dic_KolUDRvOdnomCZifrSvidetelstve"
+                                     },
+                                     {
+                                       "$ref": "../../../xbrl-csv.json#/definitions/notSpecifiedDomainType"
+                                     }
+                                   ]
+                                 }
+                               },
+                               "required": [
+                                 "name",
+                                 "http://www.cbr.ru/xbrl-csv/model#properties"
+                               ]
+                             },
+                             "columnMapping_wo_explicitDimension_Mestonaxozhdenie_emitenta_Rekv_Emit": {
+                             "description": "Описание маппинга концепта Mestonaxozhdenie_emitenta_Rekv_Emit без явных измерений",
+                               "properties": {
+				                         "name": {"$ref": "../../../xbrl-csv.json#/definitions/nameType"},
+                                 "http://www.cbr.ru/xbrl-csv/model#properties": {
+                                   "type": "object",
+                                   "allOf": [
+                                     {
+                                       "$ref": "#/definitions/conceptName_purcb-dic_Mestonaxozhdenie_emitenta_Rekv_Emit"
+                                     },
+                                     {
+                                       "$ref": "../../../xbrl-csv.json#/definitions/notSpecifiedDomainType"
+                                     }
+                                   ]
+                                 }
+                               },
+                               "required": [
+                                 "name",
+                                 "http://www.cbr.ru/xbrl-csv/model#properties"
+                               ]
+                             },
+                             "columnMapping_wo_explicitDimension_NaimDFA_UDR_DGR": {
+                             "description": "Описание маппинга концепта NaimDFA_UDR_DGR без явных измерений",
+                               "properties": {
+				                         "name": {"$ref": "../../../xbrl-csv.json#/definitions/nameType"},
+                                 "http://www.cbr.ru/xbrl-csv/model#properties": {
+                                   "type": "object",
+                                   "allOf": [
+                                     {
+                                       "$ref": "#/definitions/conceptName_purcb-dic_NaimDFA_UDR_DGR"
+                                     },
+                                     {
+                                       "$ref": "../../../xbrl-csv.json#/definitions/notSpecifiedDomainType"
+                                     }
+                                   ]
+                                 }
+                               },
+                               "required": [
+                                 "name",
+                                 "http://www.cbr.ru/xbrl-csv/model#properties"
+                               ]
+                             },
+                             "columnMapping_wo_explicitDimension_NaimDepVypCZifrSvid": {
+                             "description": "Описание маппинга концепта NaimDepVypCZifrSvid без явных измерений",
+                               "properties": {
+				                         "name": {"$ref": "../../../xbrl-csv.json#/definitions/nameType"},
+                                 "http://www.cbr.ru/xbrl-csv/model#properties": {
+                                   "type": "object",
+                                   "allOf": [
+                                     {
+                                       "$ref": "#/definitions/conceptName_purcb-dic_NaimDepVypCZifrSvid"
+                                     },
+                                     {
+                                       "$ref": "../../../xbrl-csv.json#/definitions/notSpecifiedDomainType"
+                                     }
+                                   ]
+                                 }
+                               },
+                               "required": [
+                                 "name",
+                                 "http://www.cbr.ru/xbrl-csv/model#properties"
+                               ]
+                             },
+                             "columnMapping_wo_explicitDimension_NaimInvestPlatform": {
+                             "description": "Описание маппинга концепта NaimInvestPlatform без явных измерений",
+                               "properties": {
+				                         "name": {"$ref": "../../../xbrl-csv.json#/definitions/nameType"},
+                                 "http://www.cbr.ru/xbrl-csv/model#properties": {
+                                   "type": "object",
+                                   "allOf": [
+                                     {
+                                       "$ref": "#/definitions/conceptName_purcb-dic_NaimInvestPlatform"
+                                     },
+                                     {
+                                       "$ref": "../../../xbrl-csv.json#/definitions/notSpecifiedDomainType"
+                                     }
+                                   ]
+                                 }
+                               },
+                               "required": [
+                                 "name",
+                                 "http://www.cbr.ru/xbrl-csv/model#properties"
+                               ]
+                             },
+                             "columnMapping_wo_explicitDimension_NaimOIP": {
+                             "description": "Описание маппинга концепта NaimOIP без явных измерений",
+                               "properties": {
+				                         "name": {"$ref": "../../../xbrl-csv.json#/definitions/nameType"},
+                                 "http://www.cbr.ru/xbrl-csv/model#properties": {
+                                   "type": "object",
+                                   "allOf": [
+                                     {
+                                       "$ref": "#/definitions/conceptName_purcb-dic_NaimOIP"
+                                     },
+                                     {
+                                       "$ref": "../../../xbrl-csv.json#/definitions/notSpecifiedDomainType"
+                                     }
+                                   ]
+                                 }
+                               },
+                               "required": [
+                                 "name",
+                                 "http://www.cbr.ru/xbrl-csv/model#properties"
+                               ]
+                             },
+                             "columnMapping_wo_explicitDimension_Proczentnaya_stavka_po_vekselyu_Rekv_Vekselya": {
+                             "description": "Описание маппинга концепта Proczentnaya_stavka_po_vekselyu_Rekv_Vekselya без явных измерений",
+                               "properties": {
+				                         "name": {"$ref": "../../../xbrl-csv.json#/definitions/nameType"},
+                                 "http://www.cbr.ru/xbrl-csv/model#properties": {
+                                   "type": "object",
+                                   "allOf": [
+                                     {
+                                       "$ref": "#/definitions/conceptName_purcb-dic_Proczentnaya_stavka_po_vekselyu_Rekv_Vekselya"
+                                     },
+                                     {
+                                       "$ref": "../../../xbrl-csv.json#/definitions/notSpecifiedDomainType"
+                                     }
+                                   ]
+                                 }
+                               },
+                               "required": [
+                                 "name",
+                                 "http://www.cbr.ru/xbrl-csv/model#properties"
+                               ]
+                             },
+                             "columnMapping_wo_explicitDimension_Srok_Uslovie_platezha_pogasheniyaEnumerator": {
+                             "description": "Описание маппинга концепта Srok_Uslovie_platezha_pogasheniyaEnumerator без явных измерений",
+                               "properties": {
+				                         "name": {"$ref": "../../../xbrl-csv.json#/definitions/nameType"},
+                                 "http://www.cbr.ru/xbrl-csv/model#properties": {
+                                   "type": "object",
+                                   "allOf": [
+                                     {
+                                       "$ref": "#/definitions/conceptName_purcb-dic_Srok_Uslovie_platezha_pogasheniyaEnumerator"
+                                     },
+                                     {
+                                       "$ref": "../../../xbrl-csv.json#/definitions/notSpecifiedDomainType"
+                                     }
+                                   ]
+                                 }
+                               },
+                               "required": [
+                                 "name",
+                                 "http://www.cbr.ru/xbrl-csv/model#properties"
+                               ]
+                             },
+                             "columnMapping_wo_explicitDimension_UnikUslOboznachCZifrSvid": {
+                             "description": "Описание маппинга концепта UnikUslOboznachCZifrSvid без явных измерений",
+                               "properties": {
+				                         "name": {"$ref": "../../../xbrl-csv.json#/definitions/nameType"},
+                                 "http://www.cbr.ru/xbrl-csv/model#properties": {
+                                   "type": "object",
+                                   "allOf": [
+                                     {
+                                       "$ref": "#/definitions/conceptName_purcb-dic_UnikUslOboznachCZifrSvid"
+                                     },
+                                     {
+                                       "$ref": "../../../xbrl-csv.json#/definitions/notSpecifiedDomainType"
+                                     }
+                                   ]
+                                 }
+                               },
+                               "required": [
+                                 "name",
+                                 "http://www.cbr.ru/xbrl-csv/model#properties"
+                               ]
+                             },
+                             "columnMapping_wo_explicitDimension_VekselnayaSummaValyutyNominala": {
+                             "description": "Описание маппинга концепта VekselnayaSummaValyutyNominala без явных измерений",
+                               "properties": {
+				                         "name": {"$ref": "../../../xbrl-csv.json#/definitions/nameType"},
+                                 "http://www.cbr.ru/xbrl-csv/model#properties": {
+                                   "type": "object",
+                                   "allOf": [
+                                     {
+                                       "$ref": "#/definitions/conceptName_purcb-dic_VekselnayaSummaValyutyNominala"
+                                     },
+                                     {
+                                       "$ref": "../../../xbrl-csv.json#/definitions/notSpecifiedDomainType"
+                                     }
+                                   ]
+                                 }
+                               },
+                               "required": [
+                                 "name",
+                                 "http://www.cbr.ru/xbrl-csv/model#properties"
+                               ]
+                             },
+                             "columnMapping_wo_explicitDimension_VidAktiva": {
+                             "description": "Описание маппинга концепта VidAktiva для раздела http://www.cbr.ru/xbrl/nso/purcb/rep/2025-12-30/tab/SR_0420459_R1_2  без явных измерений",
+                               "properties": {
+				                         "name": {"$ref": "../../../xbrl-csv.json#/definitions/nameType"},
+                                 "http://www.cbr.ru/xbrl-csv/model#properties": {
+                                   "type": "object",
+                                   "allOf": [
+                                     {
+                                       "$ref": "#/definitions/conceptName_purcb-dic_VidAktiva"
+                                     },
+                                     {
+                                       "$ref": "../../../xbrl-csv.json#/definitions/notSpecifiedDomainType"
+                                     }
+                                   ]
+                                 }
+                               },
+                               "required": [
+                                 "name",
+                                 "http://www.cbr.ru/xbrl-csv/model#properties"
+                               ]
+                             },
+                             "columnMapping_wo_explicitDimension_VidAktiva_2": {
+                             "description": "Описание маппинга концепта VidAktiva для раздела http://www.cbr.ru/xbrl/nso/purcb/rep/2025-12-30/tab/SR_0420459_R2  без явных измерений",
+                               "properties": {
+				                         "name": {"$ref": "../../../xbrl-csv.json#/definitions/nameType"},
+                                 "http://www.cbr.ru/xbrl-csv/model#properties": {
+                                   "type": "object",
+                                   "allOf": [
+                                     {
+                                       "$ref": "#/definitions/conceptName_purcb-dic_VidAktiva_2"
+                                     },
+                                     {
+                                       "$ref": "../../../xbrl-csv.json#/definitions/notSpecifiedDomainType"
+                                     }
+                                   ]
+                                 }
+                               },
+                               "required": [
+                                 "name",
+                                 "http://www.cbr.ru/xbrl-csv/model#properties"
+                               ]
+                             },
+                             "columnMapping_wo_explicitDimension_VidInyxCZifrPravVosnovCZifrPrav": {
+                             "description": "Описание маппинга концепта VidInyxCZifrPravVosnovCZifrPrav без явных измерений",
+                               "properties": {
+				                         "name": {"$ref": "../../../xbrl-csv.json#/definitions/nameType"},
+                                 "http://www.cbr.ru/xbrl-csv/model#properties": {
+                                   "type": "object",
+                                   "allOf": [
+                                     {
+                                       "$ref": "#/definitions/conceptName_purcb-dic_VidInyxCZifrPravVosnovCZifrPrav"
+                                     },
+                                     {
+                                       "$ref": "../../../xbrl-csv.json#/definitions/notSpecifiedDomainType"
+                                     }
+                                   ]
+                                 }
+                               },
+                               "required": [
+                                 "name",
+                                 "http://www.cbr.ru/xbrl-csv/model#properties"
+                               ]
+                             }
+
+                         ,  "IDczifrovogoSvidetelstvaTaxis": {
+                            "description": "Описание открытого измерения для типового фильтра IDczifrovogoSvidetelstvaTaxis",
+	                         	"type": "object",
+	                         	"properties": {
+	                         		"xbrldi:typedMember": {
+	                         			"type": "object",
+	                         			"properties": {
+	                         				"dim-int:IDczifrovogoSvidetelstvaTaxis": {
+	                         					"type": "string",
+	                         					"const": "dim-int:ID_CZBTypedname"
+	                         				}
+	                         			},
+	                         			"required": [
+	                         				"dim-int:IDczifrovogoSvidetelstvaTaxis"
+	                         			]
+	                         		},
+	                         		"type": {
+	                         			"$ref": "../../../xbrl-csv.json#/definitions/xbrli:stringItemType"
+	                         		}
+	                         	},
+	                         	"required": [
+	                         		"xbrldi:typedMember",
+	                         		"type"
+                            ]
+                            },
+                            "typedDimensionFilter_IDczifrovogoSvidetelstvaTaxis": {
+	                         	"description": "Типовой фильтр измерения на ось IDczifrovogoSvidetelstvaTaxis",
+	                         	"allOf": [
+	                         		{
+	                         			"properties": {
+	                         				"http://www.cbr.ru/xbrl-csv/model#properties": {
+	                         					"allOf": [
+	                         						{
+	                         							"$ref": "#/definitions/IDczifrovogoSvidetelstvaTaxis"
+	                         						}
+	                         					]
+	                         				},
+	                         				"name": {
+	                         					"$ref": "../../../xbrl-csv.json#/definitions/nameType"
+	                         				}
+	                         			},
+	                         			"required": [
+	                         				"http://www.cbr.ru/xbrl-csv/model#properties",
+	                         				"name"
+	                         			]
+	                         		}
+	                         	]
+	                         },"ID_CzennojBumagiTaxis": {
+                            "description": "Описание открытого измерения для типового фильтра ID_CzennojBumagiTaxis",
+	                         	"type": "object",
+	                         	"properties": {
+	                         		"xbrldi:typedMember": {
+	                         			"type": "object",
+	                         			"properties": {
+	                         				"dim-int:ID_CzennojBumagiTaxis": {
+	                         					"type": "string",
+	                         					"const": "dim-int:ID_CzennojBumagi_TypedName"
+	                         				}
+	                         			},
+	                         			"required": [
+	                         				"dim-int:ID_CzennojBumagiTaxis"
+	                         			]
+	                         		},
+	                         		"type": {
+	                         			"$ref": "../../../xbrl-csv.json#/definitions/xbrli:stringItemType"
+	                         		}
+	                         	},
+	                         	"required": [
+	                         		"xbrldi:typedMember",
+	                         		"type"
+                            ]
+                            },
+                            "typedDimensionFilter_ID_CzennojBumagiTaxis": {
+	                         	"description": "Типовой фильтр измерения на ось ID_CzennojBumagiTaxis",
+	                         	"allOf": [
+	                         		{
+	                         			"properties": {
+	                         				"http://www.cbr.ru/xbrl-csv/model#properties": {
+	                         					"allOf": [
+	                         						{
+	                         							"$ref": "#/definitions/ID_CzennojBumagiTaxis"
+	                         						}
+	                         					]
+	                         				},
+	                         				"name": {
+	                         					"$ref": "../../../xbrl-csv.json#/definitions/nameType"
+	                         				}
+	                         			},
+	                         			"required": [
+	                         				"http://www.cbr.ru/xbrl-csv/model#properties",
+	                         				"name"
+	                         			]
+	                         		}
+	                         	]
+	                         },"IDvypuskaDFA_UDR_DGRTaxis": {
+                            "description": "Описание открытого измерения для типового фильтра IDvypuskaDFA_UDR_DGRTaxis",
+	                         	"type": "object",
+	                         	"properties": {
+	                         		"xbrldi:typedMember": {
+	                         			"type": "object",
+	                         			"properties": {
+	                         				"dim-int:IDvypuskaDFA_UDR_DGRTaxis": {
+	                         					"type": "string",
+	                         					"const": "dim-int:ID_vypuskCzbTypedName"
+	                         				}
+	                         			},
+	                         			"required": [
+	                         				"dim-int:IDvypuskaDFA_UDR_DGRTaxis"
+	                         			]
+	                         		},
+	                         		"type": {
+	                         			"$ref": "../../../xbrl-csv.json#/definitions/xbrli:stringItemType"
+	                         		}
+	                         	},
+	                         	"required": [
+	                         		"xbrldi:typedMember",
+	                         		"type"
+                            ]
+                            },
+                            "typedDimensionFilter_IDvypuskaDFA_UDR_DGRTaxis": {
+	                         	"description": "Типовой фильтр измерения на ось IDvypuskaDFA_UDR_DGRTaxis",
+	                         	"allOf": [
+	                         		{
+	                         			"properties": {
+	                         				"http://www.cbr.ru/xbrl-csv/model#properties": {
+	                         					"allOf": [
+	                         						{
+	                         							"$ref": "#/definitions/IDvypuskaDFA_UDR_DGRTaxis"
+	                         						}
+	                         					]
+	                         				},
+	                         				"name": {
+	                         					"$ref": "../../../xbrl-csv.json#/definitions/nameType"
+	                         				}
+	                         			},
+	                         			"required": [
+	                         				"http://www.cbr.ru/xbrl-csv/model#properties",
+	                         				"name"
+	                         			]
+	                         		}
+	                         	]
+	                         }
+
+                         ,  
+                             "table_w_open_axis_hyp_ID_CzennojBumagiTaxis": {
+                               "description": "Таблица csv  мапинга колонок hyp_ID_CzennojBumagiTaxis с открытыми осями",
+                               "type": "object",
+ 		                        	"properties": {
+ 		                        		"roleUri": {
+ 		                        			"type": "string",
+ 		                        			"const": "http://www.cbr.ru/xbrl/nso/purcb/rep/2025-12-30/tab/SR_0420459"
+ 		                        		},
+                                "typedFiltering": {
+                                  "type": "boolean",
+                                  "const": true
+                                }
+ 		                        	},
+ 		                        	"required": [
+ 		                        		"roleUri",
+ 		                        		"typedFiltering"
+ 		                        	],
+                               "allOf": [
+                                 {
+                                					"$ref": "../../../xbrl-csv.json#/definitions/tableURIType"   
+                                 },
+                                 {
+                                   "properties": {
+                                     "columns": {
+                                       "type": "array",
+                                       "minItems": 1,
+                                       "maxItems": 500,
+                                       "uniqueItems": true,
+                                       "items": [
+                                            {"$ref": "#/definitions/typedDimensionFilter_ID_CzennojBumagiTaxis"}
+                                       ],
+                                       "additionalItems": {
+                                         "anyOf": [
+
+                                          {"$ref": "#/definitions/columnMapping_wo_explicitDimension_Data_sostavleniya_Rek_veks"},{"$ref": "#/definitions/columnMapping_wo_explicitDimension_Den_1_Rek_veks"},{"$ref": "#/definitions/columnMapping_wo_explicitDimension_Den_2_Rek_veks"},{"$ref": "#/definitions/columnMapping_wo_explicitDimension_FIO"},{"$ref": "#/definitions/columnMapping_wo_explicitDimension_GosRegNomerVyp"},{"$ref": "#/definitions/columnMapping_wo_explicitDimension_IDCzbvOsnDR"},{"$ref": "#/definitions/columnMapping_wo_explicitDimension_INN_TIN"},{"$ref": "#/definitions/columnMapping_wo_explicitDimension_ISIN"},{"$ref": "#/definitions/columnMapping_wo_explicitDimension_KlassAktOsnDREnumerator"},{"$ref": "#/definitions/columnMapping_wo_explicitDimension_KodCFI"},{"$ref": "#/definitions/columnMapping_wo_explicitDimension_Kod_stranEnumerator"},{"$ref": "#/definitions/columnMapping_wo_explicitDimension_Kod_valEnumerator"},{"$ref": "#/definitions/columnMapping_wo_explicitDimension_Mestonaxozhdenie_emitenta_Rekv_Emit"},{"$ref": "#/definitions/columnMapping_wo_explicitDimension_NomBlVeks"},{"$ref": "#/definitions/columnMapping_wo_explicitDimension_NomStOdnCzb"},{"$ref": "#/definitions/columnMapping_wo_explicitDimension_NomVeks"},{"$ref": "#/definitions/columnMapping_wo_explicitDimension_OGRN"},{"$ref": "#/definitions/columnMapping_wo_explicitDimension_PolnNaim"},{"$ref": "#/definitions/columnMapping_wo_explicitDimension_Primechanie"},{"$ref": "#/definitions/columnMapping_wo_explicitDimension_Proczentnaya_stavka_po_vekselyu_Rekv_Vekselya"},{"$ref": "#/definitions/columnMapping_wo_explicitDimension_SerVeks"},{"$ref": "#/definitions/columnMapping_wo_explicitDimension_Srok_Uslovie_platezha_pogasheniyaEnumerator"},{"$ref": "#/definitions/columnMapping_wo_explicitDimension_Telefon"},{"$ref": "#/definitions/columnMapping_wo_explicitDimension_TipCZenBumVidFIEnumerator"},{"$ref": "#/definitions/columnMapping_wo_explicitDimension_VekselnayaSummaValyutyNominala"}
+
+                                         ]
+                                       }
+                                     }
+                                   }
+                                 }
+                               ]
+                             },
+                             "table_w_open_axis_hyp_IDczifrovogoSvidetelstvaTaxis": {
+                               "description": "Таблица csv  мапинга колонок hyp_IDczifrovogoSvidetelstvaTaxis с открытыми осями",
+                               "type": "object",
+ 		                        	"properties": {
+ 		                        		"roleUri": {
+ 		                        			"type": "string",
+ 		                        			"const": "http://www.cbr.ru/xbrl/nso/purcb/rep/2025-12-30/tab/SR_0420459"
+ 		                        		},
+                                "typedFiltering": {
+                                  "type": "boolean",
+                                  "const": true
+                                }
+ 		                        	},
+ 		                        	"required": [
+ 		                        		"roleUri",
+ 		                        		"typedFiltering"
+ 		                        	],
+                               "allOf": [
+                                 {
+                                					"$ref": "../../../xbrl-csv.json#/definitions/tableURIType"   
+                                 },
+                                 {
+                                   "properties": {
+                                     "columns": {
+                                       "type": "array",
+                                       "minItems": 1,
+                                       "maxItems": 500,
+                                       "uniqueItems": true,
+                                       "items": [
+                                            {"$ref": "#/definitions/typedDimensionFilter_IDczifrovogoSvidetelstvaTaxis"}
+                                       ],
+                                       "additionalItems": {
+                                         "anyOf": [
+
+                                          {"$ref": "#/definitions/columnMapping_wo_explicitDimension_IDnomerUDRvOsnoveCzifrovogoSvidetelstva"},{"$ref": "#/definitions/columnMapping_wo_explicitDimension_INN_2"},{"$ref": "#/definitions/columnMapping_wo_explicitDimension_INN"},{"$ref": "#/definitions/columnMapping_wo_explicitDimension_INNDepVygCZifrSvid"},{"$ref": "#/definitions/columnMapping_wo_explicitDimension_KodDIGSEnumerator"},{"$ref": "#/definitions/columnMapping_wo_explicitDimension_Kod_stranEnumerator_2"},{"$ref": "#/definitions/columnMapping_wo_explicitDimension_Kod_valEnumerator_2"},{"$ref": "#/definitions/columnMapping_wo_explicitDimension_KolDIGSvypushDepozitariem"},{"$ref": "#/definitions/columnMapping_wo_explicitDimension_KolUDRvOdnomCZifrSvidetelstve"},{"$ref": "#/definitions/columnMapping_wo_explicitDimension_NaimDepVypCZifrSvid"},{"$ref": "#/definitions/columnMapping_wo_explicitDimension_NaimInvestPlatform"},{"$ref": "#/definitions/columnMapping_wo_explicitDimension_NaimOIP"},{"$ref": "#/definitions/columnMapping_wo_explicitDimension_OGRN_OGRNIP"},{"$ref": "#/definitions/columnMapping_wo_explicitDimension_PolnNaim_YUL_FL"},{"$ref": "#/definitions/columnMapping_wo_explicitDimension_Primechanie_2"},{"$ref": "#/definitions/columnMapping_wo_explicitDimension_UnikUslOboznachCZifrSvid"},{"$ref": "#/definitions/columnMapping_wo_explicitDimension_VidAktiva"}
+
+                                         ]
+                                       }
+                                     }
+                                   }
+                                 }
+                               ]
+                             },
+                             "table_w_open_axis_hyp_IDvypuskaDFA_UDR_DGRTaxis": {
+                               "description": "Таблица csv  мапинга колонок hyp_IDvypuskaDFA_UDR_DGRTaxis с открытыми осями",
+                               "type": "object",
+ 		                        	"properties": {
+ 		                        		"roleUri": {
+ 		                        			"type": "string",
+ 		                        			"const": "http://www.cbr.ru/xbrl/nso/purcb/rep/2025-12-30/tab/SR_0420459"
+ 		                        		},
+                                "typedFiltering": {
+                                  "type": "boolean",
+                                  "const": true
+                                }
+ 		                        	},
+ 		                        	"required": [
+ 		                        		"roleUri",
+ 		                        		"typedFiltering"
+ 		                        	],
+                               "allOf": [
+                                 {
+                                					"$ref": "../../../xbrl-csv.json#/definitions/tableURIType"   
+                                 },
+                                 {
+                                   "properties": {
+                                     "columns": {
+                                       "type": "array",
+                                       "minItems": 1,
+                                       "maxItems": 500,
+                                       "uniqueItems": true,
+                                       "items": [
+                                            {"$ref": "#/definitions/typedDimensionFilter_IDvypuskaDFA_UDR_DGRTaxis"}
+                                       ],
+                                       "additionalItems": {
+                                         "anyOf": [
+
+                                          {"$ref": "#/definitions/columnMapping_wo_explicitDimension_IDEmisCZB"},{"$ref": "#/definitions/columnMapping_wo_explicitDimension_IDNomerVypuska_DFA_UDR_DGR"},{"$ref": "#/definitions/columnMapping_wo_explicitDimension_INN_3"},{"$ref": "#/definitions/columnMapping_wo_explicitDimension_Kod_DGR_DFA_UDREnumerator"},{"$ref": "#/definitions/columnMapping_wo_explicitDimension_Kod_stranEnumerator_3"},{"$ref": "#/definitions/columnMapping_wo_explicitDimension_NaimDFA_UDR_DGR"},{"$ref": "#/definitions/columnMapping_wo_explicitDimension_OGRN_OGRNIP_2"},{"$ref": "#/definitions/columnMapping_wo_explicitDimension_PolnNaim_YUL_FL_2"},{"$ref": "#/definitions/columnMapping_wo_explicitDimension_VidAktiva_2"},{"$ref": "#/definitions/columnMapping_wo_explicitDimension_VidInyxCZifrPravVosnovCZifrPrav"}
+
+                                         ]
+                                       }
+                                     }
+                                   }
+                                 }
+                               ]
+                             }
+
+                          
+
+                        }
+                      }

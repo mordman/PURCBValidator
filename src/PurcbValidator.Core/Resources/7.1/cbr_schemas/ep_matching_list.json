@@ -1,0 +1,11 @@
+{
+	"fileSet": "www.cbr.ru/xbrl_csv/2025-12-30/20251230",
+	"files": [
+		{
+			"ep_nso_npf_y_90d_reestr_0420257.def.ep.json":"http://www.cbr.ru/xbrl/nso/npf/rep/2025-12-30/ep/ep_nso_npf_y_90d_reestr_0420257.xsd"
+		},
+		{
+			"ep_nso_purcb_m_q_y_10rd_reestr_0420417.def.ep.json":"http://www.cbr.ru/xbrl/nso/purcb/rep/2025-12-30/ep/ep_nso_purcb_m_q_y_10rd_reestr_0420417.xsd"
+		}
+	]
+}

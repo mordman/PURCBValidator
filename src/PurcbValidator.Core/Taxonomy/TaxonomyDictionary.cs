@@ -50,9 +50,11 @@ public sealed class ConceptInfo
 }
 
 /// <summary>
-/// Справочник таксономии УОД ПУРЦБ 6.1.0.10: русские метки концептов,
-/// домены перечислений и фасеты XSD. Загружается из ресурса taxonomy_dict.json,
-/// построенного по официальной таксономии Банка России.
+/// Справочник таксономии ПУРЦБ (загружается для выбранной версии пакета —
+/// см. <see cref="TaxonomyVersions"/>): русские метки концептов,
+/// домены перечислений и фасеты XSD. Ресурсы разложены по версиям:
+/// Resources/6.1.0.10/taxonomy_dict.json, Resources/7.1/taxonomy_dict.json;
+/// словари построены по официальным таксономиям Банка России.
 /// </summary>
 public sealed class TaxonomyDictionary
 {
@@ -81,7 +83,10 @@ public sealed class TaxonomyDictionary
         _tableTitles = tableTitles;
     }
 
-    /// <summary>Каталог ресурсов рядом со сборкой Core.</summary>
+    /// <summary>
+    /// Каталог ресурсов рядом со сборкой Core. Ресурсы разложены по версиям
+    /// таксономии: Resources/6.1.0.10/…, Resources/7.1/…
+    /// </summary>
     public static string ResourcesRoot
     {
         get
@@ -90,7 +95,7 @@ public sealed class TaxonomyDictionary
             for (var dir = new DirectoryInfo(asmDir); dir is not null; dir = dir.Parent)
             {
                 var candidate = Path.Combine(dir.FullName, "Resources");
-                if (Directory.Exists(Path.Combine(candidate, "cbr_schemas")))
+                if (Directory.Exists(Path.Combine(candidate, "6.1.0.10")))
                     return candidate;
             }
             return Path.Combine(asmDir, "Resources");
@@ -153,7 +158,19 @@ public sealed class TaxonomyDictionary
         // columnId -> concept: purcb_dic_XXX_dimGrp_1_periodGrp_1
         var concept = ConceptFromColumnId(qnameOrName);
         if (concept is not null && _labels.TryGetValue("purcb-dic:" + concept, out var l2)) return l2;
+        // формат 7.1: имя колонки «purcb-dic:Xxx_1» — суффикс экземпляра _N
+        var cut = StripInstanceSuffix(qnameOrName);
+        if (cut is not null && _labels.TryGetValue(cut, out var l3)) return l3;
         return "";
+    }
+
+    /// <summary>Отбрасывает суффикс экземпляра колонки «_N» (purcb-dic:Xxx_1 → purcb-dic:Xxx).</summary>
+    private static string? StripInstanceSuffix(string name)
+    {
+        var cut = name.LastIndexOf('_');
+        if (cut <= 0) return null;
+        var tail = name[(cut + 1)..];
+        return tail.Length > 0 && tail.All(char.IsDigit) ? name[..cut] : null;
     }
 
     /// <summary>Название концепта из идентификатора колонки маппинга.</summary>
@@ -168,8 +185,16 @@ public sealed class TaxonomyDictionary
     /// <summary>QName концепта из идентификатора колонки маппинга.</summary>
     public string? QNameFromColumnId(string columnId)
     {
+        // формат 6.1: purcb_dic_XXX_dimGrp_1_periodGrp_1
         var c = ConceptFromColumnId(columnId);
-        return c is null ? null : "purcb-dic:" + c;
+        if (c is not null) return "purcb-dic:" + c;
+        // формат 7.1: имя колонки «purcb-dic:Xxx_1» (возможно, с суффиксом _N)
+        if (columnId.Contains(':'))
+        {
+            var cut = StripInstanceSuffix(columnId);
+            if (cut is not null && cut.Contains(':')) return cut;
+        }
+        return null;
     }
 
     /// <summary>Домен перечисления для концепта (или null).</summary>

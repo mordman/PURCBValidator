@@ -1,0 +1,281 @@
+{
+                         "$schema": "http://json-schema.org/draft-07/schema#",
+                         "$id": "http://www.cbr.ru/xbrl_csv/2025-12-30/20251230/tab/nso/nfo/sr_soprovod_types.def_ep_nso_purcb_m_q_y_10rd_reestr_0420417.def.ep.json",
+                         "description": "Схема описания типов для разделов http://www.cbr.ru/xbrl/nso/nfo/rep/2025-12-30/tab/sr_soprovod",
+                         "innerVersion": "http://www.cbr.ru/xbrl_csv/2025-12-30/20251230",
+                         "definitions": {
+
+                          
+                             "conceptName_nfo-dic_Kommentarij": {
+                               "description": "Описание концепта nfo-dic:Kommentarij",
+                               "type": "object",
+                               "properties": {
+                                 "xbrl:concept": {
+                                   "type": "string",
+                                   "const": "nfo-dic:Kommentarij"
+                                 },
+                                 "xbrli:periodType": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/periodInstatType"
+                                 },
+                                 "type": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/xbrli:stringItemType"
+                                 }
+                               },
+                               "required": [
+                                 "xbrl:concept",
+                                 "xbrli:periodType",
+                                 "type"
+                               ]
+                             },
+                             "conceptName_nfo-dic_NaimenovanieFajla": {
+                               "description": "Описание концепта nfo-dic:NaimenovanieFajla",
+                               "type": "object",
+                               "properties": {
+                                 "xbrl:concept": {
+                                   "type": "string",
+                                   "const": "nfo-dic:NaimenovanieFajla"
+                                 },
+                                 "xbrli:periodType": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/periodInstatType"
+                                 },
+                                 "type": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/xbrli:stringItemType"
+                                 }
+                               },
+                               "required": [
+                                 "xbrl:concept",
+                                 "xbrli:periodType",
+                                 "type"
+                               ]
+                             },
+                             "conceptName_nfo-dic_TipDokumenta": {
+                               "description": "Описание концепта nfo-dic:TipDokumenta",
+                               "type": "object",
+                               "properties": {
+                                 "xbrl:concept": {
+                                   "type": "string",
+                                   "const": "nfo-dic:TipDokumenta"
+                                 },
+                                 "xbrli:periodType": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/periodInstatType"
+                                 },
+                                 "type": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/xbrli:stringItemType"
+                                 }
+                               },
+                               "required": [
+                                 "xbrl:concept",
+                                 "xbrli:periodType",
+                                 "type"
+                               ]
+                             },
+                             "conceptName_nfo-dic_TipDokumenta_SpisokEnumerator2": {
+                               "description": "Описание концепта nfo-dic:TipDokumenta_SpisokEnumerator2",
+                               "type": "object",
+                               "properties": {
+                                 "xbrl:concept": {
+                                   "type": "string",
+                                   "const": "nfo-dic:TipDokumenta_SpisokEnumerator2"
+                                 },
+                                 "xbrli:periodType": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/periodInstatType"
+                                 },
+                                 "type": {
+                                   "$ref": "../../../xbrl-csv.json#/definitions/enum2:enumerationSetItemType"
+                                 }
+                               },
+                               "required": [
+                                 "xbrl:concept",
+                                 "xbrli:periodType",
+                                 "type"
+                               ]
+                             }
+
+                          
+
+                          
+
+                         ,  
+                             "columnMapping_wo_explicitDimension_Kommentarij": {
+                             "description": "Описание маппинга концепта Kommentarij без явных измерений",
+                               "properties": {
+				                         "name": {"$ref": "../../../xbrl-csv.json#/definitions/nameType"},
+                                 "http://www.cbr.ru/xbrl-csv/model#properties": {
+                                   "type": "object",
+                                   "allOf": [
+                                     {
+                                       "$ref": "#/definitions/conceptName_nfo-dic_Kommentarij"
+                                     },
+                                     {
+                                       "$ref": "../../../xbrl-csv.json#/definitions/notSpecifiedDomainType"
+                                     }
+                                   ]
+                                 }
+                               },
+                               "required": [
+                                 "name",
+                                 "http://www.cbr.ru/xbrl-csv/model#properties"
+                               ]
+                             },
+                             "columnMapping_wo_explicitDimension_NaimenovanieFajla": {
+                             "description": "Описание маппинга концепта NaimenovanieFajla без явных измерений",
+                               "properties": {
+				                         "name": {"$ref": "../../../xbrl-csv.json#/definitions/nameType"},
+                                 "http://www.cbr.ru/xbrl-csv/model#properties": {
+                                   "type": "object",
+                                   "allOf": [
+                                     {
+                                       "$ref": "#/definitions/conceptName_nfo-dic_NaimenovanieFajla"
+                                     },
+                                     {
+                                       "$ref": "../../../xbrl-csv.json#/definitions/notSpecifiedDomainType"
+                                     }
+                                   ]
+                                 }
+                               },
+                               "required": [
+                                 "name",
+                                 "http://www.cbr.ru/xbrl-csv/model#properties"
+                               ]
+                             },
+                             "columnMapping_wo_explicitDimension_TipDokumenta": {
+                             "description": "Описание маппинга концепта TipDokumenta без явных измерений",
+                               "properties": {
+				                         "name": {"$ref": "../../../xbrl-csv.json#/definitions/nameType"},
+                                 "http://www.cbr.ru/xbrl-csv/model#properties": {
+                                   "type": "object",
+                                   "allOf": [
+                                     {
+                                       "$ref": "#/definitions/conceptName_nfo-dic_TipDokumenta"
+                                     },
+                                     {
+                                       "$ref": "../../../xbrl-csv.json#/definitions/notSpecifiedDomainType"
+                                     }
+                                   ]
+                                 }
+                               },
+                               "required": [
+                                 "name",
+                                 "http://www.cbr.ru/xbrl-csv/model#properties"
+                               ]
+                             },
+                             "columnMapping_wo_explicitDimension_TipDokumenta_SpisokEnumerator2": {
+                             "description": "Описание маппинга концепта TipDokumenta_SpisokEnumerator2 без явных измерений",
+                               "properties": {
+				                         "name": {"$ref": "../../../xbrl-csv.json#/definitions/nameType"},
+                                 "http://www.cbr.ru/xbrl-csv/model#properties": {
+                                   "type": "object",
+                                   "allOf": [
+                                     {
+                                       "$ref": "#/definitions/conceptName_nfo-dic_TipDokumenta_SpisokEnumerator2"
+                                     },
+                                     {
+                                       "$ref": "../../../xbrl-csv.json#/definitions/notSpecifiedDomainType"
+                                     }
+                                   ]
+                                 }
+                               },
+                               "required": [
+                                 "name",
+                                 "http://www.cbr.ru/xbrl-csv/model#properties"
+                               ]
+                             }
+
+                         ,  "ID_strokiTaxis": {
+                            "description": "Описание открытого измерения для типового фильтра ID_strokiTaxis",
+	                         	"type": "object",
+	                         	"properties": {
+	                         		"xbrldi:typedMember": {
+	                         			"type": "object",
+	                         			"properties": {
+	                         				"dim-int:ID_strokiTaxis": {
+	                         					"type": "string",
+	                         					"const": "dim-int:ID_strokiTypedname"
+	                         				}
+	                         			},
+	                         			"required": [
+	                         				"dim-int:ID_strokiTaxis"
+	                         			]
+	                         		},
+	                         		"type": {
+	                         			"$ref": "../../../xbrl-csv.json#/definitions/xbrli:stringItemType"
+	                         		}
+	                         	},
+	                         	"required": [
+	                         		"xbrldi:typedMember",
+	                         		"type"
+                            ]
+                            },
+                            "typedDimensionFilter_ID_strokiTaxis": {
+	                         	"description": "Типовой фильтр измерения на ось ID_strokiTaxis",
+	                         	"allOf": [
+	                         		{
+	                         			"properties": {
+	                         				"http://www.cbr.ru/xbrl-csv/model#properties": {
+	                         					"allOf": [
+	                         						{
+	                         							"$ref": "#/definitions/ID_strokiTaxis"
+	                         						}
+	                         					]
+	                         				},
+	                         				"name": {
+	                         					"$ref": "../../../xbrl-csv.json#/definitions/nameType"
+	                         				}
+	                         			},
+	                         			"required": [
+	                         				"http://www.cbr.ru/xbrl-csv/model#properties",
+	                         				"name"
+	                         			]
+	                         		}
+	                         	]
+	                         }
+
+                         ,  
+                             "table_w_open_axis_hyp_ID_strokiTaxis": {
+                               "description": "Таблица csv  мапинга колонок hyp_ID_strokiTaxis с открытыми осями",
+                               "type": "object",
+ 		                        	"properties": {
+ 		                        		"roleUri": {
+ 		                        			"type": "string",
+ 		                        			"const": "http://www.cbr.ru/xbrl/nso/nfo/rep/2025-12-30/tab/sr_soprovod"
+ 		                        		},
+                                "typedFiltering": {
+                                  "type": "boolean",
+                                  "const": true
+                                }
+ 		                        	},
+ 		                        	"required": [
+ 		                        		"roleUri",
+ 		                        		"typedFiltering"
+ 		                        	],
+                               "allOf": [
+                                 {
+                                					"$ref": "../../../xbrl-csv.json#/definitions/tableURIType"   
+                                 },
+                                 {
+                                   "properties": {
+                                     "columns": {
+                                       "type": "array",
+                                       "minItems": 1,
+                                       "maxItems": 500,
+                                       "uniqueItems": true,
+                                       "items": [
+                                            {"$ref": "#/definitions/typedDimensionFilter_ID_strokiTaxis"}
+                                       ],
+                                       "additionalItems": {
+                                         "anyOf": [
+
+                                          {"$ref": "#/definitions/columnMapping_wo_explicitDimension_Kommentarij"},{"$ref": "#/definitions/columnMapping_wo_explicitDimension_NaimenovanieFajla"},{"$ref": "#/definitions/columnMapping_wo_explicitDimension_TipDokumenta"},{"$ref": "#/definitions/columnMapping_wo_explicitDimension_TipDokumenta_SpisokEnumerator2"}
+
+                                         ]
+                                       }
+                                     }
+                                   }
+                                 }
+                               ]
+                             }
+
+                          
+
+                        }
+                      }

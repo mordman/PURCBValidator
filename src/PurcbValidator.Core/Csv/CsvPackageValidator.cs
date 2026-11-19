@@ -38,9 +38,10 @@ public sealed class CsvPackageValidator
         foreach (var t in mapping.Tables)
         {
             if (string.IsNullOrEmpty(t.Uri)) continue;
-            var tableName = t.TableName;
+            var tableName = t.TableName;          // ключ таблицы (уникален в пакете)
+            var displayTable = t.RoleKey;         // отображение: SR_0420417 / sr_R1
             var fullPath = Path.Combine(baseDir, t.Uri);
-            progress?.Invoke($"Проверка таблицы {tableName} ({t.Uri})");
+            progress?.Invoke($"Проверка таблицы {displayTable} ({t.Uri})");
 
             if (!File.Exists(fullPath))
             {
@@ -50,8 +51,8 @@ public sealed class CsvPackageValidator
                     Severity = IssueSeverity.Error,
                     Code = "CSV-001",
                     File = t.Uri,
-                    Table = tableName,
-                    Message = "CSV-файл, указанный в mapping.json, отсутствует в пакете",
+                    Table = displayTable,
+                    Message = "CSV-файл, указанный в служебном файле, отсутствует в пакете",
                 });
                 continue;
             }
@@ -76,7 +77,7 @@ public sealed class CsvPackageValidator
                         Severity = IssueSeverity.Error,
                         Code = "CSV-002",
                         File = t.Uri,
-                        Table = tableName,
+                        Table = displayTable,
                         Message = "Файл не является корректным UTF-8 (обнаружены недопустимые байты)",
                     });
                     text = new UTF8Encoding(false, false).GetString(bytes);
@@ -90,7 +91,7 @@ public sealed class CsvPackageValidator
                     Severity = IssueSeverity.Error,
                     Code = "CSV-003",
                     File = t.Uri,
-                    Table = tableName,
+                    Table = displayTable,
                     Message = $"Не удалось прочитать файл: {ex.Message}",
                 });
                 continue;
@@ -104,7 +105,7 @@ public sealed class CsvPackageValidator
                     Severity = IssueSeverity.Error,
                     Code = "CSV-004",
                     File = t.Uri,
-                    Table = tableName,
+                    Table = displayTable,
                     Message = $"Кодировка файла должна соответствовать заявленной в mapping.json ({declaredEncoding})",
                 });
             }
@@ -117,7 +118,7 @@ public sealed class CsvPackageValidator
                     Severity = IssueSeverity.Info,
                     Code = "CSV-005",
                     File = t.Uri,
-                    Table = tableName,
+                    Table = displayTable,
                     Message = "Файл начинается с маркера BOM; требуется UTF-8 без BOM",
                 });
             }
@@ -136,7 +137,7 @@ public sealed class CsvPackageValidator
                     Severity = IssueSeverity.Error,
                     Code = "CSV-006",
                     File = t.Uri,
-                    Table = tableName,
+                    Table = displayTable,
                     Message = "Файл пуст (отсутствует даже строка заголовка)",
                 });
                 continue;
@@ -167,7 +168,7 @@ public sealed class CsvPackageValidator
                     Severity = IssueSeverity.Error,
                     Code = "CSV-007",
                     File = t.Uri,
-                    Table = tableName,
+                    Table = displayTable,
                     Message = fe,
                 });
 
@@ -183,7 +184,7 @@ public sealed class CsvPackageValidator
                     Severity = IssueSeverity.Error,
                     Code = "CSV-010",
                     File = t.Uri,
-                    Table = tableName,
+                    Table = displayTable,
                     Column = missing,
                     ColumnLabel = _taxonomy.Label(missing),
                     Message = $"Колонка \"{missing}\" описана в mapping.json, но отсутствует в заголовке CSV",
@@ -195,7 +196,7 @@ public sealed class CsvPackageValidator
                     Severity = IssueSeverity.Error,
                     Code = "CSV-011",
                     File = t.Uri,
-                    Table = tableName,
+                    Table = displayTable,
                     Column = extra,
                     ColumnLabel = _taxonomy.Label(extra),
                     Message = $"Колонка \"{extra}\" присутствует в заголовке CSV, но не описана в mapping.json",
@@ -209,7 +210,7 @@ public sealed class CsvPackageValidator
                     Severity = IssueSeverity.Info,
                     Code = "CSV-012",
                     File = t.Uri,
-                    Table = tableName,
+                    Table = displayTable,
                     Message = "Порядок колонок в заголовке CSV отличается от порядка описания в mapping.json (набор колонок совпадает)",
                 });
 
@@ -222,7 +223,7 @@ public sealed class CsvPackageValidator
                     Severity = IssueSeverity.Error,
                     Code = "CSV-020",
                     File = t.Uri,
-                    Table = tableName,
+                    Table = displayTable,
                     Row = dataRows.Count,
                     Message = $"Число строк данных ({dataRows.Count}) не совпадает с заявленным в mapping.json csvRowsCount ({declared.Value})",
                 });
@@ -242,7 +243,7 @@ public sealed class CsvPackageValidator
                             Severity = IssueSeverity.Error,
                             Code = "CSV-030",
                             File = t.Uri,
-                            Table = tableName,
+                            Table = displayTable,
                             Row = r + 1,
                             Message = e,
                         });
@@ -256,7 +257,7 @@ public sealed class CsvPackageValidator
                         Severity = IssueSeverity.Error,
                         Code = "CSV-031",
                         File = t.Uri,
-                        Table = tableName,
+                        Table = displayTable,
                         Row = r + 1,
                         Message = $"Число полей в строке ({row.Fields.Count}) не совпадает с числом колонок заголовка ({header.Fields.Count})",
                     });
@@ -342,18 +343,12 @@ public sealed class CsvPackageValidator
 
             var colDef = t.Columns.FirstOrDefault(c => c.ColumnId == col);
             var columnType = colDef?.Aspect?.Type?.ColumnType;
-            var dataType = colDef?.Aspect?.Type?.DataType;
+            // концепт колонки: в 7.1 задаётся явно (xbrl:concept), в 6.1 выводится из columnId
+            var concept = colDef?.Concept ?? _taxonomy.QNameFromColumnId(col);
 
-            // краткая форма маппинга: тип из таксономии
-            if (columnType is null)
-            {
-                var qname = _taxonomy.QNameFromColumnId(col);
-                if (qname is not null)
-                {
-                    var cType = _taxonomy.ConceptType(qname);
-                    columnType = cType;
-                }
-            }
+            // краткая форма описания (6.1): тип из таксономии
+            if (columnType is null && concept is not null)
+                columnType = _taxonomy.ConceptType(concept);
 
             switch (columnType)
             {
@@ -376,13 +371,12 @@ public sealed class CsvPackageValidator
 
                 case "enum:enumerationItemType":
                 case "enum2:enumerationSetItemType":
-                    ValidateEnum(table, rowNo, col, value, columnType, issues);
+                    ValidateEnum(table, rowNo, col, value, columnType, concept, issues);
                     break;
             }
 
             // фасеты XSD (pattern и др.) для концепта колонки
-            var qn = _taxonomy.QNameFromColumnId(col);
-            if (qn is not null && _taxonomy.FacetsFor(qn) is { } facets)
+            if (concept is not null && _taxonomy.FacetsFor(concept) is { } facets)
             {
                 if (facets.TryGetValue("pattern", out var pattern))
                 {
@@ -414,17 +408,38 @@ public sealed class CsvPackageValidator
 
     private void ValidateEnum(
         CsvTableData table, long rowNo, string col, string value, string columnType,
-        List<ValidationIssue> issues)
+        string? concept, List<ValidationIssue> issues)
     {
-        var qname = _taxonomy.QNameFromColumnId(col);
+        var qname = concept ?? _taxonomy.QNameFromColumnId(col);
         var domain = qname is null ? null : _taxonomy.EnumDomainFor(qname);
         if (domain is null) return; // домен неизвестен — не проверяем
 
+        if (columnType == "enum2:enumerationSetItemType")
+        {
+            // Extensible Enumerations 2.0: значение — набор URI членов домена,
+            // разделённых пробелами (http://…/mem-int#XxxMember)
+            var uris = value.Split(' ', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+            if (uris.Length == 0 || uris.Any(u => !UriMatchesDomain(u, domain.Values)))
+            {
+                issues.Add(new ValidationIssue
+                {
+                    Layer = ValidationLayer.TaxonomyChecks,
+                    Severity = IssueSeverity.Error,
+                    Code = "TAX-020",
+                    File = table.Uri,
+                    Table = table.TableName,
+                    Row = rowNo,
+                    Column = col,
+                    ColumnLabel = _taxonomy.Label(col),
+                    Value = TruncValue(value),
+                    Message = $"Значение отсутствует в домене перечисления концепта {qname}: каждый URI набора должен иметь вид http://…#ЧленДомена",
+                });
+            }
+            return;
+        }
+
         if (!domain.Values.Contains(value))
         {
-            var hint = columnType == "enum2:enumerationSetItemType"
-                ? "значение должно быть URI вида http://…#Member"
-                : "значение должно быть именем члена перечисления (например, mem-int:…Member)";
             issues.Add(new ValidationIssue
             {
                 Layer = ValidationLayer.TaxonomyChecks,
@@ -436,9 +451,19 @@ public sealed class CsvPackageValidator
                 Column = col,
                 ColumnLabel = _taxonomy.Label(col),
                 Value = TruncValue(value),
-                Message = $"Значение отсутствует в домене перечисления концепта {qname}: {hint}",
+                Message = $"Значение отсутствует в домене перечисления концепта {qname}: значение должно быть именем члена перечисления (например, mem-int:…Member)",
             });
         }
+    }
+
+    /// <summary>URI члена перечисления (…/mem-int#XxxMember) против домена (mem-int:XxxMember).</summary>
+    private static bool UriMatchesDomain(string uri, HashSet<string> domainValues)
+    {
+        var hash = uri.LastIndexOf('#');
+        if (hash < 0 || hash == uri.Length - 1) return false;
+        var fragment = uri[(hash + 1)..];
+        return domainValues.Contains(fragment)
+            || domainValues.Any(v => v.EndsWith(":" + fragment, StringComparison.Ordinal));
     }
 
     private ValidationIssue TypeIssue(CsvTableData table, long rowNo, string col, string value, string expected) => new()
