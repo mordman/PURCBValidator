@@ -57,21 +57,40 @@ public class RegressionRealPackageTests
     }
 
     /// <summary>
-    /// Маркер отсутствия «-» (формат УОД) не проверяется масками типов:
-    /// AO_Tm = «-» не даёт TAX-010, при этом настоящий дефект типов
-    /// (текст «Клиринговый отчет» в поле даты R_DcmDt) по-прежнему ловится.
+    /// Маркер отсутствия «-» (формат УОД) и первичные контроли ЦБ:
+    /// контроль масок fControlLogicalCsv5 «-» не пропускает — AO_Tm = «-»
+    /// даёт TAX-010 (подтверждено протоколом приёмки ЦБ: 5110 срабатываний);
+    /// контроль типов по-прежнему ловит настоящий дефект (текст «Клиринговый
+    /// отчет» в поле даты R_DcmDt), а правомерность отсутствия проверяют
+    /// exists-правила ЦБ (см. Rules_TreatDashAsAbsence).
     /// </summary>
     [Fact]
-    public void AbsenceMarker_IsNotCheckedAgainstTypeMasks()
+    public void AbsenceMarker_IsCheckedAgainstTaxonomyMask()
     {
         var report = Run();
 
-        Assert.DoesNotContain(report.Issues,
+        Assert.Contains(report.Issues,
             i => i.Code == "TAX-010" && (i.Column ?? "").Contains("AO_Tm"));
         Assert.Contains(report.Issues, i =>
             i.Code == "CSV-060" &&
             i.Table == "sr_R6" &&
             (i.Column ?? "").Contains("R_DcmDt"));
+    }
+
+    /// <summary>
+    /// Пустые открытые оси (fControlLogicalCsv3): в сэмпле 10 строк sr_R6
+    /// без значений осей A_PrtflCdTaxis/A_SctnTaxis — по 10 замечаний
+    /// на каждую ось.
+    /// </summary>
+    [Fact]
+    public void EmptyOpenAxes_AreReported()
+    {
+        var report = Run();
+        var v = report.Issues.Where(i => i.Code == "CSV-070").ToList();
+        Assert.Equal(20, v.Count);
+        Assert.All(v, i => Assert.Equal("sr_R6", i.Table));
+        Assert.Equal(10, v.Count(i => (i.Column ?? "").EndsWith("A_PrtflCdTaxis")));
+        Assert.Equal(10, v.Count(i => (i.Column ?? "").EndsWith("A_SctnTaxis")));
     }
 
     /// <summary>Сыровые коды вместо имён членов перечисления — реальная ошибка данных.</summary>

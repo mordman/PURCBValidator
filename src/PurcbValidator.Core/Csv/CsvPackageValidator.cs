@@ -8,8 +8,9 @@ namespace PurcbValidator.Core.Csv;
 /// <summary>
 /// Слой 3 — проверка CSV-файлов пакета: наличие файлов, кодировка,
 /// заголовок против описания таблицы в mapping.json, число строк данных,
-/// число полей в строках, типы значений, ограничение длины текста,
-/// домены перечислений и фасеты таксономии.
+/// число полей в строках, типы значений (лексический формат XBRL-CSV),
+/// ограничение длины текста, домены перечислений, фасеты таксономии
+/// и полнота открытых осей в строках (typedFiltering).
 /// </summary>
 public sealed class CsvPackageValidator
 {
@@ -298,48 +299,37 @@ public sealed class CsvPackageValidator
         long limit,
         List<ValidationIssue> issues)
     {
+        // открытые оси (typedFiltering): пропуск данных в оси отклоняется приёмкой
+        // ЦБ — fControlLogicalCsv3 «Контроль открытых осей на пропуск данных»
+        if (t.TypedFiltering == true)
+        {
+            for (var i = 0; i < table.HeaderColumns.Count && i < row.Fields.Count; i++)
+            {
+                var axCol = table.HeaderColumns[i];
+                var axDef = t.Columns.FirstOrDefault(c => c.ColumnId == axCol);
+                var isAxis = axCol.StartsWith("dim_int_", StringComparison.Ordinal) || axDef?.IsDimension == true;
+                if (!isAxis || row.Fields[i].Length != 0) continue;
+                issues.Add(new ValidationIssue
+                {
+                    Layer = ValidationLayer.CsvData,
+                    Severity = IssueSeverity.Error,
+                    Code = "CSV-070",
+                    File = table.Uri,
+                    Table = table.TableName,
+                    Row = rowNo,
+                    Column = axCol,
+                    ColumnLabel = _taxonomy.Label(axCol),
+                    Message = "Значение открытой оси отсутствует: в таблицах с типизированной фильтрацией " +
+                              "каждая строка обязана содержать значения всех осей (контроль ЦБ fControlLogicalCsv3)",
+                });
+            }
+        }
+
         for (var i = 0; i < table.HeaderColumns.Count && i < row.Fields.Count; i++)
         {
             var col = table.HeaderColumns[i];
             var value = row.Fields[i];
             if (value.Length == 0) continue;
-
-            // «-» — признак отсутствия значения в формате УОД: проверки типов,
-            // масок и перечислений к нему не применяются; правомерность отсутствия
-            // значения у конкретного элемента проверяют exists-правила ЦБ
-            if (value == "-") continue;
-
-            // ограничение длины текстовых значений
-            if (value.Length > limit)
-                issues.Add(new ValidationIssue
-                {
-                    Layer = ValidationLayer.CsvData,
-                    Severity = IssueSeverity.Error,
-                    Code = "CSV-050",
-                    File = table.Uri,
-                    Table = table.TableName,
-                    Row = rowNo,
-                    Column = col,
-                    ColumnLabel = _taxonomy.Label(col),
-                    Value = TruncValue(value),
-                    Message = $"Длина значения ({value.Length}) превышает textValueLengthLimit ({limit})",
-                });
-
-            // пробелы по краям
-            if (value != value.Trim())
-                issues.Add(new ValidationIssue
-                {
-                    Layer = ValidationLayer.CsvData,
-                    Severity = IssueSeverity.Info,
-                    Code = "CSV-051",
-                    File = table.Uri,
-                    Table = table.TableName,
-                    Row = rowNo,
-                    Column = col,
-                    ColumnLabel = _taxonomy.Label(col),
-                    Value = TruncValue(value),
-                    Message = "Значение содержит начальные или конечные пробелы",
-                });
 
             var colDef = t.Columns.FirstOrDefault(c => c.ColumnId == col);
             var columnType = colDef?.Aspect?.Type?.ColumnType;
@@ -350,32 +340,74 @@ public sealed class CsvPackageValidator
             if (columnType is null && concept is not null)
                 columnType = _taxonomy.ConceptType(concept);
 
-            switch (columnType)
+            // «-» — признак отсутствия значения в формате УОД: проверки длины,
+            // типов и перечислений к нему не применяются (правомерность отсутствия
+            // значения у конкретного элемента проверяют exists-правила ЦБ).
+            // Маски таксономии, по протоколу приёмки ЦБ (fControlLogicalCsv5
+            // «Контроль 3Custom»), «-» не пропускают — маска проверяется ниже.
+            if (value != "-")
             {
-                case "xbrli:integerItemType":
-                    if (!IsInteger(value))
-                        issues.Add( TypeIssue(table, rowNo, col, value, "целое число (integer)") );
-                    break;
+                // ограничение длины текстовых значений
+                if (value.Length > limit)
+                    issues.Add(new ValidationIssue
+                    {
+                        Layer = ValidationLayer.CsvData,
+                        Severity = IssueSeverity.Error,
+                        Code = "CSV-050",
+                        File = table.Uri,
+                        Table = table.TableName,
+                        Row = rowNo,
+                        Column = col,
+                        ColumnLabel = _taxonomy.Label(col),
+                        Value = TruncValue(value),
+                        Message = $"Длина значения ({value.Length}) превышает textValueLengthLimit ({limit})",
+                    });
 
-                case "xbrli:decimalItemType":
-                case "xbrli:monetaryItemType":
-                case "xbrli:pureItemType":
-                    if (!IsDecimal(value))
-                        issues.Add( TypeIssue(table, rowNo, col, value, "число (decimal)") );
-                    break;
+                // пробелы по краям
+                if (value != value.Trim())
+                    issues.Add(new ValidationIssue
+                    {
+                        Layer = ValidationLayer.CsvData,
+                        Severity = IssueSeverity.Info,
+                        Code = "CSV-051",
+                        File = table.Uri,
+                        Table = table.TableName,
+                        Row = rowNo,
+                        Column = col,
+                        ColumnLabel = _taxonomy.Label(col),
+                        Value = TruncValue(value),
+                        Message = "Значение содержит начальные или конечные пробелы",
+                    });
 
-                case "xbrli:dateItemType":
-                    if (!MappingLoader.IsIsoDate(value))
-                        issues.Add( TypeIssue(table, rowNo, col, value, "дата в формате ГГГГ-ММ-ДД") );
-                    break;
+                switch (columnType)
+                {
+                    case "xbrli:integerItemType":
+                        if (!IsInteger(value))
+                            issues.Add( TypeIssue(table, rowNo, col, value, "целое число (integer)") );
+                        break;
 
-                case "enum:enumerationItemType":
-                case "enum2:enumerationSetItemType":
-                    ValidateEnum(table, rowNo, col, value, columnType, concept, issues);
-                    break;
+                    case "xbrli:decimalItemType":
+                    case "xbrli:monetaryItemType":
+                    case "xbrli:pureItemType":
+                        if (!IsDecimal(value))
+                            issues.Add( TypeIssue(table, rowNo, col, value,
+                                "десятичное число с обязательной целой частью (например, 0.5)") );
+                        break;
+
+                    case "xbrli:dateItemType":
+                        if (!MappingLoader.IsIsoDate(value))
+                            issues.Add( TypeIssue(table, rowNo, col, value, "дата в формате ГГГГ-ММ-ДД") );
+                        break;
+
+                    case "enum:enumerationItemType":
+                    case "enum2:enumerationSetItemType":
+                        ValidateEnum(table, rowNo, col, value, columnType, concept, issues);
+                        break;
+                }
             }
 
-            // фасеты XSD (pattern и др.) для концепта колонки
+            // фасеты XSD (pattern и др.) для концепта колонки; проверяются по любым
+            // непустым значениям, включая маркер «-» (fControlLogicalCsv5 ЦБ)
             if (concept is not null && _taxonomy.FacetsFor(concept) is { } facets)
             {
                 if (facets.TryGetValue("pattern", out var pattern))
@@ -480,14 +512,20 @@ public sealed class CsvPackageValidator
         Message = $"Значение не соответствует типу колонки: ожидается {expected}",
     };
 
-    internal static bool IsInteger(string value)
-        => long.TryParse(value, System.Globalization.NumberStyles.AllowLeadingSign,
-               System.Globalization.CultureInfo.InvariantCulture, out _);
+    // Числовой лексический формат XBRL-CSV, принимаемый первичными контролями ЦБ
+    // (fControlLogicalCsv2): целая часть обязательна, дробная — только цифры,
+    // экспоненциальная запись запрещена. Значения вида «.5» отклоняются
+    // приёмкой ЦБ, хотя decimal.TryParse их допускает; заодно отсекаются
+    // «5.», «1E5» и переполнение long у IsInteger.
+    private static readonly System.Text.RegularExpressions.Regex IntegerLexical =
+        new("^[+-]?[0-9]+$", System.Text.RegularExpressions.RegexOptions.CultureInvariant);
 
-    internal static bool IsDecimal(string value)
-        => decimal.TryParse(value,
-               System.Globalization.NumberStyles.AllowLeadingSign | System.Globalization.NumberStyles.AllowDecimalPoint,
-               System.Globalization.CultureInfo.InvariantCulture, out _);
+    private static readonly System.Text.RegularExpressions.Regex DecimalLexical =
+        new("^[+-]?[0-9]+(\\.[0-9]+)?$", System.Text.RegularExpressions.RegexOptions.CultureInvariant);
+
+    internal static bool IsInteger(string value) => IntegerLexical.IsMatch(value);
+
+    internal static bool IsDecimal(string value) => DecimalLexical.IsMatch(value);
 
     private static string TruncValue(string v) => v.Length <= 120 ? v : v[..120] + "…";
 }
